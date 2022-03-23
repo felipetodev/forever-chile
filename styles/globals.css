@@ -17,6 +17,15 @@ a {
   color: #E6E6E6;
 }
 
+h3 {
+  margin: 0;
+}
+
+.container {
+  width: min(800px, 90%);
+  margin: 0 auto;
+}
+
 .swiper-pagination {
   background: none;
   text-align: start !important;
@@ -40,8 +49,8 @@ a {
 .mobile-description {
   display: none;
   font-size: 28px;
-  margin-top: 70px;
-  margin-bottom: 70px;
+  padding-top: 70px;
+  padding-bottom: 70px;
   margin-left: 35px;
   margin-right: 35px;
 }
@@ -50,16 +59,22 @@ a {
   display: none;
   font-size: 12px;
   text-align: center;
-  margin-top: 45px;
-  margin-bottom: 45px;
+  padding-top: 45px;
+  padding-bottom: 45px;
   margin-left: 35px;
   margin-right: 35px;
 }
 
 /* Tablet view */
-@media(max-width: 869px) {
+@media(max-width: 1070px) {
   .swiper-pagination {
     margin-left: 80px;
+  }
+}
+
+@media(max-width: 675px) {
+  .swiper-pagination {
+    margin-left: 45px;
   }
 }
 
