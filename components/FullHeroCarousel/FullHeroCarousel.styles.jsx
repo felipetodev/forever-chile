@@ -5,6 +5,11 @@ export const FullHeroStyled = styled.div`
   position: relative;
   max-height: 70vh;
 
+  // Tablet view
+  @media(max-width: 1070px) {
+    min-height: 55vh;
+  }
+
   // Mobile view
   @media(max-width: 400px) {
     min-height: 400px;
@@ -28,8 +33,8 @@ export const Container = styled.div`
   background: none;
   overflow: hidden;
 
-    // Mobile view
-  @media(max-width: 400px) {
+    // Tablet view
+  @media(max-width: 1070px) {
     grid-template-columns: 1fr;
     margin-left: 0px;
     right: 0;
@@ -69,6 +74,7 @@ export const IntroStyled = styled.div`
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
     white-space: nowrap;
+    margin-bottom: 20px;
     cursor: pointer;
 
     h2 {
@@ -101,8 +107,17 @@ export const IntroStyled = styled.div`
   }
 
   // Tablet view
-  @media(max-width: 869px) {
+  @media(max-width: 1070px) {
     min-width: 100%;
+    div {
+      margin-right: 20px;
+      h2 {
+        font-size: 16px;
+      }
+      span {
+        font-size: 12px;
+      }
+    }
     &::before {
       display: none;
     }
