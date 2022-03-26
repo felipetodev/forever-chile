@@ -21,7 +21,7 @@ const BurgerStyled = styled.div`
   justify-content: center;
   top: 0;
   bottom: ${({ open }) => open ? "" : "0"};
-  position: ${({ open }) => open ? "fixed" : "absolute"};
+  position: ${({ open, isAbout }) => (open || isAbout) ? "fixed" : "absolute"};
   z-index: ${({ open }) => open ? 7 : 4};
   background-color: transparent;
 
@@ -68,7 +68,6 @@ const MenuStyled = styled.div`
   position: fixed;
   background-color: #1a1a1a;
   transform: ${({ open }) => open ? "translateX(0%)" : "translateX(100%)"};
-  // transform: translateX(100%);
   right: 0;
   top: 0;
   bottom: 0;
@@ -138,12 +137,12 @@ const ButtonStyled = styled.button`
 
 // onOpen 821px
 
-const Menu = () => {
+const Menu = ({ isAbout }) => {
   const [open, setOpen] = useState(false)
 
   return (
     <>
-      <BurgerStyled open={open}>
+      <BurgerStyled open={open} isAbout={isAbout}>
         <ButtonStyled onClick={() => setOpen(!open)}>X</ButtonStyled>
       </BurgerStyled>
       <MenuStyled open={open}>

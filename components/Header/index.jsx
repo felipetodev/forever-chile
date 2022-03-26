@@ -2,7 +2,7 @@ import { Container, HeaderStyled, IntroStyled, LogoStyled, Nav } from "./Header.
 import Image from 'next/image'
 import Menu from "../Menu";
 
-const Header = ({ logo, description, }) => {
+const Header = ({ isAbout, logo, description, }) => {
   return (
     <HeaderStyled>
       <Container>
@@ -13,7 +13,7 @@ const Header = ({ logo, description, }) => {
           {description}
         </IntroStyled>
         <Nav>
-          <Menu />
+          <Menu isAbout={isAbout} />
         </Nav>
       </Container>
     </HeaderStyled>
