@@ -5,6 +5,7 @@ import {
   OverlapText,
   RightImage,
   TextContainer,
+  LayoutStyled
 } from "./styles";
 
 const AboutHero = () => {
@@ -36,7 +37,7 @@ const AboutHero = () => {
             <Image
               quality={100}
               className="timeisnow"
-              layout="fixed"
+              layout="fill"
               height={270}
               width={270}
               src="/trash.png"
@@ -45,7 +46,7 @@ const AboutHero = () => {
           </RightImage>
         </div>
       </BannerContainer>
-      <Layout style={{ background: "none" }}>
+      <LayoutStyled>
         <TextContainer>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -58,7 +59,7 @@ const AboutHero = () => {
           </p>
         </TextContainer>
         <div style={{ background: "none" }} className="div3" />
-      </Layout>
+      </LayoutStyled>
     </div>
   );
 };
