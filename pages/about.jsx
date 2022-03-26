@@ -1,6 +1,11 @@
 import Header from "../components/Header";
 import styled from "styled-components";
 import Image from "next/image";
+import WhatWeDo from "../components/WhatWeDo";
+import AboutHero from "../components/AboutHero";
+import Collective from "../components/Collective";
+import HoverBanner from "../components/HoverBanner";
+import Footer from "../components/Footer";
 
 const AboutTitle = styled.div`
   display: grid;
@@ -45,6 +50,7 @@ const AboutTitle = styled.div`
   }
 `;
 
+/*
 const TeamStyled = styled.div`
   border: 1px solid red;
   height: 100%;
@@ -65,6 +71,7 @@ const TeamStyled = styled.div`
     display: block;
   }
 `;
+*/
 
 const Years = styled.div`
   display: flex;
@@ -87,10 +94,47 @@ const Years = styled.div`
   }
 `;
 
+const MediaQueries = styled.div`
+  position: relative;
+  display: flex;
+  width: min(1400px, 90%);
+  margin: 0 auto;
+
+  .div1 {
+    width: 100%;
+  }
+  .div2 {
+    width: 100%;
+  }
+  .div3 {
+    min-width: 270px;
+    @media(max-width: 1194px) {
+      min-width: 210px;
+    }
+    @media(max-width: 1070px) {
+      min-width: 150px;
+    }
+    @media(max-width: 830px) {
+      min-width: 124px;
+    }
+  }
+
+  .img-container {
+    &:first-child {
+      margin-right: 50px;
+    }
+  }
+
+  img {
+    object-fit: cover;
+    display: block;
+  }
+`
+
 const About = () => {
   return (
     <>
-      <Header />
+      <Header isAbout />
       <div className="container">
         <AboutTitle>
           <h2>
@@ -110,10 +154,14 @@ const About = () => {
           </p>
         </AboutTitle>
       </div>
-      <div>
-        <TeamStyled>
-          <div className="img-container">
+      <div style={{ marginTop: 200 }}>
+        <MediaQueries>
+          <h2>Meet the founders</h2>
+        </MediaQueries>
+        <MediaQueries>
+          <div className="div1 img-container">
             <Image
+              quality="100%"
               height={500}
               width={590}
               src="/team_01.png"
@@ -143,8 +191,10 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="img-container">
+
+          <div className="div2 img-container">
             <Image
+              quality="100%"
               height={500}
               width={590}
               src="/team_02.png"
@@ -173,9 +223,15 @@ const About = () => {
               </div>
             </div>
           </div>
-        </TeamStyled>
+          <div className="div3"></div>
+        </MediaQueries>
       </div>
-      <div style={{ height: "70vh" }} />
+
+      <WhatWeDo />
+      <AboutHero />
+      <Collective />
+      <HoverBanner />
+      <Footer />
     </>
   );
 };
