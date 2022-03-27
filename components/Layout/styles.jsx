@@ -44,4 +44,15 @@ export const Container = styled.div`
       margin-bottom: ${({ isFounders }) => (isFounders ? "80px" : "")};
     }
   }
+
+  @media (max-width: 400px) {
+    .div1 {
+      width: 100%;
+    }
+    .img-container {
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+  }
 `;

@@ -1,5 +1,4 @@
 import Header from "../components/Header";
-import styled from "styled-components";
 import WhatWeDo from "../components/WhatWeDo";
 import AboutHero from "../components/AboutHero";
 import Collective from "../components/Collective";
@@ -7,6 +6,8 @@ import HoverBanner from "../components/HoverBanner";
 import Footer from "../components/Footer";
 import TeamCard from "../components/TeamCard";
 import Layout from "../components/Layout";
+import styled from "styled-components";
+import { FoundersContainer } from "../styles";
 
 const AboutTitle = styled.div`
   display: grid;
@@ -92,7 +93,7 @@ const About = () => {
         </AboutTitle>
       </div>
 
-      <div style={{ marginTop: 200 }}>
+      <FoundersContainer>
         <Layout>
           <h2>Meet the founders</h2>
         </Layout>
@@ -108,7 +109,7 @@ const About = () => {
           ))}
           <div className="div3" />
         </Layout>
-      </div>
+      </FoundersContainer>
 
       <WhatWeDo />
       <AboutHero />
