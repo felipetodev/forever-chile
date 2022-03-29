@@ -1,5 +1,11 @@
-import Image from "next/image"
-import { Container, FooterStyled, IntroStyled, LogoStyled } from "./Footer.styles";
+import Image from "next/image";
+import {
+  Container,
+  FooterMobileStyled,
+  FooterStyled,
+  IntroStyled,
+  LogoStyled,
+} from "./Footer.styles";
 
 const Footer = () => {
   return (
@@ -9,17 +15,29 @@ const Footer = () => {
           <span>Copyright © 2021 forever-chile.</span>
           <span>All Rights Reserved FOREVER CHILE</span>
           <span>contact@forever-chile.com</span>
-          <span style={{ marginTop: "30px" }}>Design and development Sebastian Hanson Studio</span>
+          <span style={{ marginTop: "30px" }}>
+            Design and development Sebastian Hanson Studio
+          </span>
         </LogoStyled>
         <IntroStyled>
           <span>+569-9330-7139 +569-9793-7881</span>
-          <span>César Cascabel 4369 Apt. 1022, Las Condes, Santiago - 7550372, Chile.</span>
+          <span>
+            César Cascabel 4369 Apt. 1022, Las Condes, Santiago - 7550372,
+            Chile.
+          </span>
           {/* Second address */}
-          <span style={{ marginTop: "30px"}}>+1-646-652-6162</span>
-          <span>1330 Avenue of the Americas Suite 23A, New York, NY-10019, USA.</span>
+          <span style={{ marginTop: "30px" }}>+1-646-652-6162</span>
+          <span>
+            1330 Avenue of the Americas Suite 23A, New York, NY-10019, USA.
+          </span>
         </IntroStyled>
         <div className="footer-logo">
-          <Image height="100%" width="100%" src="/chiloecine.webp" alt="chiloe-cine" />
+          <Image
+            height={100}
+            width={100}
+            src="/chiloecine.png"
+            alt="chiloe-cine"
+          />
         </div>
       </Container>
     </FooterStyled>
@@ -27,3 +45,14 @@ const Footer = () => {
 };
 
 export default Footer;
+
+export const FooterMobile = () => (
+  <FooterMobileStyled>
+    <div>
+      <Image height={13} width={146} src="/denise-lira.png" alt="chiloe-cine" />
+    </div>
+    <div>
+      <Image height={81} width={88} src="/chiloecine.png" alt="chiloe-cine" />
+    </div>
+  </FooterMobileStyled>
+);

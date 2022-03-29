@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const FooterStyled = styled.div`
   display: flex;
@@ -9,26 +9,26 @@ export const FooterStyled = styled.div`
   margin-left: 40px;
   overflow: hidden;
   // Tablet view
-  @media(max-width: 1070px) {
+  @media (max-width: 1070px) {
     min-height: 160px;
     margin-right: 80px;
     margin-left: 80px;
     padding-bottom: 20px;
   }
 
-  @media(max-width: 675px) {
+  @media (max-width: 675px) {
     margin-right: 50px;
     margin-left: 50px;
   }
   // Mobile view
-  @media(max-width: 400px) {
+  @media (max-width: 400px) {
     min-height: auto;
     text-align: start;
     font-size: 13px;
     margin-right: 35px;
     margin-left: 35px;
   }
-`
+`;
 
 export const Container = styled.div`
   display: grid;
@@ -56,28 +56,28 @@ export const Container = styled.div`
       left: -30px;
       height: 100%;
       width: 1px;
-      visibility: ${({ open }) => open ? "hidden" : "visible"};
+      visibility: ${({ open }) => (open ? "hidden" : "visible")};
     }
   }
 
   // Tablet Landscape view
-  @media(max-width: 1194px) {
+  @media (max-width: 1194px) {
     .footer-logo {
       width: 180px;
       padding-left: 25px;
     }
   }
 
-  @media(max-width: 1070px) {
+  @media (max-width: 1070px) {
     grid-template-columns: 1fr 1.5fr;
     padding-left: 20px;
     gap: 20px;
     font-size: 12px;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
-      background: transparent url('/line.png') 0% 0% repeat padding-box;
+      background: transparent url("/line.png") 0% 0% repeat padding-box;
       top: 0;
       left: 0;
       height: 100%;
@@ -90,7 +90,7 @@ export const Container = styled.div`
   }
 
   // Mobile view
-  @media(max-width: 400px) {
+  @media (max-width: 400px) {
     display: grid;
     grid-template-columns: auto;
     gap: 30px;
@@ -105,7 +105,7 @@ export const Container = styled.div`
       top: 0;
     }
   }
-`
+`;
 
 export const LogoStyled = styled.div`
   display: flex;
@@ -115,10 +115,10 @@ export const LogoStyled = styled.div`
   gap: 4px;
   margin-right: 25px;
 
-  @media(max-width: 1070px) {
+  @media (max-width: 1070px) {
     padding-left: 0px;
   }
-`
+`;
 
 export const IntroStyled = styled.div`
   position: relative;
@@ -127,9 +127,9 @@ export const IntroStyled = styled.div`
   min-width: 570px;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
-    background: transparent url('/line.png') 0% 0% repeat padding-box;
+    background: transparent url("/line.png") 0% 0% repeat padding-box;
     top: -40px;
     left: -30px;
     height: 1000px;
@@ -137,11 +137,25 @@ export const IntroStyled = styled.div`
   }
 
   // Tablet view
-  @media(max-width: 1070px) {
+  @media (max-width: 1070px) {
     min-width: auto;
     margin-right: 100px;
     &::before {
       display: none;
     }
   }
-`
+`;
+
+export const FooterMobileStyled = styled.div`
+  display: none;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  z-index: 4;
+
+  @media (max-width: 400px) {
+    display: flex;
+  }
+`;

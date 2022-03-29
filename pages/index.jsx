@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer, { FooterMobile } from "../components/Footer";
 import FullHeroCarousel from "../components/FullHeroCarousel";
 
 export default function Home() {
@@ -31,13 +31,7 @@ export default function Home() {
         <div style={{ position: "absolute", zIndex: 4 }}></div>
       </div>
       <Footer />
-      <div
-        className="footer-mobile"
-        style={{ position: "relative", zIndex: 4 }}
-      >
-        <div>DENISE LIRA-RATINOFF</div>
-        <div>CHILOE CINE LOGO</div>
-      </div>
+      <FooterMobile />
     </div>
   );
 }

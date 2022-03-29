@@ -56,16 +56,6 @@ h3 {
   margin-right: 35px;
 }
 
-.footer-mobile {
-  display: none;
-  font-size: 12px;
-  text-align: center;
-  padding-top: 45px;
-  padding-bottom: 45px;
-  margin-left: 35px;
-  margin-right: 35px;
-}
-
 /* Tablet view */
 @media(max-width: 1070px) {
   .swiper-pagination {
@@ -83,10 +73,6 @@ h3 {
 @media(max-width: 400px) {
   .mobile-description {
     display: inline-block;
-  }
-  .footer-mobile {
-    display: flex;
-    justify-content: space-between;
   }
   .swiper-pagination {
     margin-left: 30px;

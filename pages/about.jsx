@@ -3,7 +3,7 @@ import WhatWeDo from "../components/WhatWeDo";
 import AboutHero from "../components/AboutHero";
 import Collective from "../components/Collective";
 import HoverBanner from "../components/HoverBanner";
-import Footer from "../components/Footer";
+import Footer, { FooterMobile } from "../components/Footer";
 import TeamCard from "../components/TeamCard";
 import Layout from "../components/Layout";
 import styled from "styled-components";
@@ -116,6 +116,7 @@ const About = () => {
       <Collective />
       <HoverBanner />
       <Footer />
+      <FooterMobile />
     </>
   );
 };
