@@ -35,6 +35,7 @@ export const Container = styled.div`
 `
 
 export const LogoStyled = styled.div`
+  background: none !important;
   padding-left: 40px;
 
   // Tablet view
@@ -45,7 +46,8 @@ export const LogoStyled = styled.div`
     top: 30px;
     left: 80px;
 
-    & img {
+    img {
+      background: none;
       width: 106px !important;
       height: 56.33px !important;
     }

@@ -7,7 +7,7 @@ import {
   Container,
   LogoStyled,
   IntroStyled,
-} from "./FullHeroCarousel.styles";
+} from "./styles";
 
 import "swiper/css";
 import "swiper/css/effect-fade";

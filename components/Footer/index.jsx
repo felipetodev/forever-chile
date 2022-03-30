@@ -5,7 +5,7 @@ import {
   FooterStyled,
   IntroStyled,
   LogoStyled,
-} from "./Footer.styles";
+} from "./styles";
 
 const Footer = () => {
   return (
