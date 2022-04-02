@@ -65,6 +65,22 @@ export const RightImage = styled.div`
   }
 `;
 
+export const RightImageMobile = styled.div`
+  display: flex;
+  position: absolute;
+  right: -50px;
+  justify-content: flex-end;
+  height: 270px;
+  width: 270px;
+  z-index: 5;
+  background: transparent;
+  display: none;
+  
+  @media (max-width: 740px) {
+    display: block;
+  }
+`;
+
 export const TextContainer = styled.div`
   width: 100%;
   display: flex;

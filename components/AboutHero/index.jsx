@@ -5,8 +5,25 @@ import {
   OverlapText,
   RightImage,
   TextContainer,
-  LayoutStyled
+  LayoutStyled,
+  RightImageMobile,
 } from "./styles";
+
+const trashImage = () => (
+  <Image
+    quality={100}
+    className="timeisnow"
+    layout="fill"
+    height={270}
+    width={270}
+    src="/trash.png"
+    alt="Trash is a design error"
+  />
+);
+
+export const TrashDesignMobile = () => (
+  <RightImageMobile>{trashImage()}</RightImageMobile>
+);
 
 const AboutHero = () => {
   return (
@@ -33,17 +50,7 @@ const AboutHero = () => {
           />
         </OverlapText>
         <div style={{ position: "relative", zIndex: 4 }}>
-          <RightImage>
-            <Image
-              quality={100}
-              className="timeisnow"
-              layout="fill"
-              height={270}
-              width={270}
-              src="/trash.png"
-              alt="Trash is a design error"
-            />
-          </RightImage>
+          <RightImage>{trashImage()}</RightImage>
         </div>
       </BannerContainer>
       <LayoutStyled>

@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import WhatWeDo from "../components/WhatWeDo";
-import AboutHero from "../components/AboutHero";
+import AboutHero, { TrashDesignMobile } from "../components/AboutHero";
 import Collective from "../components/Collective";
 import HoverBanner from "../components/HoverBanner";
 import Footer, { FooterMobile } from "../components/Footer";
@@ -51,6 +51,7 @@ const About = () => {
 
       <WhatWeDo />
       <AboutHero />
+      <TrashDesignMobile />
       <Collective />
       <HoverBanner />
       <Footer />
