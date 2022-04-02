@@ -20,9 +20,9 @@ const BurgerStyled = styled.div`
   display: flex;
   justify-content: center;
   top: 0;
-  bottom: ${({ open }) => open ? "" : "0"};
-  position: ${({ open, isAbout }) => (open || isAbout) ? "fixed" : "absolute"};
-  z-index: ${({ open }) => open ? 7 : 4};
+  bottom: ${({ open }) => (open ? "" : "0")};
+  position: ${({ open, isAbout }) => (open || isAbout ? "fixed" : "absolute")};
+  z-index: ${({ open }) => (open ? 7 : 4)};
   background-color: transparent;
 
   &::before {
@@ -33,16 +33,16 @@ const BurgerStyled = styled.div`
     top: 0;
     height: 100%;
     width: 1px;
-    visibility: ${({ open }) => open ? "hidden" : "visible"};
+    visibility: ${({ open }) => (open ? "hidden" : "visible")};
   }
 
   // Tablet Landscape view
-  @media(max-width: 1194px) {
+  @media (max-width: 1194px) {
     width: 180px;
   }
 
   // Tablet view
-  @media(max-width: 1070px) {
+  @media (max-width: 1070px) {
     width: 150px;
     position: fixed;
     right: 0;
@@ -51,23 +51,41 @@ const BurgerStyled = styled.div`
     }
   }
 
-  @media(max-width: 830px) {
+  @media (max-width: 830px) {
     width: 124px;
+    ${({ isAbout }) => (isAbout ? "height: 15vh;" : "")};
+    ${({ isAbout }) => (isAbout ? "position: static;" : "")};
+    &::before {
+      ${({ isAbout }) => (isAbout ? "height: 15vh;" : "")};
+    }
+    &::after {
+      ${({ isAbout, open }) =>
+        isAbout
+          ? `
+            content: '';
+            position: absolute;
+            left: 4px;
+            bottom: 0;
+            height: 5px;
+            width: 5px;
+            border-radius: 9999px;
+            border: 1px solid #707070;
+            visibility: ${open ? "hidden" : "visible"};
+          `
+          : ""};
+    }
   }
 
   // Mobile view
-  @media(max-width: 400px) {
+  @media (max-width: 400px) {
     width: 115px;
-    &::before {
-      content: none;
-    }
   }
 `;
 
 const MenuStyled = styled.div`
   position: fixed;
   background-color: #1a1a1a;
-  transform: ${({ open }) => open ? "translateX(0%)" : "translateX(100%)"};
+  transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(100%)")};
   right: 0;
   top: 0;
   bottom: 0;
@@ -111,39 +129,75 @@ const MenuStyled = styled.div`
   }
 
   // Tablet view
-  @media(max-width: 1070px) {
+  @media (max-width: 1070px) {
     width: 400px;
     li {
-    text-align: center;
-    font-size: 35px;
-    margin-right: 30px;
+      text-align: center;
+      font-size: 35px;
+      margin-right: 30px;
     }
   }
 
   // Mobile view
-  @media(max-width: 400px) {
+  @media (max-width: 400px) {
     width: 100%;
   }
 `;
 
-const ButtonStyled = styled.button`
+const HamburgerMenu = styled.div`
+  position: absolute;
+  background: none;
+  top: 70px;
+  width: 40px;
+  height: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
-  position: absolute; // fixed (?)
-  top: 55px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-`
+  transition: width 1s ease-in-out;
 
-// onOpen 821px
+  .wrapper-menu .open {
+    transform: rotate(-45deg);
+    color: red;
+    background-color: red;
+  }
+
+  .line-menu {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    height: 2px;
+  }
+
+  &.open {
+    .start {
+      align-self: flex-end !important;
+      width: 100px !important;
+    }
+  }
+
+  @media (max-width: 830px) {
+    position: fixed;
+  }
+`;
+
+function cn(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 const Menu = ({ isAbout }) => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <>
       <BurgerStyled open={open} isAbout={isAbout}>
-        <ButtonStyled onClick={() => setOpen(!open)}>X</ButtonStyled>
+        <HamburgerMenu
+          onClick={() => setOpen(!open)}
+          className={open ? "open" : ""}
+        >
+          <div className="line-menu start" />
+          <div className="line-menu end"></div>
+        </HamburgerMenu>
       </BurgerStyled>
       <MenuStyled open={open}>
         <ul>
@@ -152,7 +206,11 @@ const Menu = ({ isAbout }) => {
           <li>About</li>
           <li>Contact</li>
           <li>
-            <a href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+            <a
+              href="https://instagram.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <InstagramIcon />
             </a>
           </li>

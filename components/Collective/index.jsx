@@ -41,7 +41,7 @@ const ImageContainer = styled.div`
   position: relative;
   img {
     background: transparent;
-    object-fit: contain;
+    object-fit: scale-down;
   }
   @media(max-width: 996px) {
     &:not(:last-child) {

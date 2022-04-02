@@ -44,4 +44,26 @@ export const AboutTitle = styled.div`
       margin-left: 30%;
     }
   }
+
+  @media (max-width: 1070px) {
+    display: flex;
+    flex-direction: column;
+    p {
+      min-width: 100%;
+      margin-left: 0;
+    }
+  }
+  @media (max-width: 830px) {
+    width: 95%;
+  }
+  @media (max-width: 400px) {
+    min-width: 100%;
+    h2 {
+      min-width: 100%;
+      font-size: 30px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
 `;

@@ -9,8 +9,8 @@ const AboutDescription = () => {
           We deliver and achieve the best combination of results for each
           spectator.
         </h2>
-        <div className="empty1">empty</div>
-        <div className="empty2">empty2</div>
+        <div className="empty1" />
+        <div className="empty2" />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

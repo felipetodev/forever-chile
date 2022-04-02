@@ -49,10 +49,10 @@ export default Footer;
 export const FooterMobile = () => (
   <FooterMobileStyled>
     <div>
-      <Image height={13} width={146} src="/denise-lira.png" alt="chiloe-cine" />
+      <Image objectFit="scale-down" height={13} width={146} src="/denise-lira.png" alt="chiloe-cine" />
     </div>
     <div>
-      <Image height={81} width={88} src="/chiloecine.png" alt="chiloe-cine" />
+      <Image objectFit="scale-down" height={81} width={88} src="/chiloecine.png" alt="chiloe-cine" />
     </div>
   </FooterMobileStyled>
 );

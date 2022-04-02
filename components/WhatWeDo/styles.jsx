@@ -2,6 +2,7 @@ import Layout from "../Layout";
 import styled from "styled-components";
 
 export const Container = styled.div`
+  background-color: transparent;
   position: relative;
   margin-top: 200px;
   padding-bottom: 200px;

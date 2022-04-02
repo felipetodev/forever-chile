@@ -8,6 +8,7 @@ export const FooterStyled = styled.div`
   min-height: 230px;
   margin-left: 40px;
   overflow: hidden;
+  z-index: 4;
   // Tablet view
   @media (max-width: 1070px) {
     min-height: 160px;
@@ -151,8 +152,8 @@ export const FooterMobileStyled = styled.div`
   justify-content: space-evenly;
   align-items: center;
   position: relative;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   z-index: 4;
 
   @media (max-width: 400px) {
