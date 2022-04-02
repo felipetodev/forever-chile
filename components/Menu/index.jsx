@@ -181,16 +181,30 @@ const HamburgerMenu = styled.div`
   }
 `;
 
-function cn(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+const NavContainer = styled.div`
+  width: 240px;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  bottom: ${({ open }) => (open ? "" : "0")};
+  position: ${({ open, isAbout }) => (open || isAbout ? "fixed" : "absolute")};
+  z-index: ${({ open }) => (open ? 7 : 5)};
+  background-color: transparent;
+`
+
+/*
+  function cn(...classes) {
+    return classes.filter(Boolean).join(" ");
+  }
+*/
 
 const Menu = ({ isAbout }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <BurgerStyled open={open} isAbout={isAbout}>
+      <BurgerStyled open={open} isAbout={isAbout} />
+      <NavContainer open={open} isAbout={isAbout}>
         <HamburgerMenu
           onClick={() => setOpen(!open)}
           className={open ? "open" : ""}
@@ -198,7 +212,7 @@ const Menu = ({ isAbout }) => {
           <div className="line-menu start" />
           <div className="line-menu end"></div>
         </HamburgerMenu>
-      </BurgerStyled>
+      </NavContainer>
       <MenuStyled open={open}>
         <ul>
           <li>Home</li>

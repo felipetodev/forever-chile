@@ -38,6 +38,10 @@ export const LogoStyled = styled.div`
   background: none !important;
   padding-left: 40px;
 
+  a {
+    background: none !important;
+  }
+
   // Tablet view
   @media (max-width: 1070px) {
     padding: 0px;

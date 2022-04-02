@@ -20,7 +20,6 @@ const Container = styled.div`
     text-align: center;
     flex-direction: column;
     height: auto;
-    margin-top: 100px;
   }
 `;
 
@@ -31,6 +30,7 @@ const BannerTitle = styled.div`
     background: none;
   }
   @media(max-width: 996px) {
+    margin-top: 50px;
     margin-bottom: 50px;
   }
 `
