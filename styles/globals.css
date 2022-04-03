@@ -18,6 +18,14 @@ a {
   color: #E6E6E6;
 }
 
+.app {
+  max-width: min(2000px, 100%);
+  margin: 0 auto;
+}
+.app .works-spacing {
+  margin-left: 4%;
+}
+
 h3 {
   margin: 0;
 }
