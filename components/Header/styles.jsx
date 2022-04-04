@@ -57,13 +57,13 @@ export const LogoStyled = styled.div`
     }
   }
 
-  @media (max-width: 675px) {
-    left: 50px;
+  @media (max-width: 830px) {
+    left: 40px;
   }
 
   // Mobile view
   @media (max-width: 400px) {
-    left: 35px;
+    left: 25px;
   }
 `;
 

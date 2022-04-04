@@ -5,6 +5,7 @@ import styled from "styled-components";
 import ListOfWorks from "../components/ListOfWorks";
 import Footer, { FooterMobile } from "../components/Footer";
 import WorkMobileSelector from "../components/WorkMobileSelector";
+import Modal from "../components/Modal";
 
 const Container = styled.div`
   position: relative;
@@ -91,6 +92,8 @@ const menuList = ["All", "Films", "Multimedia", "Advertising", "3D & Videogames"
 
 const WorkPage = () => {
   const [workSection, setWorkSection] = useState("all");
+  const [modalIsOpen, setIsOpen] = useState(false);
+  console.log(modalIsOpen)
   return (
     <>
       <Header isAbout />
@@ -116,9 +119,10 @@ const WorkPage = () => {
         <div className="_3"></div>
       </Layout>
       <WorkMobileSelector menu={menuList} workSection={workSection} onWorkSelection={setWorkSection} />
-      <ListOfWorks workSection={workSection} />
+      <ListOfWorks workSection={workSection} onClick={() => setIsOpen(true)} />
       <Footer />
       <FooterMobile />
+      <Modal modalIsOpen={modalIsOpen} setIsOpen={setIsOpen}  />
     </>
   );
 };

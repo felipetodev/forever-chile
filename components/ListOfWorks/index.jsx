@@ -46,7 +46,7 @@ const Spacing = styled.div`
   }
 `
 
-const ListOfWorks = ({ workSection }) => {
+const ListOfWorks = ({ workSection, onClick }) => {
   const result =
     workSection !== "all"
       ? workList.filter((el) => el.slug.toLowerCase() === workSection)
@@ -58,7 +58,7 @@ const ListOfWorks = ({ workSection }) => {
       <Grid>
         {result.length > 0 ? (
           result.map((work) => (
-            <VideoContainer key={work.id}>
+            <VideoContainer key={work.id} onClick={onClick}>
               <img src={work.src} alt="team" />
               <div>
                 <h3>Poesía sin fin</h3>
