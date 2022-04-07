@@ -20,7 +20,7 @@ export const Container = styled.div`
   height: 100vh;
   margin: 0 auto;
   background: none;
-  @media(min-width: 2000px) {
+  @media (min-width: 2000px) {
     width: 100%;
   }
   @media (max-width: 1194px) {
@@ -39,7 +39,7 @@ export const ImageContainer = styled.div`
 
   @media (max-width: 1194px) {
     margin-top: 130px;
-    min-height: 300px;
+    min-height: auto;
     max-height: 400px;
   }
 `;
@@ -51,8 +51,9 @@ export const ModalDescription = styled.div`
   margin-top: 30px;
   height: 20vh;
   gap: 50px;
+  // overflow-y: scroll;
 
-  @media(min-width: 2000px) {
+  @media (min-width: 2000px) {
     width: 100%;
     max-width: min(2000px, 100%);
     margin: 0 auto;
@@ -64,6 +65,12 @@ export const ModalDescription = styled.div`
     margin: 0 auto;
     margin-top: 30px;
     flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+  @media (max-width: 600px) {
+    overflow-y: scroll;
+    margin-bottom: 20px;
   }
 `;
 
@@ -73,7 +80,11 @@ export const Left = styled.div`
   align-items: flex-end;
   min-width: 45%;
   font-size: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #525252;
+
   @media (max-width: 1194px) {
+    border-bottom: none;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
@@ -107,8 +118,20 @@ export const CloseModal = styled.div`
   position: absolute;
   top: 2%;
   left: 4%;
-  padding: 4px 8px;
-  writing-mode: vertical-lr;
-  transform: rotate(180deg);
   cursor: pointer;
+  background-color: transparent;
+  svg {
+    background: transparent;
+    transition: transform .2s ease-in-out;
+  }
+  svg:hover {
+    fill: red;
+    transform: scale(1.04);
+  }
+  @media (max-width: 1194px) {
+    top: 1%;
+    svg {
+      width: 24px;
+    }
+  }
 `;

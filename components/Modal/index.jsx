@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import CloseModalIcon from "./SVGModal"
 import {
   ArtDirection,
   CloseModal,
@@ -42,7 +44,9 @@ const Modal = ({ modalIsOpen, setIsOpen }) => {
             ac ut consequat semper viverra.
           </Description>
         </ModalDescription>
-        <CloseModal onClick={closeModal}>Close Modal</CloseModal>
+        <CloseModal onClick={closeModal}>
+          <CloseModalIcon />
+        </CloseModal>
       </Container>
     </ModalStyled>
   );

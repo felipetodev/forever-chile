@@ -1,5 +1,5 @@
 import { Grid, NewContainer, VideoContainer } from "./styles";
-import styled from "styled-components"
+import styled from "styled-components";
 
 const workList = [
   {
@@ -44,7 +44,7 @@ const Spacing = styled.div`
   @media (max-width: 1070px) {
     display: none;
   }
-`
+`;
 
 const ListOfWorks = ({ workSection, onClick }) => {
   const result =

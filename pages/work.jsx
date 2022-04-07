@@ -60,21 +60,26 @@ const Navigation = styled.ul`
   li {
     cursor: pointer;
     list-style: none;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 5;
+      left: 0;
+      right: 0;
+      bottom: -20px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background: transparent;
+      visibility: hidden;
+    }
     &.active {
-      position: relative;
       &::after {
-        content: "";
-        position: absolute;
-        z-index: 5;
-        left: 0; 
-        right: 0; 
-        bottom: -20px;
-        margin-left: auto; 
-        margin-right: auto; 
-        width: 8px;
-        height: 8px;
-        border-radius: 9999px;
-        background: #052CAB;
+        background: #052cab;
+        visibility: visible;
       }
     }
   }
@@ -88,15 +93,22 @@ const Navigation = styled.ul`
   }
 `;
 
-const menuList = ["All", "Films", "Multimedia", "Advertising", "3D & Videogames", "Editorial", "Industrial (soon)"]
+const menuList = [
+  "All",
+  "Films",
+  "Multimedia",
+  "Advertising",
+  "3D & Videogames",
+  "Editorial",
+  "Industrial (soon)",
+];
 
 const WorkPage = () => {
   const [workSection, setWorkSection] = useState("all");
   const [modalIsOpen, setIsOpen] = useState(false);
-  console.log(modalIsOpen)
   return (
     <>
-      <Header isAbout />
+      <Header isAbout isWork />
       <Container>
         <div className="_1" />
         <div className="_2" />
@@ -109,20 +121,33 @@ const WorkPage = () => {
         </Heading>
       </Layout>
       <Layout>
-        <Navigation className="_1">
-          {menuList.map(item => (
-            <li key={item} className={item.toLowerCase() === workSection ? "active" : ""} onClick={() => setWorkSection(item?.toLowerCase())}>
+        <Navigation
+        className="_1"
+        initial='hidden'
+        animate='visible'
+        exit='hidden'
+        >
+          {menuList.map((item) => (
+            <li
+              key={item}
+              className={item.toLowerCase() === workSection ? "active" : ""}
+              onClick={() => setWorkSection(item?.toLowerCase())}
+            >
               {item}
             </li>
           ))}
         </Navigation>
         <div className="_3"></div>
       </Layout>
-      <WorkMobileSelector menu={menuList} workSection={workSection} onWorkSelection={setWorkSection} />
+      <WorkMobileSelector
+        menu={menuList}
+        workSection={workSection}
+        onWorkSelection={setWorkSection}
+      />
       <ListOfWorks workSection={workSection} onClick={() => setIsOpen(true)} />
       <Footer />
       <FooterMobile />
-      <Modal modalIsOpen={modalIsOpen} setIsOpen={setIsOpen}  />
+      <Modal modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />
     </>
   );
 };

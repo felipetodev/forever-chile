@@ -37,6 +37,7 @@ export const Container = styled.div`
 export const LogoStyled = styled.div`
   background: none !important;
   padding-left: 40px;
+  z-index: 99;
 
   a {
     background: none !important;
@@ -46,7 +47,6 @@ export const LogoStyled = styled.div`
   @media (max-width: 1070px) {
     padding: 0px;
     position: fixed;
-    z-index: 5;
     top: 30px;
     left: 80px;
 
@@ -103,6 +103,12 @@ export const IntroStyled = styled.div`
     height: 500px;
     width: 1px;
   }
+
+  ${({ isWork }) => isWork ? `
+    &::before {
+      display: none !important;
+    }
+  ` : ""}
 
   // Tablet Landscape view
   @media (max-width: 1194px) {

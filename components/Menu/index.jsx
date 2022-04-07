@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import Link from "next/link"
 
 const InstagramIcon = () => (
   <svg
@@ -231,10 +232,26 @@ const Menu = ({ isAbout }) => {
       </NavContainer>
       <MenuStyled open={open}>
         <ul>
-          <li>Home</li>
-          <li>Work</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/work">
+              <a>Work</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact">
+              <a>Contact</a>
+            </Link>
+          </li>
           <li>
             <a
               href="https://instagram.com"

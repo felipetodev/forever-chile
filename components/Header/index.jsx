@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Menu from "../Menu";
 
-const Header = ({ isAbout, description }) => {
+const Header = ({ isAbout, isWork, description }) => {
   return (
     <HeaderStyled isAbout={isAbout}>
       <Container>
@@ -26,7 +26,7 @@ const Header = ({ isAbout, description }) => {
             </a>
           </Link>
         </LogoStyled>
-        <IntroStyled>{description}</IntroStyled>
+        <IntroStyled isWork={isWork}>{description}</IntroStyled>
         <Nav isAbout={isAbout}>
           <Menu isAbout={isAbout} />
         </Nav>
