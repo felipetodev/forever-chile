@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Menu from "../Menu";
 
-const Header = ({ isAbout, isWork, description }) => {
+const Header = ({ noDot, isAbout, isWork, description }) => {
   return (
     <HeaderStyled isAbout={isAbout}>
       <Container>
@@ -26,7 +26,7 @@ const Header = ({ isAbout, isWork, description }) => {
             </a>
           </Link>
         </LogoStyled>
-        <IntroStyled isWork={isWork}>{description}</IntroStyled>
+        <IntroStyled className={noDot ? "remove-dot" : null} isWork={isWork}>{description}</IntroStyled>
         <Nav isAbout={isAbout}>
           <Menu isAbout={isAbout} />
         </Nav>

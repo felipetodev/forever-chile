@@ -6,44 +6,8 @@ import ListOfWorks from "../components/ListOfWorks";
 import Footer, { FooterMobile } from "../components/Footer";
 import WorkMobileSelector from "../components/WorkMobileSelector";
 import Modal from "../components/Modal";
-
-const Container = styled.div`
-  position: relative;
-  display: flex;
-  margin: 0 auto;
-
-  ._1 {
-    width: 100%;
-  }
-  ._2 {
-    width: 100%;
-    position: relative;
-    min-height: 10px;
-    &::before {
-      content: "";
-      position: absolute;
-      right: -10px;
-      top: 0;
-      height: 5px;
-      width: 5px;
-      border-radius: 9999px;
-      border: 1px solid #707070;
-    }
-  }
-  ._3 {
-    min-width: 270px;
-    @media (max-width: 1194px) {
-      min-width: 210px;
-    }
-    @media (max-width: 1070px) {
-      // min-width: 150px;
-      display: none;
-    }
-    @media (max-width: 830px) {
-      min-width: 124px;
-    }
-  }
-`;
+import Dots from "../components/Dots";
+import { motion } from "framer-motion";
 
 const Heading = styled.h1`
   max-width: 615px;
@@ -62,6 +26,7 @@ const Navigation = styled.ul`
     list-style: none;
     position: relative;
     &::after {
+      transition: background 300ms ease-in-out;
       content: "";
       position: absolute;
       z-index: 5;
@@ -108,12 +73,8 @@ const WorkPage = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   return (
     <>
-      <Header isAbout isWork />
-      <Container>
-        <div className="_1" />
-        <div className="_2" />
-        <div className="_3" />
-      </Container>
+      <Header noDot isAbout isWork />
+      <Dots />
       <Layout>
         <Heading>
           We deliver and achieve the best combination of results for each
@@ -121,20 +82,15 @@ const WorkPage = () => {
         </Heading>
       </Layout>
       <Layout>
-        <Navigation
-        className="_1"
-        initial='hidden'
-        animate='visible'
-        exit='hidden'
-        >
+        <Navigation className="_1">
           {menuList.map((item) => (
-            <li
+            <motion.li
               key={item}
-              className={item.toLowerCase() === workSection ? "active" : ""}
+              className={item.toLowerCase() === workSection ? "active" : null}
               onClick={() => setWorkSection(item?.toLowerCase())}
             >
               {item}
-            </li>
+            </motion.li>
           ))}
         </Navigation>
         <div className="_3"></div>

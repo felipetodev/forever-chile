@@ -8,6 +8,7 @@ import TeamCard from "../components/TeamCard";
 import Layout from "../components/Layout";
 import { FoundersContainer } from "../styles";
 import AboutDescription from "../components/AboutDescription";
+import Dots from "../components/Dots";
 
 const teamMembers = {
   Denise: {
@@ -48,8 +49,9 @@ const About = () => {
           <div className="div3" />
         </Layout>
       </FoundersContainer>
-
+      <Dots style={{ marginTop: "200px" }} />
       <WhatWeDo />
+      <Dots style={{ marginBottom: "100px" }} />
       <AboutHero />
       <TrashDesignMobile />
       <Collective />

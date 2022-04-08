@@ -1,15 +1,18 @@
 import Header from "../components/Header";
 import Footer, { FooterMobile } from "../components/Footer";
 import FullHeroCarousel from "../components/FullHeroCarousel";
+import Dots from "../components/Dots";
 
 export default function Home() {
   return (
     <div>
       <Header
+        noDot
         description="We are a team of professionals from different artistic areas that unite
           to deliver and achieve the best combination of results for each
           spectator."
       />
+      <Dots />
       <FullHeroCarousel />
       <div
         className="mobile-description"

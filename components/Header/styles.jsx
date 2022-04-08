@@ -93,6 +93,7 @@ export const IntroStyled = styled.div`
   position: relative;
   min-width: 570px;
   font-size: 28px;
+  z-index: 1;
 
   &::before {
     content: "";
@@ -102,6 +103,23 @@ export const IntroStyled = styled.div`
     top: -150px;
     height: 500px;
     width: 1px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -40px;
+    bottom: 0;
+    height: 5px;
+    width: 5px;
+    border-radius: 9999px;
+    border: 1px solid #707070;
+  }
+
+  &.remove-dot {
+    &&::after {
+      display: none;
+    }
   }
 
   ${({ isWork }) => isWork ? `

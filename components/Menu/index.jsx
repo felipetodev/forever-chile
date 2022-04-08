@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Link from "next/link"
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 const InstagramIcon = () => (
   <svg
@@ -86,6 +87,7 @@ const BurgerStyled = styled.div`
 const MenuStyled = styled.div`
   position: fixed;
   background-color: #1a1a1a;
+  transition: transform 300ms ease;
   transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(100%)")};
   right: 0;
   top: 0;
@@ -145,7 +147,7 @@ const MenuStyled = styled.div`
   }
 `;
 
-const HamburgerMenu = styled.div`
+const HamburgerMenu = styled(motion.div)`
   position: absolute;
   background: none;
   top: 70px;
@@ -164,6 +166,8 @@ const HamburgerMenu = styled.div`
   }
 
   .line-menu {
+    transition: all 300ms ease;
+    align-self: flex-end !important;
     background-color: #fff;
     border-radius: 5px;
     width: 100%;
@@ -173,7 +177,13 @@ const HamburgerMenu = styled.div`
   &.open {
     .start {
       align-self: flex-end !important;
-      width: 100px !important;
+      width: 150px !important;
+    }
+  }
+
+  &.closed {
+    .start {
+      width: 40px;
     }
   }
 
@@ -207,7 +217,7 @@ const NavContainer = styled.div`
   @media (max-width: 830px) {
     width: 120px;
   }
-`
+`;
 
 /*
   function cn(...classes) {
@@ -224,14 +234,14 @@ const Menu = ({ isAbout }) => {
       <NavContainer open={open} isAbout={isAbout}>
         <HamburgerMenu
           onClick={() => setOpen(!open)}
-          className={open ? "open" : ""}
+          className={open ? "open" : "closed"}
         >
-          <div className="line-menu start" />
+          <motion.div className="line-menu start" />
           <div className="line-menu end"></div>
         </HamburgerMenu>
       </NavContainer>
       <MenuStyled open={open}>
-        <ul>
+        <motion.ul>
           <li>
             <Link href="/">
               <a>Home</a>
@@ -261,7 +271,7 @@ const Menu = ({ isAbout }) => {
               <InstagramIcon />
             </a>
           </li>
-        </ul>
+        </motion.ul>
       </MenuStyled>
     </>
   );

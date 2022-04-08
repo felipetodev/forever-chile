@@ -4,8 +4,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   background-color: transparent;
   position: relative;
-  margin-top: 200px;
-  padding-bottom: 200px;
+  // margin-top: 200px;
+  // padding-bottom: 200px;
   z-index: 4;
 `
 
