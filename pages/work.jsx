@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import styled from "styled-components";
@@ -8,6 +8,7 @@ import WorkMobileSelector from "../components/WorkMobileSelector";
 import Modal from "../components/Modal";
 import Dots from "../components/Dots";
 import { motion } from "framer-motion";
+import { GET_WORK_ENTRY } from "../queries/getWorkEntry";
 
 const Heading = styled.h1`
   max-width: 615px;
@@ -68,17 +69,32 @@ const menuList = [
   "Industrial (soon)",
 ];
 
-const WorkPage = () => {
+const getURLParams = () => {
+  let params = new URLSearchParams(document.location.search);
+  let categorySearched = params.get("category");
+  return categorySearched?.toLowerCase();
+};
+
+const WorkPage = ({ page = {} }) => {
+  const { description, workVideosCollection = [] } = page;
   const [workSection, setWorkSection] = useState("all");
   const [modalIsOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const searchParam = getURLParams();
+    if (typeof searchParam === "string") {
+      setWorkSection(searchParam);
+    }
+  }, []);
+
   return (
     <>
       <Header noDot isAbout isWork />
       <Dots />
       <Layout>
         <Heading>
-          We deliver and achieve the best combination of results for each
-          spectator.
+          {description ||
+            "We deliver and achieve the best combination of results for each spectator."}
         </Heading>
       </Layout>
       <Layout>
@@ -109,3 +125,14 @@ const WorkPage = () => {
 };
 
 export default WorkPage;
+
+export async function getStaticProps() {
+  const { contentful } = require("../contentful/service");
+  const page = await contentful("work", GET_WORK_ENTRY);
+
+  return {
+    props: {
+      page,
+    },
+  };
+}

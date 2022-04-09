@@ -8,54 +8,75 @@ import {
   LogoStyled,
   IntroStyled,
 } from "./styles";
+import { useRouter } from "next/router";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const videos = [{ url: "/video2.mp4", autoPlay: true }, { url: "/video.mp4" }];
-
 const getActiveSlide = () => {
-  const activeSlider = document.querySelector(".swiper-slide-active").lastChild
-  if (activeSlider) activeSlider.play()
-}
+  const activeSlider = document.querySelector(".swiper-slide-active")?.lastChild;
+  if (activeSlider) activeSlider.play();
+};
 
-const FullHeroCarousel = () => {
-  const [index, setIndex] = useState(null)
+const FullHeroCarousel = ({ videosCollection = {} }) => {
+  const { items = [] } = videosCollection;
+  const [index, setIndex] = useState(0);
   const videoRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
-    videoRef.current.defaultMuted = true;
-  }, [])
+    videoRef?.current?.defaultMuted = true;
+  }, []);
 
   useEffect(() => {
-    getActiveSlide()
-  }, [index])
+    getActiveSlide();
+  }, [index]);
+
+  const onWorkClicked = () => {
+    if (items[index]?.filmCategory) {
+      router.push(`/work?category=${items[index]?.filmCategory}`);
+    } else {
+      router.push("/work");
+    }
+  };
 
   return (
     <FullHeroStyled>
       <Swiper
-        onTransitionStart={e => setIndex(e.realIndex)}
+        onTransitionStart={(e) => setIndex(e.realIndex)}
         effect="fade"
+        style={{ width: "100%" }}
         pagination={{ clickable: true }}
         modules={[EffectFade, Navigation, Pagination]}
       >
-        {videos.map((video, idx) => (
-          <SwiperSlide key={video.url}>
-            <Video ref={videoRef} id={`player${idx}`} playsInline muted loop>
-              <source src={video.url} type="video/mp4" />
-            </Video>
-          </SwiperSlide>
-        ))}
+        {items &&
+          items.map((item, idx) => (
+            <SwiperSlide
+              key={item?.video?.sys?.id}
+              style={{ minWidth: "100%" }}
+            >
+              <Video ref={videoRef} id={`player${idx}`} playsInline muted loop>
+                <source
+                  src={item?.video?.url}
+                  alt={item?.video?.title}
+                  type="video/mp4"
+                />
+              </Video>
+            </SwiperSlide>
+          ))}
       </Swiper>
       <Container>
         <LogoStyled />
         <IntroStyled>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <h2>Aftershock</h2>
-            <span>Chiloé Films</span>
-            <span>Special Effects, Set Design, Set Construction.</span>
+          <div
+            onClick={onWorkClicked}
+            style={{ display: "flex", flexDirection: "column" }}
+          >
+            <h2>{items[index]?.title}</h2>
+            <span>{items[index]?.filmName}</span>
+            <span>{items[index]?.filmDescription}</span>
           </div>
         </IntroStyled>
       </Container>
