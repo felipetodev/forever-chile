@@ -17,9 +17,8 @@ const contentful = async (slug, query) => {
       }
     );
     const { data } = await result.json();
-    console.log(data)
-    const [page] = data.layoutPageCollection.items;
-    return page
+    const [pageContainer] = data.layoutPageCollection.items;
+    return pageContainer
   } catch (e) {
     console.error(e);
     return {};

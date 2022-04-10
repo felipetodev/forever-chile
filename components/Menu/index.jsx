@@ -53,6 +53,17 @@ const BurgerStyled = styled.div`
     }
   }
 
+  @media (min-width: 830px) {
+    ${({ isContact }) =>
+      isContact
+        ? `
+      &::before {
+        display: none;
+      }  
+    `
+        : ""}
+  }
+
   @media (max-width: 830px) {
     width: 124px;
     ${({ isAbout }) => (isAbout ? "height: 15vh;" : "")};
@@ -225,12 +236,12 @@ const NavContainer = styled.div`
   }
 */
 
-const Menu = ({ isAbout }) => {
+const Menu = ({ isAbout, isContact }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <BurgerStyled open={open} isAbout={isAbout} />
+      <BurgerStyled open={open} isAbout={isAbout} isContact={isContact} />
       <NavContainer open={open} isAbout={isAbout}>
         <HamburgerMenu
           onClick={() => setOpen(!open)}

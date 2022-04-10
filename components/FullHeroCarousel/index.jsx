@@ -27,7 +27,7 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
   const router = useRouter();
 
   useEffect(() => {
-    videoRef?.current?.defaultMuted = true;
+    videoRef.current.defaultMuted = true;
   }, []);
 
   useEffect(() => {

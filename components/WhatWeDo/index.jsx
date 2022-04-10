@@ -39,7 +39,7 @@ const WhatWeDo = () => {
                       background: "transparent",
                     }}
                   >
-                    <span data-text={section}>{section}</span>
+                    <span>{section}</span>
                     <div className="image-container">
                       <Image
                         quality={100}

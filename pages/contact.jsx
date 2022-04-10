@@ -1,24 +1,33 @@
 import Header from "../components/Header";
-import styled from "styled-components";
 import Form from "../components/Form";
+import FormImage from "../components/FormImage";
+import Footer, { FooterMobile } from "../components/Footer";
+import styled from "styled-components";
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid red;
   width: min(1400px, 90%);
   margin: 0 auto;
-`
+  @media (max-width: 950px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
 
 const ContactPage = () => {
   return (
     <>
-      <Header isAbout />
+      <Header noDot isAbout isWork isContact />
       <Container>
+        <FormImage />
         <Form />
       </Container>
+      <div style={{ minHeight: "20vh" }} />
+      <Footer />
+      <FooterMobile />
     </>
-  )
-}
+  );
+};
 
-export default ContactPage
+export default ContactPage;

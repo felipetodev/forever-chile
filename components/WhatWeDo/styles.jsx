@@ -7,7 +7,7 @@ export const Container = styled.div`
   // margin-top: 200px;
   // padding-bottom: 200px;
   z-index: 4;
-`
+`;
 
 export const LayoutStyled = styled(Layout)`
   @media (max-width: 740px) {
@@ -15,16 +15,16 @@ export const LayoutStyled = styled(Layout)`
       display: none;
     }
   }
-`
+`;
 
 export const Col = styled.div`
   display: flex;
   width: 100%;
-  font-size: clamp(.9rem,3.5vw, 2.3rem);
+  font-size: clamp(0.9rem, 3.5vw, 2.3rem);
   @media (max-width: 400px) {
     justify-content: center;
   }
-`
+`;
 
 export const NavigationList = styled.ul`
   background: none;
@@ -39,21 +39,14 @@ export const NavigationList = styled.ul`
       z-index: 4;
       display: block;
 
-      &::before {
-        content: attr(data-text);
-        width: 0;
-        color: crimson;
-        font-weight: 400;
-        // -webkit-text-stroke: 1px;
-        overflow: hidden;
-        position: absolute;
-        transition: all 1s cubic-bezier(0.84, 0, 0.08, 0.99);
-      }
-
       &:hover:before {
         width: 100%;
       }
     }
+  }
+
+  li:hover span {
+    color: transparent;
   }
 
   li:hover .image-container {
