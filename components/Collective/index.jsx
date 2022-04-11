@@ -50,14 +50,11 @@ const ImageContainer = styled.div`
   }
 `
 
-const Collective = () => {
+const Collective = ({ title }) => {
   return (
     <Container>
       <BannerTitle>
-        <h2>
-          The<br />
-          Collective:
-        </h2>
+        <h2 dangerouslySetInnerHTML={{ __html: title }} />
       </BannerTitle>
       <ImageContainer>
         <Image layout="fill" src="/chiloecine.png" alt="" />

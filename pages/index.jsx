@@ -5,7 +5,7 @@ import Dots from "../components/Dots";
 import { GET_HOME_ENTRY } from "../queries/getHomeEntry";
 
 export default function Home({ page = {} }) {
-  const { description, homeVideosCollection } = page;
+  const { description, homeVideosCollection = {} } = page;
   return (
     <div>
       <Header
@@ -21,9 +21,7 @@ export default function Home({ page = {} }) {
         className="mobile-description"
         style={{ position: "relative", zIndex: 4 }}
       >
-        We are a team of professionals from different artistic areas that unite
-        to deliver and achieve the best combination of results for each
-        spectator.
+        {description}
       </div>
       {/* DIVISOR LINE */}
       <div
@@ -47,6 +45,7 @@ export async function getStaticProps() {
   const page = await contentful("home", "homePageCollection", GET_HOME_ENTRY);
 
   return {
+    revalidate: 10,
     props: {
       page,
     },
