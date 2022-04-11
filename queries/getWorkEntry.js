@@ -1,6 +1,6 @@
 export const GET_WORK_ENTRY = `
   query GetLayoutPage($slug: String!) {
-    layoutPageCollection(where: {
+    workPageCollection(where: {
       slug: $slug
     }, limit: 1) {
       items {
@@ -13,11 +13,17 @@ export const GET_WORK_ENTRY = `
               id
             }
             title
-            author
+            client
             category
-            artDirection
+            discipline
             description
-            url
+            workImage {
+              sys {
+                id
+              }
+              url
+            }
+            vimeoUrl
           }
         }
       }

@@ -1,13 +1,13 @@
 export const GET_HOME_ENTRY = `
   query GetLayoutPage($slug: String!) {
-    layoutPageCollection(where: {
+    homePageCollection(where: {
       slug: $slug
     }, limit: 1) {
       items {
         title
         slug
         description
-        videosCollection {
+        homeVideosCollection {
           items {
             title
             filmCategory

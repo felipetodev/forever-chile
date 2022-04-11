@@ -9,6 +9,7 @@ import Layout from "../components/Layout";
 import { FoundersContainer } from "../styles";
 import AboutDescription from "../components/AboutDescription";
 import Dots from "../components/Dots";
+import { GET_ABOUT_ENTRY } from "../queries/getAboutEntry";
 
 const teamMembers = {
   Denise: {
@@ -27,23 +28,25 @@ const teamMembers = {
   },
 };
 
-const About = () => {
+const About = ({ page }) => {
+  const { mainTitle, description, teamCollection = {} } = page;
   return (
     <>
       <Header isAbout />
-      <AboutDescription />
+      <AboutDescription title={mainTitle} description={description} />
       <FoundersContainer>
         <Layout>
           <h2>Meet the founders</h2>
         </Layout>
         <Layout isFounders>
-          {Object.entries(teamMembers).map(([key, value]) => (
+          {teamCollection?.items?.map((team) => (
             <TeamCard
-              key={key}
-              name={value.name}
-              src={value.src}
-              title={value.title}
-              description={value.description}
+              key={team?.sys?.id}
+              name={team?.fullName}
+              src={team?.image.url}
+              title={team?.title}
+              description={team?.description}
+              timeline={team?.timelineCollection}
             />
           ))}
           <div className="div3" />
@@ -63,3 +66,18 @@ const About = () => {
 };
 
 export default About;
+
+export async function getStaticProps() {
+  const { contentful } = require("../contentful/service");
+  const page = await contentful(
+    "about",
+    "aboutPageCollection",
+    GET_ABOUT_ENTRY
+  );
+
+  return {
+    props: {
+      page,
+    },
+  };
+}

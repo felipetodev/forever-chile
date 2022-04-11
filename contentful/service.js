@@ -1,4 +1,4 @@
-const contentful = async (slug, query) => {
+const contentful = async (slug = "", contentType = "", query) => {
   try {
     const result = await fetch(
       `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`,
@@ -17,7 +17,7 @@ const contentful = async (slug, query) => {
       }
     );
     const { data } = await result.json();
-    const [pageContainer] = data.layoutPageCollection.items;
+    const [pageContainer] = data[contentType]?.items;
     return pageContainer
   } catch (e) {
     console.error(e);

@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['videos.ctfassets.net']
+    domains: ['images.ctfassets.net', 'videos.ctfassets.net']
   },
   compiler: {
     styledComponents: true,
