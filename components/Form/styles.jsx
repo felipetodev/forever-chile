@@ -48,8 +48,6 @@ export const TextArea = styled.textarea`
   transition: all 300ms ease;
   &:focus {
     border-color: #052cab;
-    min-height: 100%;
-    min-height: 150px;
   }
 `;
 

@@ -28,13 +28,13 @@ export const Container = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div`
+export const IframeContainer = styled.div`
   min-height: 80vh;
-  img {
+
+  iframe {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
   }
 
   @media (max-width: 1194px) {

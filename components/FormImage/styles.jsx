@@ -18,11 +18,11 @@ export const Wrap = styled(motion.div)`
     }
     .square {
       top: 100px;
-      left: 55%;
+      left: 52%;
       transform: rotate(35deg);
     }
     .circle {
-      bottom: -90px;
+      bottom: -40px;
       left: 80px;
       transform: rotate(35deg);
     }
@@ -39,12 +39,12 @@ export const Wrap = styled(motion.div)`
         transform: rotate(-5deg);
       }
       .square {
-        top: 130px;
+        top: 160px;
         left: 55%;
       }
       .circle {
-        bottom: -20px;
-        left: 30px;
+        bottom: 40px;
+        left: 60px;
         transform: rotate(35deg);
       }
     }
@@ -52,6 +52,16 @@ export const Wrap = styled(motion.div)`
   @media (max-width: 1000px) {
     h1 {
       font-size: 25px;
+    }
+    &:hover {
+      .circle {
+        bottom: 20px;
+        left: 60px;
+        transform: rotate(35deg);
+      }
+      .square {
+        left: 60%;
+      }
     }
   }
   @media (max-width: 950px) {
@@ -124,13 +134,13 @@ export const Square = styled(motion.div)`
   width: 400px;
   height: 400px;
   position: absolute;
-  top: 0px;
+  top: -10px;
   left: 150px;
   background: none;
   @media (max-width: 1300px) {
     width: 300px;
     height: 300px;
-    top: 60px;
+    top: 40px;
     left: 120px;
   }
   @media (max-width: 1000px) {
@@ -149,13 +159,13 @@ export const Circle = styled(motion.div)`
   width: 300px;
   height: 300px;
   position: absolute;
-  bottom: -150px;
+  bottom: -80px;
   left: 30px;
   background: none;
   @media (max-width: 1300px) {
     width: 250px;
     height: 250px;
-    bottom: -80px;
+    bottom: -10px;
     left: 10px;
   }
   @media (max-width: 950px) {

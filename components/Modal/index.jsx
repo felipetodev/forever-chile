@@ -1,18 +1,18 @@
 import { useEffect } from "react";
-import CloseModalIcon from "./SVGModal"
+import CloseModalIcon from "./SVGModal";
 import {
   ArtDirection,
   CloseModal,
   Container,
   Description,
-  ImageContainer,
+  IframeContainer,
   Left,
   ModalDescription,
   ModalStyled,
   Title,
 } from "./styles";
 
-const Modal = ({ modalIsOpen, setIsOpen }) => {
+const Modal = ({ modalIsOpen, setIsOpen, infoModal }) => {
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -24,25 +24,24 @@ const Modal = ({ modalIsOpen, setIsOpen }) => {
       className="Modal"
     >
       <Container>
-        <ImageContainer>
-          <img src="modal.png" alt="modal" />
-        </ImageContainer>
+        <IframeContainer>
+          <iframe
+            // style={{ position: "absolute", top: 0, left: 0 }}
+            src={infoModal.vimeoUrl}
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </IframeContainer>
         <ModalDescription>
           <Left>
             <Title>
-              <h3>Poesía sin fin</h3>
-              <span>Alejandro Jodorowsky</span>
+              <h3>{infoModal?.title}</h3>
+              <span>{infoModal?.client}</span>
             </Title>
-            <ArtDirection>Art Direction, SFX.</ArtDirection>
+            <ArtDirection>{infoModal?.discipline}</ArtDirection>
           </Left>
-          <Description>
-            Habitant morbi tristique senectus et. Ornare lectus sit amet est
-            placerat. Quisque id diam vel quam. Neque convallis a cras semper
-            auctor neque vitae tempus quam. A lacus vestibulum sed arcu non odio
-            euismod lacinia at. Rutrum quisque non tellus orci ac auctor augue
-            mauris augue. Justo nec ultrices dui sapien eget mi. Tortor posuere
-            ac ut consequat semper viverra.
-          </Description>
+          <Description>{infoModal?.description}</Description>
         </ModalDescription>
         <CloseModal onClick={closeModal}>
           <CloseModalIcon />

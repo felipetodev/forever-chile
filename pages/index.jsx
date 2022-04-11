@@ -5,7 +5,7 @@ import Dots from "../components/Dots";
 import { GET_HOME_ENTRY } from "../queries/getHomeEntry";
 
 export default function Home({ page = {} }) {
-  const { description, videosCollection } = page;
+  const { description, homeVideosCollection } = page;
   return (
     <div>
       <Header
@@ -16,7 +16,7 @@ export default function Home({ page = {} }) {
         }
       />
       <Dots />
-      <FullHeroCarousel videosCollection={videosCollection} />
+      <FullHeroCarousel videosCollection={homeVideosCollection} />
       <div
         className="mobile-description"
         style={{ position: "relative", zIndex: 4 }}
@@ -44,7 +44,7 @@ export default function Home({ page = {} }) {
 
 export async function getStaticProps() {
   const { contentful } = require("../contentful/service");
-  const page = await contentful("home", GET_HOME_ENTRY);
+  const page = await contentful("home", "homePageCollection", GET_HOME_ENTRY);
 
   return {
     props: {

@@ -33,7 +33,7 @@ const Form = () => {
     }
   };
   return (
-    <FormStyled onSubmit={handleOnSubmit}>
+    <FormStyled onSubmit={handleOnSubmit} style={{ minHeight: "60vh" }}>
       <Label>
         Name*
         <Input
@@ -69,7 +69,7 @@ const Form = () => {
       <Label>
         Message
         <TextArea
-          rows={1}
+          rows={3}
           onChange={handleInput}
           placeholder="Message"
           name="message"
