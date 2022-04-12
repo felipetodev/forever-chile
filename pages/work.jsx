@@ -7,55 +7,12 @@ import Footer, { FooterMobile } from "../components/Footer";
 import WorkMobileSelector from "../components/WorkMobileSelector";
 import Dots from "../components/Dots";
 import Modal from "../components/Modal";
+import MenuList from "../components/MenuList";
 import { GET_WORK_ENTRY } from "../queries/getWorkEntry";
 
 const Heading = styled.h1`
   max-width: 615px;
   font-size: 50px;
-`;
-
-const Navigation = styled.ul`
-  width: 100%;
-  display: flex;
-  margin: 0 auto;
-  padding: 0;
-  margin-right: 240px;
-  li {
-    cursor: pointer;
-    list-style: none;
-    position: relative;
-    margin-right: 100px;
-    &::after {
-      transition: background 300ms ease-in-out;
-      content: "";
-      position: absolute;
-      z-index: 5;
-      left: 0;
-      right: 0;
-      bottom: -20px;
-      margin-left: auto;
-      margin-right: auto;
-      width: 8px;
-      height: 8px;
-      border-radius: 9999px;
-      background: transparent;
-      visibility: hidden;
-    }
-    &.active {
-      &::after {
-        background: #052cab;
-        visibility: visible;
-      }
-    }
-  }
-
-  @media (max-width: 1194px) {
-    margin-right: 200px;
-  }
-  @media (max-width: 1070px) {
-    margin-right: 150px;
-    display: none;
-  }
 `;
 
 const menuList = [
@@ -87,8 +44,10 @@ const WorkPage = ({ page = {} }) => {
     }
   }, []);
 
-  const getArrayOfCategories = workVideosCollection?.items?.map(el => el.category)
-  const categories = [...new Set(getArrayOfCategories)]
+  const getArrayOfCategories = workVideosCollection?.items?.map(
+    (item) => item.category
+  );
+  const categories = [...new Set(getArrayOfCategories)];
   return (
     <>
       <Header noDot isAbout isWork />
@@ -99,27 +58,26 @@ const WorkPage = ({ page = {} }) => {
             "We deliver and achieve the best combination of results for each spectator."}
         </Heading>
       </Layout>
-      <Layout>
-        <Navigation className="_1">
-          {["All", ...categories].map((item) => (
-            <li
-              key={item}
-              className={item.toLowerCase() === workSection ? "active" : null}
-              onClick={() => setWorkSection(item?.toLowerCase())}
-            >
-              {item}
-            </li>
-          ))}
-        </Navigation>
-        <div className="_3"></div>
-      </Layout>
+      <MenuList
+        categories={categories}
+        workSection={workSection}
+        setWorkSection={setWorkSection}
+      />
       <WorkMobileSelector
         menu={menuList}
         workSection={workSection}
         onWorkSelection={setWorkSection}
       />
-      <ListOfWorks workSection={workVideosCollection?.items} setIsOpen={setIsOpen} setModalWork={setModalWork} />
-      <Modal modalIsOpen={modalIsOpen} infoModal={modalWork} setIsOpen={setIsOpen} />
+      <ListOfWorks
+        workSection={workVideosCollection?.items}
+        setIsOpen={setIsOpen}
+        setModalWork={setModalWork}
+      />
+      <Modal
+        modalIsOpen={modalIsOpen}
+        infoModal={modalWork}
+        setIsOpen={setIsOpen}
+      />
       <Footer />
       <FooterMobile />
     </>
