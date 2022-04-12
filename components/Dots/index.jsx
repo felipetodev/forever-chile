@@ -12,11 +12,11 @@ const Container = styled.div`
     width: 100%;
     position: relative;
     min-height: 10px;
-    &::before {
+    &::after {
       content: "";
       position: absolute;
-      right: -10px;
-      top: 0;
+      right: -16px;
+      top: -3px;
       height: 5px;
       width: 5px;
       border-radius: 9999px;

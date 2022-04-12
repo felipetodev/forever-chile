@@ -7,7 +7,6 @@ import Footer, { FooterMobile } from "../components/Footer";
 import WorkMobileSelector from "../components/WorkMobileSelector";
 import Dots from "../components/Dots";
 import Modal from "../components/Modal";
-import { motion } from "framer-motion";
 import { GET_WORK_ENTRY } from "../queries/getWorkEntry";
 
 const Heading = styled.h1`
@@ -18,7 +17,6 @@ const Heading = styled.h1`
 const Navigation = styled.ul`
   width: 100%;
   display: flex;
-  justify-content: space-between;
   margin: 0 auto;
   padding: 0;
   margin-right: 240px;
@@ -26,6 +24,7 @@ const Navigation = styled.ul`
     cursor: pointer;
     list-style: none;
     position: relative;
+    margin-right: 100px;
     &::after {
       transition: background 300ms ease-in-out;
       content: "";
@@ -88,6 +87,8 @@ const WorkPage = ({ page = {} }) => {
     }
   }, []);
 
+  const getArrayOfCategories = workVideosCollection?.items?.map(el => el.category)
+  const categories = [...new Set(getArrayOfCategories)]
   return (
     <>
       <Header noDot isAbout isWork />
@@ -100,14 +101,14 @@ const WorkPage = ({ page = {} }) => {
       </Layout>
       <Layout>
         <Navigation className="_1">
-          {menuList.map((item) => (
-            <motion.li
+          {["All", ...categories].map((item) => (
+            <li
               key={item}
               className={item.toLowerCase() === workSection ? "active" : null}
               onClick={() => setWorkSection(item?.toLowerCase())}
             >
               {item}
-            </motion.li>
+            </li>
           ))}
         </Navigation>
         <div className="_3"></div>
