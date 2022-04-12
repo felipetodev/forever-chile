@@ -6,6 +6,7 @@ import ListOfWorks from "../components/ListOfWorks";
 import Footer, { FooterMobile } from "../components/Footer";
 import WorkMobileSelector from "../components/WorkMobileSelector";
 import Dots from "../components/Dots";
+import Modal from "../components/Modal";
 import { motion } from "framer-motion";
 import { GET_WORK_ENTRY } from "../queries/getWorkEntry";
 
@@ -77,6 +78,8 @@ const getURLParams = () => {
 const WorkPage = ({ page = {} }) => {
   const { description, workVideosCollection = [] } = page;
   const [workSection, setWorkSection] = useState("all");
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalWork, setModalWork] = useState(null);
 
   useEffect(() => {
     const searchParam = getURLParams();
@@ -114,7 +117,8 @@ const WorkPage = ({ page = {} }) => {
         workSection={workSection}
         onWorkSelection={setWorkSection}
       />
-      <ListOfWorks workSection={workVideosCollection} />
+      <ListOfWorks workSection={workVideosCollection?.items} setIsOpen={setIsOpen} setModalWork={setModalWork} />
+      <Modal modalIsOpen={modalIsOpen} infoModal={modalWork} setIsOpen={setIsOpen} />
       <Footer />
       <FooterMobile />
     </>
@@ -128,6 +132,7 @@ export async function getStaticProps() {
   const page = await contentful("work", "workPageCollection", GET_WORK_ENTRY);
 
   return {
+    revalidate: 10,
     props: {
       page,
     },

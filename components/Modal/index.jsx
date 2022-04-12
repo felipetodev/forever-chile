@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import CloseModalIcon from "./SVGModal";
 import {
   ArtDirection,
@@ -19,19 +18,11 @@ const Modal = ({ modalIsOpen, setIsOpen, infoModal }) => {
   return (
     <ModalStyled
       isOpen={modalIsOpen}
-      onAfterOpen={() => {}}
-      onRequestClose={() => {}}
-      className="Modal"
+      shouldCloseOnEsc
     >
       <Container>
         <IframeContainer>
-          <iframe
-            // style={{ position: "absolute", top: 0, left: 0 }}
-            src={infoModal.vimeoUrl}
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <div dangerouslySetInnerHTML={{ __html: infoModal?.vimeoEmbedUrl }} />
         </IframeContainer>
         <ModalDescription>
           <Left>

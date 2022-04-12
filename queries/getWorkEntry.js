@@ -16,6 +16,7 @@ export const GET_WORK_ENTRY = `
             client
             category
             discipline
+            vimeoEmbedUrl
             description
             workImage {
               sys {
@@ -23,7 +24,6 @@ export const GET_WORK_ENTRY = `
               }
               url
             }
-            vimeoUrl
           }
         }
       }

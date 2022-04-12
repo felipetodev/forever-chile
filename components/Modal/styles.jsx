@@ -20,6 +20,7 @@ export const Container = styled.div`
   height: 100vh;
   margin: 0 auto;
   background: none;
+  overflow-y: scroll;
   @media (min-width: 2000px) {
     width: 100%;
   }
@@ -29,19 +30,9 @@ export const Container = styled.div`
 `;
 
 export const IframeContainer = styled.div`
-  min-height: 80vh;
-
-  iframe {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  @media (max-width: 1194px) {
-    margin-top: 130px;
-    min-height: auto;
-    max-height: 400px;
-  }
+  // border: 1px solid red;
+  height: fit-content;
+  width: 100%;
 `;
 
 export const ModalDescription = styled.div`
@@ -49,7 +40,8 @@ export const ModalDescription = styled.div`
   justify-content: space-between;
   align-items: baseline;
   margin-top: 30px;
-  height: 20vh;
+  margin-bottom: 50px;
+  // height: 20vh;
   gap: 50px;
   // overflow-y: scroll;
 
@@ -65,11 +57,11 @@ export const ModalDescription = styled.div`
     margin: 0 auto;
     margin-top: 30px;
     flex-direction: column;
-    height: auto;
+    // height: auto;
     gap: 10px;
   }
   @media (max-width: 600px) {
-    overflow-y: scroll;
+    // overflow-y: scroll;
     margin-bottom: 20px;
   }
 `;
