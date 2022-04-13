@@ -91,7 +91,6 @@ export async function getStaticProps() {
   const page = await contentful("work", "workPageCollection", GET_WORK_ENTRY);
 
   return {
-    revalidate: 10,
     props: {
       page,
     },
