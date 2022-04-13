@@ -80,7 +80,7 @@ export const IntroStyled = styled.div`
     h2 {
       position: relative;
       transition: transform 150ms ease;
-      margin-right: 0px;
+      margin-right: -4px;
     }
 
     span {
