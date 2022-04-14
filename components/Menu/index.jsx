@@ -163,6 +163,12 @@ const MenuStyled = styled.div`
     }
   }
 
+  li:last-child {
+    a {
+      outline: none;
+    }
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -319,6 +325,7 @@ const Menu = ({ isAbout, hasDot, isContact }) => {
               href="https://instagram.com"
               rel="noopener noreferrer"
               target="_blank"
+              className="instagram"
             >
               <InstagramIcon />
             </a>
