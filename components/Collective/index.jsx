@@ -20,6 +20,9 @@ const Container = styled.div`
     flex-direction: column;
     height: auto;
   }
+  @media(max-width: 740px) {
+    margin-top: 180px;
+  }
 `;
 
 const BannerTitle = styled.div`

@@ -135,5 +135,8 @@ export const LayoutStyled = styled(Layout)`
 export const Spacing = styled.div`
   position: relative;
   z-index: 4;
-  padding-bottom: 180px;;
+  padding-bottom: 180px;
+  @media(max-width: 740px) {
+    display: none;
+  }
 `
