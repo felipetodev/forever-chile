@@ -1,4 +1,4 @@
-// import { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Layout from "../Layout";
 import {
@@ -29,19 +29,20 @@ export const TrashDesignMobile = () => (
 );
 
 const AboutHero = ({ videoBanner, description }) => {
-  // const videoRef = useRef(null);
-  // useEffect(() => {
-  //   if (videoRef.current) {
-  //     videoRef.current.defaultMuted = true;
-  //   }
-  // }, []);
+  const videoRef = useRef(null);
+  useEffect(() => {
+    if (videoRef.current) {
+      console.log(videoRef.current)
+      videoRef.current.defaultMuted = true;
+    }
+  }, []);
   return (
     <div>
       <Layout>
         <h2>Why we do it</h2>
       </Layout>
       <BannerContainer>
-        <Video id={videoBanner?.title} autoPlay muted loop>
+        <Video ref={videoRef} id={videoBanner?.title} autoPlay playsInline muted loop>
           <source
             src={videoBanner?.url}
             alt={videoBanner?.title}
