@@ -186,6 +186,9 @@ const MenuStyled = styled.div`
   // Mobile view
   @media (max-width: 400px) {
     width: 100%;
+    &::before {
+      display: none;
+    }
   }
 `;
 
