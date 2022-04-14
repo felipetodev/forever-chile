@@ -35,7 +35,7 @@ const AboutHero = ({ videoBanner, description }) => {
         <h2>Why we do it</h2>
       </Layout>
       <BannerContainer>
-        <Video id={videoBanner?.title} preload autoPlay playsInline muted loop>
+        <Video id={videoBanner?.title} preload="true" autoPlay playsInline muted loop>
           <source
             src={videoBanner?.url}
             alt={videoBanner?.title}

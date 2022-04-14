@@ -148,6 +148,7 @@ const MenuStyled = styled.div`
   }
 
   li {
+    background: none;
     text-align: right;
     font-size: 45px;
     width: 300px;
@@ -164,7 +165,7 @@ const MenuStyled = styled.div`
   }
 
   li:last-child {
-    a {
+    svg {
       outline: none;
     }
   }
