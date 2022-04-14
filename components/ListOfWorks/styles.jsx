@@ -42,14 +42,23 @@ export const Container = styled.div`
 export const NewContainer = styled(Container)`
   min-height: 50vh;
   padding-top: 80px;
+  // border: 1px solid red;
   @media (max-width: 1070px) {
-    width: min(1200px, 90%);
+    margin-left: 80px;
+    margin-right: 6.2222%;
     & .margin-left {
       display: none;
     }
     & ._3 {
       display: none;
     }
+  }
+  @media (max-width: 675px) {
+    margin-left: 50px;
+  }
+  @media (max-width: 400px) {
+    width: min(800px, 84%);
+    margin: 0 auto;
   }
 `;
 
@@ -87,8 +96,13 @@ export const Grid = styled.div`
   margin-right: 2px;
   width: 100%;
 
-  @media (max-width: 830px) {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  @media (max-width: 834px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -115,9 +129,12 @@ export const VideoContainer = styled.div`
       filter: hue-rotate(220deg);
     }
   }
-  @media (max-width: 830px) {
+  @media (max-width: 840px) {
+    div {
+      flex-direction: column;
+    }
     img {
-      max-height: 186px;
+      max-height: 186px !important;
     }
   }
   @media (max-width: 650px) {

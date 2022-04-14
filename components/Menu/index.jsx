@@ -77,10 +77,10 @@ const BurgerStyled = styled.div`
           ? `
             content: '';
             position: absolute;
-            left: 4px;
+            left: 11px;
             bottom: 0;
-            height: 5px;
-            width: 5px;
+            height: 8px;
+            width: 8px;
             border-radius: 9999px;
             border: 1px solid #707070;
             visibility: ${open ? "hidden" : "visible"};
@@ -93,7 +93,38 @@ const BurgerStyled = styled.div`
   @media (max-width: 400px) {
     width: 115px;
   }
-`;
+
+  /* &.menu-dot {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 150px;
+      left: -17px;
+      height: 8px;
+      width: 8px;
+      border-radius: 9999px;
+      z-index: 4;
+      border: 1px solid #707070;
+      visibility: ${({ open }) => (open ? "hidden" : "visible")};
+    }
+    @media (max-width: 1070px) {
+      &::after {
+        left: 13px;
+      }
+    }
+    @media (max-width: 1070px) {
+      &::after {
+        top: 119px;
+      }
+    }
+    @media (max-width: 400px) {
+      &::after {
+        left: -20px;
+      }
+    }
+  } */
+`
+
 
 const MenuStyled = styled.div`
   position: fixed;
@@ -159,7 +190,7 @@ const MenuStyled = styled.div`
 `;
 
 const HamburgerMenu = styled(motion.div)`
-  position: absolute;
+  position: fixed;
   background: none;
   top: 70px;
   width: 40px;
@@ -199,8 +230,10 @@ const HamburgerMenu = styled(motion.div)`
   }
 
   @media (max-width: 830px) {
-    position: fixed;
     top: 55px;
+  }
+  @media (max-width: 400px) {
+    margin-left: 4.9555%;
   }
 `;
 
@@ -211,7 +244,7 @@ const NavContainer = styled.div`
   top: 0;
   bottom: ${({ open }) => (open ? "" : "0")};
   position: ${({ open, isAbout }) => (open || isAbout ? "fixed" : "absolute")};
-  z-index: ${({ open }) => (open ? 7 : 5)};
+  z-index: ${({ open }) => (open ? 7 : 6)};
   background-color: transparent;
 
   @media (max-width: 1194px) {
@@ -236,12 +269,17 @@ const NavContainer = styled.div`
   }
 */
 
-const Menu = ({ isAbout, isContact }) => {
+const Menu = ({ isAbout, hasDot, isContact }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <BurgerStyled open={open} isAbout={isAbout} isContact={isContact} />
+      <BurgerStyled
+        className={hasDot ? "menu-dot" : null}
+        open={open}
+        isAbout={isAbout}
+        isContact={isContact}
+      />
       <NavContainer open={open} isAbout={isAbout}>
         <HamburgerMenu
           onClick={() => setOpen(!open)}

@@ -7,9 +7,9 @@ import {
   LogoStyled,
 } from "./styles";
 
-const Footer = () => {
+const Footer = ({ isWork }) => {
   return (
-    <FooterStyled>
+    <FooterStyled className={isWork ? "is-work-footer" : null}>
       <Container>
         <LogoStyled>
           <span>Copyright © 2021 forever-chile.</span>

@@ -30,6 +30,11 @@ export const FooterStyled = styled.div`
     margin-right: 35px;
     margin-left: 35px;
   }
+  &.is-work-footer {
+    @media (max-width: 400px) {
+      margin-top: 14vh;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -132,7 +137,7 @@ export const IntroStyled = styled.div`
     content: "";
     position: absolute;
     background: transparent url("/line.png") 0% 0% repeat padding-box;
-    top: -40px;
+    top: -80px;
     left: -30px;
     height: 1000px;
     width: 1px;

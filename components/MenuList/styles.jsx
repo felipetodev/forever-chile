@@ -38,7 +38,7 @@ export const Navigation = styled.ul`
   @media (max-width: 1194px) {
     margin-right: 200px;
   }
-  @media (max-width: 1070px) {
+  @media (max-width: 834px) {
     margin-right: 150px;
     display: none;
   }

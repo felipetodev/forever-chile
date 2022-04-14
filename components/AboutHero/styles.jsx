@@ -1,6 +1,23 @@
 import styled from "styled-components";
 import Layout from "../Layout";
 
+export const Video = styled.video`
+  position: absolute;
+  inset: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+  border: none;
+  margin: auto;
+  display: block;
+  width: 0px;
+  height: 0px;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  object-fit: cover;
+`
+
 export const BannerContainer = styled.div`
   position: relative;
   height: 60vh;
@@ -114,3 +131,9 @@ export const LayoutStyled = styled(Layout)`
     }
   }
 `;
+
+export const Spacing = styled.div`
+  position: relative;
+  z-index: 4;
+  padding-bottom: 180px;;
+`

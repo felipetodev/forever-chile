@@ -15,10 +15,10 @@ const Container = styled.div`
     &::after {
       content: "";
       position: absolute;
-      right: -16px;
-      top: -3px;
-      height: 5px;
-      width: 5px;
+      right: -23px;
+      top: -9px;
+      height: 8px;
+      width: 8px;
       border-radius: 9999px;
       border: 1px solid #707070;
     }
@@ -36,11 +36,69 @@ const Container = styled.div`
       min-width: 124px;
     }
   }
+
+  &.about-dot-top {
+    ._2 {
+      &::after {
+        top: 0;
+      }
+    }
+    ._3 {
+      @media (max-width: 1070px) {
+        display: flex;
+        min-width: 150px;
+      }
+      @media (max-width: 830px) {
+        display: none;
+      }
+    }
+  }
+  &.about-dot-bottom {
+    ._2 {
+      &::after {
+        top: 0;
+      }
+    }
+    ._3 {
+      @media (max-width: 1070px) {
+        display: flex;
+        min-width: 150px;
+      }
+      @media (max-width: 830px) {
+        display: none;
+      }
+    }
+  }
+  &.last-dot {
+    z-index: 4;
+    ._2 {
+      &::after {
+        top: -190px;
+      }
+    }
+    @media (max-width: 1070px) {
+      ._2 {
+        &::after {
+          right: 128px;
+        }
+      }
+    }
+    @media (max-width: 830px) {
+      display: none;
+    }
+  }
 `;
 
-const Dots = (props) => {
+const Dots = ({ dotTop, dotBottom, lastDot, ...props }) => {
+  const isDot = dotTop
+    ? "about-dot-top"
+    : dotBottom
+    ? "about-dot-bottom"
+    : lastDot
+    ? "last-dot"
+    : null;
   return (
-    <Container {...props}>
+    <Container className={isDot} {...props}>
       <div className="_1" />
       <div className="_2" />
       <div className="_3" />

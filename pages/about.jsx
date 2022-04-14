@@ -15,13 +15,14 @@ const About = ({ page }) => {
   const {
     mainTitle,
     description,
+    videoBanner = {},
     teamCollection = {},
     videoBannerDescription,
     blueBannerTitle,
   } = page;
   return (
     <>
-      <Header isAbout />
+      <Header isAbout hasDot />
       <AboutDescription title={mainTitle} description={description} />
       <FoundersContainer>
         <Layout>
@@ -41,10 +42,11 @@ const About = ({ page }) => {
           <div className="div3" />
         </Layout>
       </FoundersContainer>
-      <Dots style={{ marginTop: "200px" }} />
+      <Dots dotTop style={{ marginTop: "200px" }} />
       <WhatWeDo />
-      <Dots style={{ marginBottom: "100px" }} />
-      <AboutHero description={videoBannerDescription} />
+      <Dots dotBottom style={{ marginBottom: "100px" }} />
+      <AboutHero videoBanner={videoBanner} description={videoBannerDescription} />
+      <Dots lastDot />
       <TrashDesignMobile />
       <Collective title={blueBannerTitle} />
       <HoverBanner />

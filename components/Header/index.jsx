@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Menu from "../Menu";
 
-const Header = ({ noDot, isAbout, isWork, isContact, description }) => {
+const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
   return (
     <HeaderStyled isAbout={isAbout}>
       <Container>
@@ -18,7 +18,7 @@ const Header = ({ noDot, isAbout, isWork, isContact, description }) => {
             <a>
               <Image
                 objectFit="cover"
-                src="/Grupo-137.png"
+                src="/forever-logo.svg"
                 width="135"
                 height="77px"
                 alt="forever collective"
@@ -26,11 +26,11 @@ const Header = ({ noDot, isAbout, isWork, isContact, description }) => {
             </a>
           </Link>
         </LogoStyled>
-        <IntroStyled className={noDot ? "remove-dot" : null} isWork={isWork}>
+        <IntroStyled hasDot={hasDot} className={noDot ? "remove-dot" : null} isWork={isWork}>
           {description}
         </IntroStyled>
         <Nav isAbout={isAbout}>
-          <Menu isAbout={isAbout} isContact={isContact} />
+          <Menu isAbout={isAbout} hasDot={hasDot} isContact={isContact} />
         </Nav>
       </Container>
     </HeaderStyled>

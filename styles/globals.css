@@ -52,6 +52,27 @@ span, img {
   width: min(800px, 90%);
   margin: 0 auto;
 }
+@media (max-width: 1070px) {
+  .container {
+    margin-left: 80px;
+    width: auto;
+    max-width: 800px;
+    /* border: 1px solid red !important; */
+  }
+}
+
+@media (max-width: 675px) {
+  .container {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: min(800px, 84%);
+    margin: 0 auto;
+  }
+}
 
 .swiper-pagination {
   background: none;

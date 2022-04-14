@@ -9,11 +9,14 @@ export const AboutTitle = styled.div`
     "h2 empty1"
     "empty2 parragraph";
   margin-right: 150px;
+  z-index: 4;
+  position: relative;
+  padding-top: 30px;
 
   h2 {
     width: 100%;
     min-width: 400px;
-    font-size: 30px;
+    font-size: 38px;
     grid-area: h2;
     margin: 0;
   }
@@ -27,13 +30,13 @@ export const AboutTitle = styled.div`
   }
   p {
     font-size: 18px;
-    min-width: 490px;
+    min-width: 400px;
     color: #e6e6e6;
     margin: 0;
     grid-area: parragraph;
   }
 
-  @media (max-width: 1333px) {
+  @media (max-width: 1194px) {
     display: flex;
     flex-direction: column;
     h2 {

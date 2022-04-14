@@ -10,7 +10,6 @@ const Container = styled.div`
   background-color: #052CAB;
   width: 100%;
   height: 50vh;
-  margin-top: 180px;
   
   div {
     background: none;

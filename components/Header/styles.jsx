@@ -38,8 +38,11 @@ export const LogoStyled = styled.div`
   background: none !important;
   padding-left: 40px;
   z-index: 99;
+  position: relative;
 
   a {
+    position: fixed;
+    top: 70px;
     background: none !important;
   }
 
@@ -58,12 +61,22 @@ export const LogoStyled = styled.div`
   }
 
   @media (max-width: 830px) {
-    left: 40px;
+    left: 80px;
+    a {
+      top: 55px;
+    }
+  }
+
+  @media (max-width: 675px) {
+    left: 50px;
   }
 
   // Mobile view
   @media (max-width: 400px) {
-    left: 25px;
+    a {
+      top: 35px;
+    }
+    left: 30px;
   }
 `;
 
@@ -108,10 +121,10 @@ export const IntroStyled = styled.div`
   &::after {
     content: "";
     position: absolute;
-    left: -40px;
-    bottom: 0;
-    height: 5px;
-    width: 5px;
+    left: -49px;
+    bottom: -30px;
+    height: 8px;
+    width: 8px;
     border-radius: 9999px;
     border: 1px solid #707070;
   }
@@ -144,6 +157,9 @@ export const IntroStyled = styled.div`
     &::before {
       display: none;
     }
+    &::after {
+      display: none;
+    }
   }
 
   @media (max-width: 834px) {
@@ -151,6 +167,13 @@ export const IntroStyled = styled.div`
     width: 100%;
     margin-right: 100px;
     font-size: clamp(1.2rem, 3.5vw, 2rem);
+  }
+  @media (max-width: 760px) {
+    width: 97%;
+  }
+
+  @media (max-width: 830px) {
+    margin-top: 85px;
   }
 
   @media (max-width: 400px) {

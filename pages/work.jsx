@@ -13,6 +13,13 @@ import { GET_WORK_ENTRY } from "../queries/getWorkEntry";
 const Heading = styled.h1`
   max-width: 615px;
   font-size: 50px;
+  @media (max-width: 1070px) {
+    margin-right: 6.2222%;
+  }
+  @media (max-width: 400px) {
+    margin: 0 auto;
+    width: min(800px, 100%);
+  }
 `;
 
 const menuList = [
@@ -78,7 +85,18 @@ const WorkPage = ({ page = {} }) => {
         infoModal={modalWork}
         setIsOpen={setIsOpen}
       />
-      <Footer />
+      {/* DIVISOR LINE */}
+      <div
+        style={{
+          position: "relative",
+          height: "150px",
+          backgroundColor: "#1A1A1A",
+          zIndex: 4,
+        }}
+      >
+        <div style={{ position: "absolute", zIndex: 4 }}></div>
+      </div>
+      <Footer isWork />
       <FooterMobile />
     </>
   );

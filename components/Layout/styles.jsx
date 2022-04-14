@@ -36,8 +36,14 @@ export const Container = styled.div`
     display: block;
   }
 
-  @media (max-width: 729px) {
+  @media (max-width: 1070px) {
+    // border: 1px solid red;
+    margin-left: 80px;
+  }
+
+  @media (max-width: 675px) {
     flex-direction: ${({ isFounders }) => (isFounders ? "column" : "")};
+    margin-left: 50px;
 
     .div1 {
       width: ${({ isFounders }) => (isFounders ? "90%" : "")};
@@ -46,6 +52,9 @@ export const Container = styled.div`
   }
 
   @media (max-width: 400px) {
+    margin-left: 0;
+    margin: 0 auto;
+    width: min(800px, 84%);
     .div1 {
       width: 100%;
     }

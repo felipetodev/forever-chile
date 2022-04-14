@@ -8,6 +8,10 @@ query GetLayoutPage($slug: String!) {
       slug
       mainTitle
       description
+      videoBanner {
+        url
+        title
+      }
       videoBannerDescription
       blueBannerTitle
       teamCollection {

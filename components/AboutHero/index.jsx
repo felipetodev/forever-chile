@@ -1,12 +1,15 @@
+// import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Layout from "../Layout";
 import {
+  Video,
   BannerContainer,
   OverlapText,
   RightImage,
   TextContainer,
   LayoutStyled,
   RightImageMobile,
+  Spacing,
 } from "./styles";
 
 const trashImage = () => (
@@ -25,20 +28,26 @@ export const TrashDesignMobile = () => (
   <RightImageMobile>{trashImage()}</RightImageMobile>
 );
 
-const AboutHero = ({ description }) => {
+const AboutHero = ({ videoBanner, description }) => {
+  // const videoRef = useRef(null);
+  // useEffect(() => {
+  //   if (videoRef.current) {
+  //     videoRef.current.defaultMuted = true;
+  //   }
+  // }, []);
   return (
     <div>
       <Layout>
         <h2>Why we do it</h2>
       </Layout>
       <BannerContainer>
-        <Image
-          layout="fill"
-          width={100}
-          height={700}
-          src="/waves.png"
-          alt="Why we do it"
-        />
+        <Video id={videoBanner?.title} autoPlay muted loop>
+          <source
+            src={videoBanner?.url}
+            alt={videoBanner?.title}
+            type="video/mp4"
+          />
+        </Video>
         <OverlapText>
           <Image
             className="timeisnow"
@@ -61,6 +70,7 @@ const AboutHero = ({ description }) => {
         </TextContainer>
         <div style={{ background: "none" }} className="div3" />
       </LayoutStyled>
+      <Spacing />
     </div>
   );
 };
