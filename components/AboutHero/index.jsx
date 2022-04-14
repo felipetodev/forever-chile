@@ -19,7 +19,7 @@ const trashImage = () => (
     layout="fill"
     height={270}
     width={270}
-    src="/trash.png"
+    src="/trashis.svg"
     alt="Trash is a design error"
   />
 );
@@ -29,20 +29,13 @@ export const TrashDesignMobile = () => (
 );
 
 const AboutHero = ({ videoBanner, description }) => {
-  const videoRef = useRef(null);
-  useEffect(() => {
-    if (videoRef.current) {
-      console.log(videoRef.current)
-      videoRef.current.defaultMuted = true;
-    }
-  }, []);
   return (
     <div>
       <Layout>
         <h2>Why we do it</h2>
       </Layout>
       <BannerContainer>
-        <Video ref={videoRef} id={videoBanner?.title} autoPlay playsInline muted loop>
+        <Video id={videoBanner?.title} preload autoPlay playsInline muted loop>
           <source
             src={videoBanner?.url}
             alt={videoBanner?.title}
@@ -55,7 +48,7 @@ const AboutHero = ({ videoBanner, description }) => {
             layout="fill"
             height={610}
             width={884}
-            src="/timeisnow.png"
+            src="/thetimeisnow.svg"
             alt="Why we do it"
           />
         </OverlapText>

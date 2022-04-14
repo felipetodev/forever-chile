@@ -27,6 +27,12 @@ export const BannerContainer = styled.div`
     object-fit: cover;
     background: none !important;
   }
+  @media (max-width: 400px) {
+    span {
+      width: 100% !important;
+      height: 650px !important;
+    }
+  }
 `;
 
 export const OverlapText = styled.div`
@@ -120,6 +126,9 @@ export const TextContainer = styled.div`
   @media (max-width: 740px) {
     margin-top: 200px;
     margin-left: 0;
+  }
+  @media (max-width: 400px) {
+    margin-top: 250px;
   }
 `;
 
