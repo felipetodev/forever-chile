@@ -125,6 +125,12 @@ export const LogoStyled = styled.div`
   @media (max-width: 1070px) {
     padding-left: 0px;
   }
+
+  a:hover {
+    .hover {
+      opacity: 0.5;
+    }
+  }
 `;
 
 export const IntroStyled = styled.div`

@@ -16,7 +16,14 @@ const Footer = ({ isWork }) => {
           <span>All Rights Reserved FOREVER CHILE</span>
           <span>contact@forever-chile.com</span>
           <span style={{ marginTop: "30px" }}>
-            Design and development Sebastian Hanson Studio
+            <a
+              href="https://www.sebastianhansonstudio.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Design and development{" "}
+              <span className="hover">Sebastian Hanson Studio</span>
+            </a>
           </span>
         </LogoStyled>
         <IntroStyled>
@@ -49,10 +56,22 @@ export default Footer;
 export const FooterMobile = () => (
   <FooterMobileStyled>
     <div>
-      <Image objectFit="scale-down" height={13} width={146} src="/denise-lira.png" alt="chiloe-cine" />
+      <Image
+        objectFit="scale-down"
+        height={13}
+        width={146}
+        src="/denise-lira.png"
+        alt="chiloe-cine"
+      />
     </div>
     <div>
-      <Image objectFit="scale-down" height={81} width={88} src="/chiloecine.png" alt="chiloe-cine" />
+      <Image
+        objectFit="scale-down"
+        height={81}
+        width={88}
+        src="/chiloecine.png"
+        alt="chiloe-cine"
+      />
     </div>
   </FooterMobileStyled>
 );
