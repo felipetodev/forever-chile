@@ -152,8 +152,8 @@ const MenuStyled = styled.div`
     text-align: right;
     font-size: 45px;
     width: 300px;
-    &:hover {
-      color: red;
+    a:hover {
+      color: #052CAB;
     }
     &:not(:last-child) {
       margin-bottom: 40px;
@@ -166,6 +166,9 @@ const MenuStyled = styled.div`
 
   li:last-child {
     svg {
+      &:hover {
+        fill: #052CAB;
+      }
       outline: none;
     }
   }
