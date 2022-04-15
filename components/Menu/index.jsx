@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -123,8 +123,7 @@ const BurgerStyled = styled.div`
       }
     }
   } */
-`
-
+`;
 
 const MenuStyled = styled.div`
   position: fixed;
@@ -153,7 +152,7 @@ const MenuStyled = styled.div`
     font-size: 45px;
     width: 300px;
     a:hover {
-      color: #052CAB;
+      color: #052cab;
     }
     &:not(:last-child) {
       margin-bottom: 40px;
@@ -167,7 +166,7 @@ const MenuStyled = styled.div`
   li:last-child {
     svg {
       &:hover {
-        fill: #052CAB;
+        fill: #052cab;
       }
       outline: none;
     }
@@ -276,14 +275,38 @@ const NavContainer = styled.div`
   }
 `;
 
-/*
-  function cn(...classes) {
-    return classes.filter(Boolean).join(" ");
-  }
-*/
-
 const Menu = ({ isAbout, hasDot, isContact }) => {
+  const drawerRef = useRef(null);
+  const menuRef = useRef(null);
   const [open, setOpen] = useState(false);
+
+  /* TODO: build custom hook */
+  useEffect(() => {
+    const handleMenuToggle = ({ target }) => {
+      if (menuRef.current && menuRef.current.contains(target)) {
+        onClickBurgerMenu && onClickBurgerMenu();
+      }
+    };
+    document.addEventListener('click', handleMenuToggle, true);
+    return () => {
+      document.removeEventListener('click', handleMenuToggle, true);
+    };
+  }, [open])
+
+  useEffect(() => {
+    const handleClickOutside = ({ target }) => {
+      if (drawerRef.current && !drawerRef.current.contains(target)) {
+        onClickOutside && onClickOutside();
+      }
+    };
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  }, [open])
+
+  const onClickOutside = () => setOpen(false)
+  const onClickBurgerMenu = () => setOpen(!open)
 
   return (
     <>
@@ -295,14 +318,14 @@ const Menu = ({ isAbout, hasDot, isContact }) => {
       />
       <NavContainer open={open} isAbout={isAbout}>
         <HamburgerMenu
-          onClick={() => setOpen(!open)}
+          ref={menuRef}
           className={open ? "open" : "closed"}
         >
           <motion.div className="line-menu start" />
           <div className="line-menu end"></div>
         </HamburgerMenu>
       </NavContainer>
-      <MenuStyled open={open}>
+      <MenuStyled open={open} ref={drawerRef}>
         <motion.ul>
           <li>
             <Link href="/">
