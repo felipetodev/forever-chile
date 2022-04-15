@@ -129,52 +129,54 @@ export const HoverWrapper = styled(motion.div)`
     }
   }
 
-  &.is-intersecting {
-    .hover-one {
-      margin-right: 200px;
-      &::after {
-        width: 200px;
-        right: -210px;
-        visibility: visible;
-      }
-    }
-    .hover-two {
-      margin-left: 300px;
-      &::after {
-        width: 285px;
-        left: -295px;
-        visibility: visible;
-      }
-    }
-    @media (max-width: 875px) {
+  @media (max-width: 875px) {
+    &.is-intersecting {
       .hover-one {
+        margin-right: 200px;
         &::after {
-          right: -190px;
-          width: 205px;
+          width: 200px;
+          right: -210px;
+          visibility: visible;
         }
       }
       .hover-two {
+        margin-left: 300px;
         &::after {
-          left: -271px;
-          width: 251px;
+          width: 285px;
+          left: -295px;
+          visibility: visible;
         }
       }
-    }
-    @media (max-width: 565px) {
-      .hover-one {
-        margin-right: 150px;
-        text-align: start;
-        &::after {
-          right: -150px;
-          width: 150px;
+      @media (max-width: 875px) {
+        .hover-one {
+          &::after {
+            right: -190px;
+            width: 205px;
+          }
+        }
+        .hover-two {
+          &::after {
+            left: -271px;
+            width: 251px;
+          }
         }
       }
-      .hover-two {
-        margin-left: 150px;
-        text-align: end;
-        &::after {
-          left: -150px;
-          width: 170px;
+      @media (max-width: 565px) {
+        .hover-one {
+          margin-right: 150px;
+          text-align: start;
+          &::after {
+            right: -150px;
+            width: 150px;
+          }
+        }
+        .hover-two {
+          margin-left: 150px;
+          text-align: end;
+          &::after {
+            left: -150px;
+            width: 170px;
+          }
         }
       }
     }
