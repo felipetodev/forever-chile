@@ -16,7 +16,7 @@ export const Video = styled.video`
   min-height: 100%;
   max-height: 100%;
   object-fit: cover;
-`
+`;
 
 export const BannerContainer = styled.div`
   position: relative;
@@ -31,7 +31,7 @@ export const BannerContainer = styled.div`
     span {
       width: 100% !important;
       height: 650px !important;
-    } 
+    }
   }
   @media (max-width: 400px) {
     span {
@@ -107,7 +107,7 @@ export const RightImageMobile = styled.div`
   z-index: 5;
   background: transparent;
   display: none;
-  
+
   @media (max-width: 740px) {
     display: block;
   }
@@ -157,7 +157,7 @@ export const Spacing = styled.div`
   position: relative;
   z-index: 4;
   padding-bottom: 180px;
-  @media(max-width: 740px) {
+  @media (max-width: 740px) {
     display: none;
   }
-`
+`;

@@ -27,8 +27,8 @@ const ListOfWorks = ({ workSection, setIsOpen, setModalWork }) => {
       <Grid>
         {workSection?.length > 0 ? (
           workSection?.map((work) => (
-            <VideoContainer key={work?.sys?.id} onClick={() => handleWorkClick(work)}>
-              <img src={work?.workImage?.url} alt={work?.title} />
+            <VideoContainer key={work?.sys?.id}>
+              <img onClick={() => handleWorkClick(work)} src={work?.workImage?.url} alt={work?.title} />
               <div>
                 <h3>{work?.title}</h3>
                 <span>{work?.client}</span>
