@@ -24,6 +24,10 @@ export const GET_WORK_ENTRY = `
               }
               url
             }
+            pdf {
+              title
+              url
+            }
           }
         }
       }

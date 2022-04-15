@@ -1,4 +1,9 @@
-import { Grid, NewContainer, VideoContainer } from "./styles";
+import {
+  Grid,
+  NewContainer,
+  VideoPdfContainer,
+  VideoContainer,
+} from "./styles";
 import styled from "styled-components";
 
 const Spacing = styled.div`
@@ -17,24 +22,36 @@ const Spacing = styled.div`
 
 const ListOfWorks = ({ workSection, setIsOpen, setModalWork }) => {
   const handleWorkClick = (work) => {
-    setIsOpen(true)
-    setModalWork(work)
-  }
-
+    setIsOpen(true);
+    setModalWork(work);
+  };
   return (
     <NewContainer>
       <Spacing className="works-spacing" />
       <Grid>
         {workSection?.length > 0 ? (
-          workSection?.map((work) => (
-            <VideoContainer key={work?.sys?.id}>
-              <img onClick={() => handleWorkClick(work)} src={work?.workImage?.url} alt={work?.title} />
-              <div>
-                <h3>{work?.title}</h3>
-                <span>{work?.client}</span>
-              </div>
-            </VideoContainer>
-          ))
+          workSection?.map((work) => {
+            const isPDF = work?.pdf;
+            return (
+              <VideoContainer
+                as={isPDF ? "a" : undefined}
+                href={isPDF ? work?.pdf?.url : null}
+                key={work?.sys?.id}
+                target={isPDF ? "_blank" : null}
+                onClick={isPDF ? () => {} : () => handleWorkClick(work)}
+              >
+                <img
+                  height={230}
+                  src={work?.workImage?.url}
+                  alt={work?.title}
+                />
+                <div>
+                  <h3>{work?.title}</h3>
+                  <span>{work?.client}</span>
+                </div>
+              </VideoContainer>
+            );
+          })
         ) : (
           <span>{`Were sorry, there is no content in "${workSection}" section`}</span>
         )}

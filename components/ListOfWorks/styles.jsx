@@ -107,9 +107,12 @@ export const Grid = styled.div`
 `;
 
 export const VideoContainer = styled.div`
+  cursor: pointer;
+  min-height: 230px;
+  margin-bottom: 40px;
   div {
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -119,12 +122,12 @@ export const VideoContainer = styled.div`
     }
   }
   img {
-    cursor: pointer;
     width: 100%;
     height: 100%;
     max-height: 230px;
     object-fit: cover;
     display: block;
+    overflow: hidden;
     &:hover {
       filter: hue-rotate(220deg);
     }
