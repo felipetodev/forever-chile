@@ -27,6 +27,12 @@ export const BannerContainer = styled.div`
     object-fit: cover;
     background: none !important;
   }
+  @media (max-width: 740px) {
+    span {
+      width: 100% !important;
+      height: 650px !important;
+    } 
+  }
   @media (max-width: 400px) {
     span {
       width: 100% !important;
@@ -44,12 +50,15 @@ export const OverlapText = styled.div`
   span {
     left: 40% !important;
     bottom: -350px !important;
+    img {
+      min-height: 650px !important;
+    }
   }
   img {
     object-fit: contain;
   }
   @media (max-width: 834px) {
-    width: 45%;
+    width: 48%;
     span {
       left: 25% !important;
       bottom: -380px !important;
@@ -65,7 +74,7 @@ export const OverlapText = styled.div`
       min-width: 200.6px;
       min-height: 335.52px;
 
-      top: 100% !important;
+      top: 85.5% !important;
       left: 50% !important;
       transform: translate(-50%, -50%) !important;
     }
@@ -124,11 +133,14 @@ export const TextContainer = styled.div`
     margin-left: 10%;
   }
   @media (max-width: 740px) {
+    max-width: 100%;
+    margin-right: 4%;
     margin-top: 200px;
-    margin-left: 0;
+    margin-left: 0 !important;
   }
   @media (max-width: 400px) {
-    margin-top: 250px;
+    max-width: 100%;
+    margin-top: 170px;
   }
 `;
 
