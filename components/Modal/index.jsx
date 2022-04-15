@@ -18,6 +18,8 @@ const Modal = ({ modalIsOpen, setIsOpen, infoModal }) => {
   return (
     <ModalStyled
       isOpen={modalIsOpen}
+      onRequestClose={() => setIsOpen(false)}
+      closeTimeoutMS={200}
       shouldCloseOnEsc
     >
       <Container>

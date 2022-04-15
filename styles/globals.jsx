@@ -52,7 +52,17 @@ export const GlobalStyles = createGlobalStyle`
 
   .ReactModal__Overlay {
     z-index: 1000;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
     background-color: transparent !important;
+  }
+
+  .ReactModal__Overlay--after-open{
+      opacity: 1;
+  }
+
+  .ReactModal__Overlay--before-close{
+      opacity: 0;
   }
 
   .container {
