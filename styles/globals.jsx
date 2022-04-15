@@ -50,6 +50,11 @@ export const GlobalStyles = createGlobalStyle`
     background: transparent;
   }
 
+  .ReactModal__Body--open {
+    overflow: visible;
+    position: relative;
+  }
+
   .ReactModal__Overlay {
     z-index: 1000;
     opacity: 0;
