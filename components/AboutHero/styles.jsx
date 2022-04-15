@@ -74,7 +74,7 @@ export const OverlapText = styled.div`
       min-width: 200.6px;
       min-height: 335.52px;
 
-      top: 85.5% !important;
+      top: 81% !important;
       left: 50% !important;
       transform: translate(-50%, -50%) !important;
     }

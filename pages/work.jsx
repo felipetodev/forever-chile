@@ -52,7 +52,7 @@ const WorkPage = ({ page = {} }) => {
   }, []);
 
   const getArrayOfCategories = workVideosCollection?.items?.map(
-    (item) => item.category
+    (item) => item?.category
   );
   const categories = [...new Set(getArrayOfCategories)];
   return (
