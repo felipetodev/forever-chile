@@ -107,7 +107,6 @@ export const Grid = styled.div`
 `;
 
 export const VideoContainer = styled.div`
-  cursor: pointer;
   div {
     margin-top: 10px;
     margin-bottom: 50px;
@@ -120,6 +119,7 @@ export const VideoContainer = styled.div`
     }
   }
   img {
+    cursor: pointer;
     width: 100%;
     height: 100%;
     max-height: 230px;
