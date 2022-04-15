@@ -20,6 +20,17 @@ const Modal = ({ modalIsOpen, setIsOpen, infoModal }) => {
       isOpen={modalIsOpen}
       onRequestClose={() => setIsOpen(false)}
       closeTimeoutMS={200}
+      onAfterOpen={() => {
+        document.body.style.top = `-${window.scrollY}px`;
+        document.body.style.position = "fixed";
+      }}
+      onAfterClose={() => {
+        const scrollY = document.body.style.top;
+        document.body.style.position = "";
+        document.body.style.top = "";
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }}
+      // shouldFocusAfterRender={false}
       shouldCloseOnEsc
     >
       <Container>
