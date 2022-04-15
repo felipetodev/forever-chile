@@ -15,10 +15,9 @@ import {
 const trashImage = () => (
   <Image
     quality={100}
+    loading="lazy"
     className="timeisnow"
     layout="fill"
-    height={270}
-    width={270}
     src="/trashis.svg"
     alt="Trash is a design error"
   />
@@ -28,14 +27,21 @@ export const TrashDesignMobile = () => (
   <RightImageMobile>{trashImage()}</RightImageMobile>
 );
 
-const AboutHero = ({ videoBanner, description }) => {
+const AboutHero = ({ videoBanner = {}, description }) => {
   return (
     <div>
       <Layout>
         <h2>Why we do it</h2>
       </Layout>
       <BannerContainer>
-        <Video id={videoBanner?.title} preload="true" autoPlay playsInline muted loop>
+        <Video
+          id={videoBanner?.title}
+          preload="true"
+          autoPlay
+          playsInline
+          muted
+          loop
+        >
           <source
             src={videoBanner?.url}
             alt={videoBanner?.title}
@@ -44,10 +50,9 @@ const AboutHero = ({ videoBanner, description }) => {
         </Video>
         <OverlapText>
           <Image
+            loading="lazy"
             className="timeisnow"
             layout="fill"
-            height={610}
-            width={884}
             src="/thetimeisnow.svg"
             alt="Why we do it"
           />
@@ -58,9 +63,7 @@ const AboutHero = ({ videoBanner, description }) => {
       </BannerContainer>
       <LayoutStyled>
         <TextContainer>
-          <p>
-            {description}
-          </p>
+          <p>{description}</p>
         </TextContainer>
         <div style={{ background: "none" }} className="div3" />
       </LayoutStyled>
