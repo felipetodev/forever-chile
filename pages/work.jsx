@@ -76,7 +76,8 @@ const WorkPage = ({ page = {} }) => {
         onWorkSelection={setWorkSection}
       />
       <ListOfWorks
-        workSection={workVideosCollection?.items}
+        workSection={workSection}
+        workVideos={workVideosCollection?.items}
         setIsOpen={setIsOpen}
         setModalWork={setModalWork}
       />

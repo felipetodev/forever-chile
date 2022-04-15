@@ -1,10 +1,6 @@
-import {
-  Grid,
-  NewContainer,
-  VideoPdfContainer,
-  VideoContainer,
-} from "./styles";
+import { Grid, NewContainer, VideoContainer, PdfContainer } from "./styles";
 import styled from "styled-components";
+import { AnimatePresence } from "framer-motion";
 
 const Spacing = styled.div`
   margin-left: 5%;
@@ -20,41 +16,63 @@ const Spacing = styled.div`
   }
 `;
 
-const ListOfWorks = ({ workSection, setIsOpen, setModalWork }) => {
+const variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+const ListOfWorks = ({ workVideos, workSection, setIsOpen, setModalWork }) => {
   const handleWorkClick = (work) => {
     setIsOpen(true);
     setModalWork(work);
   };
+
+  const videos =
+    workSection === "all"
+      ? workVideos
+      : workVideos.filter((it) => it?.category?.toLowerCase() === workSection);
   return (
     <NewContainer>
       <Spacing className="works-spacing" />
-      <Grid>
-        {workSection?.length > 0 ? (
-          workSection?.map((work) => {
-            const isPDF = work?.pdf;
-            return (
-              <VideoContainer
-                as={isPDF ? "a" : undefined}
-                href={isPDF ? work?.pdf?.url : null}
-                key={work?.sys?.id}
-                target={isPDF ? "_blank" : null}
-                onClick={isPDF ? () => {} : () => handleWorkClick(work)}
-              >
-                <img
-                  height={230}
-                  src={work?.workImage?.url}
-                  alt={work?.title}
-                />
-                <div>
-                  <h3>{work?.title}</h3>
-                  <span>{work?.client}</span>
-                </div>
-              </VideoContainer>
-            );
-          })
-        ) : (
-          <span>{`Were sorry, there is no content in "${workSection}" section`}</span>
-        )}
+      <Grid layout>
+        <AnimatePresence>
+          {videos?.length > 0 ? (
+            videos?.map((work) => {
+              const isPDF = work?.pdf;
+              const Component = isPDF ? PdfContainer : VideoContainer;
+              return (
+                <Component
+                  key={work?.sys?.id}
+                  initial="hidden"
+                  animate="visible"
+                  variants={variants}
+                  target={isPDF ? "_blank" : null}
+                  href={isPDF ? work?.pdf?.url : null}
+                  onClick={isPDF ? () => {} : () => handleWorkClick(work)}
+                >
+                  <img
+                    height={230}
+                    src={work?.workImage?.url}
+                    alt={work?.title}
+                  />
+                  <div>
+                    <h3>{work?.title}</h3>
+                    <span>{work?.client}</span>
+                  </div>
+                </Component>
+              );
+            })
+          ) : (
+            <span>{`Were sorry, there is no content published for this section`}</span>
+          )}
+        </AnimatePresence>
       </Grid>
       <div className="_3" />
     </NewContainer>

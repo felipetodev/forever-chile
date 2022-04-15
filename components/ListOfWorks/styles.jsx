@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 
 export const Container = styled.div`
   position: relative;
@@ -106,8 +107,7 @@ export const Grid = styled.div`
   }
 `;
 
-export const VideoContainer = styled.div`
-  cursor: pointer;
+const ContainerStyles = css`
   min-height: 230px;
   margin-bottom: 40px;
   div {
@@ -143,4 +143,13 @@ export const VideoContainer = styled.div`
   @media (max-width: 650px) {
     width: 100%;
   }
+`;
+
+export const VideoContainer = styled(motion.div)`
+  cursor: pointer;
+  ${ContainerStyles};
+`;
+
+export const PdfContainer = styled(motion.a)`
+  ${ContainerStyles};
 `;
