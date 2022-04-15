@@ -6,7 +6,7 @@ import HoverBanner from "../components/HoverBanner";
 import Footer, { FooterMobile } from "../components/Footer";
 import TeamCard from "../components/TeamCard";
 import Layout from "../components/Layout";
-import { FoundersContainer } from "../styles";
+import { FoundersContainer } from "../styles/globals";
 import AboutDescription from "../components/AboutDescription";
 import Dots from "../components/Dots";
 import { GET_ABOUT_ENTRY } from "../queries/getAboutEntry";
@@ -45,7 +45,10 @@ const About = ({ page }) => {
       <Dots dotTop style={{ marginTop: "200px" }} />
       <WhatWeDo />
       <Dots dotBottom style={{ marginBottom: "100px" }} />
-      <AboutHero videoBanner={videoBanner} description={videoBannerDescription} />
+      <AboutHero
+        videoBanner={videoBanner}
+        description={videoBannerDescription}
+      />
       <Dots lastDot />
       <TrashDesignMobile />
       <Collective title={blueBannerTitle} />
