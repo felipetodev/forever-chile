@@ -62,6 +62,7 @@ export const Button = styled.button`
   font-size: 30px;
   padding: 10px 80px;
   margin-top: 50px;
+  border: 1px solid #E6E6E6;
   transition: background 200ms ease;
   &:hover,
   &:focus {

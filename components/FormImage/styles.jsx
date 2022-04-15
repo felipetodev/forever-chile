@@ -84,14 +84,17 @@ export const Wrap = styled(motion.div)`
   }
   @media (max-width: 600px) {
     margin-left: 10%;
+    h1 {
+      font-size: 20px;
+    }
     &:hover {
       .triangle {
         top: 1%;
         left: 10%;
       }
       .square {
-        top: 170px;
-        left: 230px;
+        top: 150px;
+        left: 200px;
       }
       .circle {
         bottom: 140px;
@@ -124,7 +127,7 @@ export const Triangle = styled(motion.div)`
     left: 30px;
   }
   @media (max-width: 600px) {
-    left: 20px;
+    left: 18px;
   }
 `;
 
@@ -149,6 +152,7 @@ export const Square = styled(motion.div)`
   @media (max-width: 600px) {
     width: 230px;
     height: 230px;
+    left: 100px;
     top: 80px;
   }
 `;
