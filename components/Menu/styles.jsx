@@ -50,6 +50,7 @@ export const BurgerStyled = styled.div`
 
   @media (max-width: 830px) {
     width: 124px;
+    pointer-events: none;
     ${({ isAbout }) => (isAbout ? "height: 15vh;" : "")};
     ${({ isAbout }) => (isAbout ? "position: static;" : "")};
     &::before {
@@ -226,6 +227,7 @@ export const HamburgerMenu = styled(motion.div)`
 
   @media (max-width: 830px) {
     top: 55px;
+    pointer-events: all;
   }
   @media (max-width: 400px) {
     margin-left: 4.9555%;
@@ -255,5 +257,6 @@ export const NavContainer = styled.div`
   }
   @media (max-width: 830px) {
     width: 120px;
+    pointer-events: none;
   }
 `;
