@@ -41,7 +41,7 @@ const ListOfWorks = ({ workVideos, workSection, setIsOpen, setModalWork }) => {
   return (
     <NewContainer>
       <Spacing className="works-spacing" />
-      <Grid layout>
+      <Grid>
         <AnimatePresence>
           {videos?.length > 0 ? (
             videos?.map((work) => {
