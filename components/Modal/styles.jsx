@@ -47,9 +47,7 @@ export const ModalDescription = styled.div`
   align-items: baseline;
   margin-top: 30px;
   margin-bottom: 50px;
-  // height: 20vh;
   gap: 50px;
-  // overflow-y: scroll;
 
   @media (min-width: 2000px) {
     width: 100%;
@@ -64,12 +62,10 @@ export const ModalDescription = styled.div`
     margin-top: 30px;
     margin-bottom: 100px;
     flex-direction: column;
-    // height: auto;
     gap: 10px;
   }
   @media (max-width: 600px) {
-    // overflow-y: scroll;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 `;
 
@@ -111,7 +107,10 @@ export const ArtDirection = styled.div`
   }
 `;
 
-export const Description = styled.div``;
+export const Description = styled.div`
+  background: transparent;
+  height: 100%;
+`;
 
 export const CloseModal = styled.div`
   position: absolute;

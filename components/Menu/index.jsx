@@ -151,6 +151,11 @@ const MenuStyled = styled.div`
     text-align: right;
     font-size: 45px;
     width: 300px;
+    a {
+      width: 100%;
+      height: 100%;
+      padding: 4px;
+    }
     a:hover {
       color: #052cab;
     }
