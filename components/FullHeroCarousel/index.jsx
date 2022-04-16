@@ -1,12 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {
-  EffectFade,
-  Navigation,
-  Autoplay,
-  Pagination,
-} from "swiper";
+import { EffectFade, Navigation, Autoplay, Pagination } from "swiper";
 import {
   FullHeroStyled,
   Video,
@@ -16,8 +11,6 @@ import {
   IntroStyled,
 } from "./styles";
 import { SVGAudioMutedIcon, SVGAudioPlayIcon } from "./icons";
-
-SwiperCore.use([Autoplay]);
 
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -42,8 +35,10 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
   useEffect(() => {
     const actualSlider = getActiveSlide();
     if (videoRef.current) {
+      videoRef.current.muted = true;
       videoRef.current = actualSlider;
       videoRef.current.defaultMuted = true;
+      videoRef.current.muted = !videoMute;
     }
   }, [index]);
 
@@ -71,12 +66,12 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
         effect="fade"
         style={{ width: "100%" }}
         pagination={{ clickable: true }}
-        modules={[EffectFade, Navigation, Pagination]}
+        modules={[EffectFade, Navigation, Pagination, Autoplay]}
         speed={500}
         loop={true}
         autoplay={{
           delay: 6000,
-          disableOnInteraction: false,
+          // disableOnInteraction: false,
         }}
       >
         {items &&
