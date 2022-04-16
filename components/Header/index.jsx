@@ -21,7 +21,8 @@ const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
                 src="/forever-logo.svg"
                 width="135"
                 height="77px"
-                alt="forever collective"
+                alt="Forever Collective"
+                title="Logo Forever"
               />
             </a>
           </Link>

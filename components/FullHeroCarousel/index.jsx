@@ -39,8 +39,9 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
       videoRef.current = actualSlider;
       videoRef.current.defaultMuted = true;
       videoRef.current.muted = !videoMute;
+      videoRef.current.volume = 0.5;
     }
-  }, [index]);
+  }, [index, videoMute]);
 
   useEffect(() => {
     getActiveSlide();
@@ -112,6 +113,7 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
           <button
             onClick={handleAudio}
             className={videoMute ? "is-enabled" : "muted"}
+            title={videoMute ? "Pause audio" : "Play audio"}
           >
             {!videoMute ? (
               <>
