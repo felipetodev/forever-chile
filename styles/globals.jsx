@@ -100,9 +100,9 @@ export const GlobalStyles = createGlobalStyle`
   .swiper-pagination {
     background: none;
     text-align: start !important;
-    margin-left: 40px;
-    color: red;
+    margin-left: 80px;
     z-index: 2;
+    bottom: 2vw !important;
   }
 
   .swiper-pagination-bullet {
@@ -146,6 +146,7 @@ export const GlobalStyles = createGlobalStyle`
     }
     .swiper-pagination {
       margin-left: 30px;
+      margin-bottom: 1vh;
     }
   }
 `;
