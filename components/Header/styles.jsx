@@ -19,7 +19,7 @@ export const HeaderStyled = styled.div`
 
   // Mobile view
   @media (max-width: 400px) {
-    min-height: 160px;
+    min-height: 130px;
   }
 `;
 
