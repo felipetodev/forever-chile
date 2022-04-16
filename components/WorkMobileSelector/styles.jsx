@@ -11,7 +11,7 @@ export const MobileLayout = styled(NewContainer)`
 `
 
 export const WorkSelect = styled.div`
-  padding: 10px 0px;
+  padding: 20px 0px;
   width: 100%;
   position: relative;
   user-select: none;
@@ -34,6 +34,7 @@ export const WorkSelect = styled.div`
     cursor: pointer;
     pointer-events: all;
     margin: 10px 0px;
+    padding: 10px 0px;
     position: relative;
     &:not(:last-child)::after {
       content: "";

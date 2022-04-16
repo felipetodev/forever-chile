@@ -22,16 +22,6 @@ const Heading = styled.h1`
   }
 `;
 
-const menuList = [
-  "All",
-  "Films",
-  "Multimedia",
-  "Advertising",
-  "3D & Videogames",
-  "Editorial",
-  "Industrial (soon)",
-];
-
 const getURLParams = () => {
   let params = new URLSearchParams(document.location.search);
   let categorySearched = params.get("category");
@@ -71,7 +61,7 @@ const WorkPage = ({ page = {} }) => {
         setWorkSection={setWorkSection}
       />
       <WorkMobileSelector
-        menu={menuList}
+        categories={categories}
         workSection={workSection}
         onWorkSelection={setWorkSection}
       />
