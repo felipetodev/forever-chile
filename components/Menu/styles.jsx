@@ -10,6 +10,7 @@ export const BurgerStyled = styled.div`
   position: ${({ open, isAbout }) => (open || isAbout ? "fixed" : "absolute")};
   z-index: ${({ open }) => (open ? 7 : 4)};
   background-color: transparent;
+  pointer-events: none;
 
   &::before {
     content: "";
@@ -201,6 +202,7 @@ export const HamburgerMenu = styled(motion.div)`
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  pointer-events: all;
   transition: width 1s ease-in-out;
 
   .line-menu {
@@ -227,7 +229,6 @@ export const HamburgerMenu = styled(motion.div)`
 
   @media (max-width: 830px) {
     top: 55px;
-    pointer-events: all;
   }
   @media (max-width: 400px) {
     margin-left: 4.9555%;
@@ -243,6 +244,7 @@ export const NavContainer = styled.div`
   position: ${({ open, isAbout }) => (open || isAbout ? "fixed" : "absolute")};
   z-index: ${({ open }) => (open ? 7 : 999)}; // <----- maybe it will be change
   background-color: transparent;
+  pointer-events: none;
 
   @media (max-width: 1194px) {
     width: 180px;

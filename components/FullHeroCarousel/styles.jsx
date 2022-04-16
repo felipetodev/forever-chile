@@ -142,7 +142,7 @@ export const IntroStyled = styled.div`
 
 export const AudioButton = styled.div`
   position: relative;
-  z-index: 1;
+  z-index: 4;
   button {
     position: absolute;
     right: 2vw;
