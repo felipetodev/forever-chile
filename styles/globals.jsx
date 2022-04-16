@@ -2,6 +2,9 @@ import styled, { createGlobalStyle } from "styled-components";
 
 export const FoundersContainer = styled.div`
   margin-top: 170px;
+  @media(max-width: 400px) {
+    margin-top: 100px;
+  }
 `;
 
 export const GlobalStyles = createGlobalStyle`
@@ -59,11 +62,12 @@ export const GlobalStyles = createGlobalStyle`
     z-index: 1000;
     opacity: 0;
     transition: opacity 200ms ease-in-out;
-    background: transparent !important;
+    background: inherit !important;
   }
 
   .ReactModal__Overlay--after-open{
     opacity: 1;
+    overflow-y: scroll;
   }
 
   .ReactModal__Overlay--before-close{
@@ -80,7 +84,6 @@ export const GlobalStyles = createGlobalStyle`
       margin-left: 80px;
       width: auto;
       max-width: 800px;
-      /* border: 1px solid red !important; */
     }
   }
 
@@ -126,7 +129,6 @@ export const GlobalStyles = createGlobalStyle`
     margin-right: 35px;
   }
 
-  /* Tablet view */
   @media(max-width: 1070px) {
     .swiper-pagination {
       margin-left: 80px;
@@ -139,7 +141,6 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  /* Mobile view */
   @media(max-width: 400px) {
     .mobile-description {
       display: inline-block;
