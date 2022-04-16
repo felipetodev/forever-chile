@@ -7,6 +7,7 @@ import {
   MenuStyled,
   NavContainer,
 } from "./styles";
+import useOutsideClickHandler from "../../hooks/useOutsideClickHandler";
 
 const InstagramIcon = () => (
   <svg
@@ -27,33 +28,14 @@ const Menu = ({ isAbout, hasDot, isHome, isContact }) => {
   const menuRef = useRef(null);
   const [open, setOpen] = useState(false);
 
-  /* TODO: build custom hook */
-  useEffect(() => {
-    const handleMenuToggle = ({ target }) => {
-      if (menuRef.current && menuRef.current.contains(target)) {
-        onClickBurgerMenu && onClickBurgerMenu();
-      }
-    };
-    document.addEventListener("click", handleMenuToggle, true);
-    return () => {
-      document.removeEventListener("click", handleMenuToggle, true);
-    };
-  }, [open]);
-
-  useEffect(() => {
-    const handleClickOutside = ({ target }) => {
-      if (drawerRef.current && !drawerRef.current.contains(target)) {
-        onClickOutside && onClickOutside();
-      }
-    };
-    document.addEventListener("click", handleClickOutside, true);
-    return () => {
-      document.removeEventListener("click", handleClickOutside, true);
-    };
-  }, [open]);
-
   const onClickOutside = () => setOpen(false);
   const onClickBurgerMenu = () => setOpen(!open);
+  useOutsideClickHandler({
+    ref: drawerRef,
+    onClick: onClickOutside,
+    includeEl: false,
+  });
+  useOutsideClickHandler({ ref: menuRef, onClick: onClickBurgerMenu });
 
   return (
     <>
