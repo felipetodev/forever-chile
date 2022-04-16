@@ -1,7 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade, Navigation, Pagination } from "swiper";
+import SwiperCore, {
+  EffectFade,
+  Navigation,
+  Autoplay,
+  Pagination,
+} from "swiper";
 import {
   FullHeroStyled,
   Video,
@@ -11,6 +16,8 @@ import {
   IntroStyled,
 } from "./styles";
 import { SVGAudioMutedIcon, SVGAudioPlayIcon } from "./icons";
+
+SwiperCore.use([Autoplay]);
 
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -67,6 +74,10 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
         modules={[EffectFade, Navigation, Pagination]}
         speed={500}
         loop={true}
+        autoplay={{
+          delay: 6000,
+          disableOnInteraction: false,
+        }}
       >
         {items &&
           items.map((item) => (
