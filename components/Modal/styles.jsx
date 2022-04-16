@@ -16,8 +16,8 @@ export const ModalStyled = styled(ReactModal)`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: min(1200px, 90%);
-  height: 100vh;
+  width: min(1200px, 85%);
+  height: 100%;
   margin: 0 auto;
   background: none;
   overflow-y: scroll;
@@ -25,6 +25,9 @@ export const Container = styled.div`
     width: 100%;
   }
   @media (max-width: 1194px) {
+    width: min(1200px, 80%);
+  }
+  @media (max-width: 834px) {
     width: 100%;
   }
 `;
@@ -33,6 +36,9 @@ export const IframeContainer = styled.div`
   // border: 1px solid red;
   height: fit-content;
   width: 100%;
+  @media (max-width: 834px) {
+    margin-top: 10vh;
+  }
 `;
 
 export const ModalDescription = styled.div`
@@ -49,13 +55,14 @@ export const ModalDescription = styled.div`
     width: 100%;
     max-width: min(2000px, 100%);
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 80px;
   }
 
   @media (max-width: 1194px) {
     width: min(1200px, 90%);
     margin: 0 auto;
     margin-top: 30px;
+    margin-bottom: 100px;
     flex-direction: column;
     // height: auto;
     gap: 10px;
@@ -125,5 +132,9 @@ export const CloseModal = styled.div`
     svg {
       width: 24px;
     }
+  }
+
+  @media (max-width: 834px) {
+    top: 15px;
   }
 `;

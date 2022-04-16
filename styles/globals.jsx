@@ -59,21 +59,22 @@ export const GlobalStyles = createGlobalStyle`
     z-index: 1000;
     opacity: 0;
     transition: opacity 200ms ease-in-out;
-    background-color: transparent !important;
+    background: transparent !important;
   }
 
   .ReactModal__Overlay--after-open{
-      opacity: 1;
+    opacity: 1;
   }
 
   .ReactModal__Overlay--before-close{
-      opacity: 0;
+    opacity: 0;
   }
 
   .container {
     width: min(800px, 90%);
     margin: 0 auto;
   }
+
   @media (max-width: 1070px) {
     .container {
       margin-left: 80px;

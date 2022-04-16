@@ -1,5 +1,15 @@
+import styled from "styled-components";
+
+const SVGStyled = styled.svg`
+  @media (max-width: 834px) {
+    .close-text {
+      display: none;
+    }
+  }
+`;
+
 const CloseModalIcon = ({ height, width, ...props }) => (
-  <svg
+  <SVGStyled
     height={height || "116.207"}
     width={width || "27.577"}
     xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +51,7 @@ const CloseModalIcon = ({ height, width, ...props }) => (
         strokeWidth="2"
       />
     </g>
-  </svg>
+  </SVGStyled>
 );
 
 export default CloseModalIcon;
