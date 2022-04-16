@@ -139,6 +139,13 @@ export const IntroStyled = styled.div`
   flex-direction: column;
   min-width: 570px;
 
+  a {
+    width: fit-content;
+  }
+  a:hover {
+    opacity: 0.5;
+  }
+
   &::before {
     content: "";
     position: absolute;

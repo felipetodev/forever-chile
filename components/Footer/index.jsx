@@ -28,15 +28,15 @@ const Footer = ({ isWork }) => {
         </LogoStyled>
         <IntroStyled>
           <span>+569-9330-7139 +569-9793-7881</span>
-          <span>
+          <a href="https://goo.gl/maps/iWCU3zUYN4waeJKY7" target="_blank" rel="noreferrer">
             César Cascabel 4369 Apt. 1022, Las Condes, Santiago - 7550372,
             Chile.
-          </span>
+          </a>
           {/* Second address */}
           <span style={{ marginTop: "30px" }}>+1-646-652-6162</span>
-          <span>
+          <a href="https://goo.gl/maps/TeBATtpueDLLGUrz6" target="_blank" rel="noreferrer">
             1330 Avenue of the Americas Suite 23A, New York, NY-10019, USA.
-          </span>
+          </a>
         </IntroStyled>
         <div className="footer-logo">
           <Image
