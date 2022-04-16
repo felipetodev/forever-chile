@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MobileLayout, Options, WorkSelect } from "./styles";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const variants = {
   hidden: {
@@ -22,29 +22,31 @@ const WorkMobileSelector = ({ categories = [], workSection, onWorkSelection }) =
 
   return (
     <MobileLayout>
-      <WorkSelect>
-        <div onClick={() => setOpen(!openMenu)}>{workSection || "All"}</div>
-        {openMenu && (
-          <Options>
-            {[DEFAULT_OPTION, ...categories].map((item, idx) => (
-              <motion.span
-                layoutId={item}
-                custom={{ delay: (idx + 1) * 0.08 }}
-                initial="hidden"
-                animate="visible"
-                variants={variants}
-                key={item}
-                value={item}
-                onClick={() => {
-                  onWorkSelection(item?.toLowerCase())
-                  setOpen(false)
-                }}
-              >
-                {item}
-              </motion.span>
-            ))}
-          </Options>
-        )}
+      <WorkSelect onClick={() => setOpen(!openMenu)}>
+        <div>{workSection || "All"}</div>
+        <AnimatePresence>
+          {openMenu && (
+            <Options>
+              {[DEFAULT_OPTION, ...categories].map((item, idx) => (
+                <motion.span
+                  custom={{ delay: (idx + 1) * 0.08 }}
+                  initial="hidden"
+                  animate="visible"
+                  variants={variants}
+                  layoutId={item}
+                  key={item}
+                  value={item}
+                  onClick={() => {
+                    onWorkSelection(item?.toLowerCase())
+                    setOpen(false)
+                  }}
+                >
+                  {item}
+                </motion.span>
+              ))}
+            </Options>
+          )}
+        </AnimatePresence>
       </WorkSelect>
     </MobileLayout>
   );
