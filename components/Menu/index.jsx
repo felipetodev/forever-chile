@@ -1,7 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import {
+  BurgerStyled,
+  HamburgerMenu,
+  MenuStyled,
+  NavContainer,
+} from "./styles";
 
 const InstagramIcon = () => (
   <svg
@@ -17,270 +22,7 @@ const InstagramIcon = () => (
   </svg>
 );
 
-const BurgerStyled = styled.div`
-  width: 240px;
-  display: flex;
-  justify-content: center;
-  top: 0;
-  bottom: ${({ open }) => (open ? "" : "0")};
-  position: ${({ open, isAbout }) => (open || isAbout ? "fixed" : "absolute")};
-  z-index: ${({ open }) => (open ? 7 : 4)};
-  background-color: transparent;
-
-  &::before {
-    content: "";
-    position: absolute;
-    background: transparent url("/line.png") 0% 0% repeat padding-box;
-    left: -30px;
-    top: 0;
-    height: 100%;
-    width: 1px;
-    visibility: ${({ open }) => (open ? "hidden" : "visible")};
-  }
-
-  // Tablet Landscape view
-  @media (max-width: 1194px) {
-    width: 180px;
-  }
-
-  // Tablet view
-  @media (max-width: 1070px) {
-    width: 150px;
-    position: fixed;
-    right: 0;
-    &::before {
-      left: 0;
-    }
-  }
-
-  @media (min-width: 830px) {
-    ${({ isContact }) =>
-      isContact
-        ? `
-      &::before {
-        display: none;
-      }  
-    `
-        : ""}
-  }
-
-  @media (max-width: 830px) {
-    width: 124px;
-    ${({ isAbout }) => (isAbout ? "height: 15vh;" : "")};
-    ${({ isAbout }) => (isAbout ? "position: static;" : "")};
-    &::before {
-      ${({ isAbout }) => (isAbout ? "height: 15vh;" : "")};
-    }
-    &::after {
-      ${({ isAbout, open }) =>
-        isAbout
-          ? `
-            content: '';
-            position: absolute;
-            left: 11px;
-            bottom: 0;
-            height: 8px;
-            width: 8px;
-            border-radius: 9999px;
-            border: 1px solid #707070;
-            visibility: ${open ? "hidden" : "visible"};
-          `
-          : ""};
-    }
-  }
-
-  // Mobile view
-  @media (max-width: 400px) {
-    width: 115px;
-  }
-
-  /* &.menu-dot {
-    &::after {
-      content: "";
-      position: absolute;
-      top: 150px;
-      left: -17px;
-      height: 8px;
-      width: 8px;
-      border-radius: 9999px;
-      z-index: 4;
-      border: 1px solid #707070;
-      visibility: ${({ open }) => (open ? "hidden" : "visible")};
-    }
-    @media (max-width: 1070px) {
-      &::after {
-        left: 13px;
-      }
-    }
-    @media (max-width: 1070px) {
-      &::after {
-        top: 119px;
-      }
-    }
-    @media (max-width: 400px) {
-      &::after {
-        left: -20px;
-      }
-    }
-  } */
-`;
-
-const MenuStyled = styled.div`
-  position: fixed;
-  background-color: #1a1a1a;
-  transition: transform 300ms ease;
-  transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(100%)")};
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 621px; // <---------------
-  height: 100%;
-  z-index: 6;
-
-  ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    list-style: none;
-  }
-
-  li {
-    background: none;
-    text-align: right;
-    font-size: 45px;
-    width: 300px;
-    a {
-      width: 100%;
-      height: 100%;
-      padding: 4px;
-    }
-    a:hover {
-      color: #052cab;
-    }
-    &:not(:last-child) {
-      margin-bottom: 40px;
-    }
-
-    &:last-child {
-      margin-top: 40px;
-    }
-  }
-
-  li:last-child {
-    svg {
-      &:hover {
-        fill: #052cab;
-      }
-      outline: none;
-    }
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    background: transparent url("/line.png") 0% 0% repeat padding-box;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 1px;
-  }
-
-  // Tablet view
-  @media (max-width: 1070px) {
-    width: 400px;
-    li {
-      text-align: center;
-      font-size: 35px;
-      margin-right: 30px;
-    }
-  }
-
-  // Mobile view
-  @media (max-width: 400px) {
-    width: 100%;
-    &::before {
-      display: none;
-    }
-  }
-`;
-
-const HamburgerMenu = styled(motion.div)`
-  position: fixed;
-  background: none;
-  top: 70px;
-  width: 40px;
-  height: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: width 1s ease-in-out;
-
-  .wrapper-menu .open {
-    transform: rotate(-45deg);
-    color: red;
-    background-color: red;
-  }
-
-  .line-menu {
-    transition: all 300ms ease;
-    align-self: flex-end !important;
-    background-color: #fff;
-    border-radius: 5px;
-    width: 100%;
-    height: 2px;
-  }
-
-  &.open {
-    .start {
-      align-self: flex-end !important;
-      width: 150px !important;
-    }
-  }
-
-  &.closed {
-    .start {
-      width: 40px;
-    }
-  }
-
-  @media (max-width: 830px) {
-    top: 55px;
-  }
-  @media (max-width: 400px) {
-    margin-left: 4.9555%;
-  }
-`;
-
-const NavContainer = styled.div`
-  width: 240px;
-  display: flex;
-  justify-content: center;
-  top: 0;
-  bottom: ${({ open }) => (open ? "" : "0")};
-  position: ${({ open, isAbout }) => (open || isAbout ? "fixed" : "absolute")};
-  z-index: ${({ open }) => (open ? 7 : 6)};
-  background-color: transparent;
-
-  @media (max-width: 1194px) {
-    width: 180px;
-  }
-
-  // Tablet view
-  @media (max-width: 1070px) {
-    width: 150px;
-    position: fixed;
-    right: 0;
-    top: -10px;
-  }
-  @media (max-width: 830px) {
-    width: 120px;
-  }
-`;
-
-const Menu = ({ isAbout, hasDot, isContact }) => {
+const Menu = ({ isAbout, hasDot, isHome, isContact }) => {
   const drawerRef = useRef(null);
   const menuRef = useRef(null);
   const [open, setOpen] = useState(false);
@@ -292,11 +34,11 @@ const Menu = ({ isAbout, hasDot, isContact }) => {
         onClickBurgerMenu && onClickBurgerMenu();
       }
     };
-    document.addEventListener('click', handleMenuToggle, true);
+    document.addEventListener("click", handleMenuToggle, true);
     return () => {
-      document.removeEventListener('click', handleMenuToggle, true);
+      document.removeEventListener("click", handleMenuToggle, true);
     };
-  }, [open])
+  }, [open]);
 
   useEffect(() => {
     const handleClickOutside = ({ target }) => {
@@ -304,14 +46,14 @@ const Menu = ({ isAbout, hasDot, isContact }) => {
         onClickOutside && onClickOutside();
       }
     };
-    document.addEventListener('click', handleClickOutside, true);
+    document.addEventListener("click", handleClickOutside, true);
     return () => {
-      document.removeEventListener('click', handleClickOutside, true);
+      document.removeEventListener("click", handleClickOutside, true);
     };
-  }, [open])
+  }, [open]);
 
-  const onClickOutside = () => setOpen(false)
-  const onClickBurgerMenu = () => setOpen(!open)
+  const onClickOutside = () => setOpen(false);
+  const onClickBurgerMenu = () => setOpen(!open);
 
   return (
     <>
@@ -319,13 +61,11 @@ const Menu = ({ isAbout, hasDot, isContact }) => {
         className={hasDot ? "menu-dot" : null}
         open={open}
         isAbout={isAbout}
+        isHome={isHome}
         isContact={isContact}
       />
-      <NavContainer open={open} isAbout={isAbout}>
-        <HamburgerMenu
-          ref={menuRef}
-          className={open ? "open" : "closed"}
-        >
+      <NavContainer open={open} isAbout={isAbout} isHome={isHome}>
+        <HamburgerMenu ref={menuRef} className={open ? "open" : "closed"}>
           <motion.div className="line-menu start" />
           <div className="line-menu end"></div>
         </HamburgerMenu>

@@ -16,13 +16,13 @@ export default function Home({ page = {} }) {
         }
       />
       <Dots />
-      <FullHeroCarousel videosCollection={homeVideosCollection} />
       <div
         className="mobile-description"
         style={{ position: "relative", zIndex: 4 }}
       >
         {description}
       </div>
+      <FullHeroCarousel videosCollection={homeVideosCollection} />
       {/* DIVISOR LINE */}
       <div
         style={{
