@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MobileLayout, Options, WorkSelect } from "./styles";
 import { AnimatePresence, motion } from "framer-motion";
+import { SVGDropdownIcon } from "./icons";
 
 const variants = {
   hidden: {
@@ -15,27 +16,11 @@ const variants = {
   }),
 };
 
-const SVGDropdownIcon = ({ openMenu }) => {
-  const transform = openMenu ? { transform: "rotate(180deg)" } : {};
-  return (
-    <svg
-      style={{ position: "relative", zIndex: 5, ...transform }}
-      height={20}
-      width={20}
-      fill="#e6e6e6"
-      focusable="false"
-      viewBox="0 0 24 24"
-    >
-      <path d="m7 10 5 5 5-5z"></path>
-    </svg>
-  );
-};
-
 const DEFAULT_OPTION = "All";
 
 const WorkMobileSelector = ({
   categories = [],
-  workSection,
+  workSection = DEFAULT_OPTION,
   onWorkSelection,
 }) => {
   const [openMenu, setOpen] = useState(false);
@@ -44,7 +29,7 @@ const WorkMobileSelector = ({
     <MobileLayout>
       <WorkSelect onClick={() => setOpen(!openMenu)}>
         <div>
-          {workSection || "All"} <SVGDropdownIcon openMenu={openMenu} />
+          {workSection} <SVGDropdownIcon openMenu={openMenu} />
         </div>
         <AnimatePresence>
           {openMenu && (
