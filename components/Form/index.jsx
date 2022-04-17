@@ -40,7 +40,7 @@ const Form = () => {
           autoComplete="off"
           onChange={handleInput}
           type="text"
-          placeholder="Patricio Aguilar"
+          placeholder="Name"
           name="name"
           required
         />

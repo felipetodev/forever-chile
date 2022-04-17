@@ -87,15 +87,27 @@ const Container = styled.div`
       display: none;
     }
   }
+  &.home-dot {
+    @media (max-width: 400px) {
+      z-index: 4;
+      ._2 {
+        &::after {
+          right: 90px;
+        }
+      }
+    }
+  }
 `;
 
-const Dots = ({ dotTop, dotBottom, lastDot, ...props }) => {
+const Dots = ({ isHome, dotTop, dotBottom, lastDot, ...props }) => {
   const isDot = dotTop
     ? "about-dot-top"
     : dotBottom
     ? "about-dot-bottom"
     : lastDot
     ? "last-dot"
+    : isHome
+    ? "home-dot"
     : null;
   return (
     <Container className={isDot} {...props}>

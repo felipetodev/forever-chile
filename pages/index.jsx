@@ -15,7 +15,7 @@ export default function Home({ page = {} }) {
           "We are a team of professionals from different artistic areas that unite to deliver and achieve the best combination of results for each spectator."
         }
       />
-      <Dots />
+      <Dots isHome />
       <div
         className="mobile-description"
         style={{ position: "relative", zIndex: 4 }}
