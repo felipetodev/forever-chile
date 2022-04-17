@@ -18,13 +18,6 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
   }
 
-  .ReactModal__Body--open {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-  }
-
   a {
     color: inherit;
     text-decoration: none;
@@ -53,9 +46,15 @@ export const GlobalStyles = createGlobalStyle`
     background: transparent;
   }
 
+  .ReactModal__Content {
+    background: none;
+  }
+
   .ReactModal__Body--open {
     overflow: visible;
     position: relative;
+    width: 100%;
+    height: 100%;
   }
 
   .ReactModal__Overlay {
@@ -68,6 +67,11 @@ export const GlobalStyles = createGlobalStyle`
   .ReactModal__Overlay--after-open{
     opacity: 1;
     overflow-y: scroll;
+    backdrop-filter: saturate(50%) blur(20px) !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    @media (max-width: 834px) {
+      background: inherit !important;
+    }
   }
 
   .ReactModal__Overlay--before-close{

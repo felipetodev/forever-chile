@@ -19,8 +19,9 @@ export const Container = styled.div`
   width: min(1200px, 85%);
   // height: 100%;
   margin: 0 auto;
-  background: none;
   overflow-y: scroll;
+  background: none;
+
   @media (min-width: 2000px) {
     width: 100%;
   }
@@ -47,6 +48,7 @@ export const ModalDescription = styled.div`
   align-items: baseline;
   margin-top: 30px;
   margin-bottom: 50px;
+  background: none;
   gap: 50px;
 
   @media (min-width: 2000px) {
@@ -77,6 +79,7 @@ export const Left = styled.div`
   font-size: 14px;
   padding-bottom: 10px;
   border-bottom: 1px solid #525252;
+  background: none;
 
   @media (max-width: 1194px) {
     border-bottom: none;
@@ -87,7 +90,12 @@ export const Left = styled.div`
 `;
 
 export const Title = styled.div`
+  background: none;
+  h3 {
+    background: none;
+  }
   span {
+    background: none;
     opacity: 0.5;
   }
   @media (max-width: 1194px) {
@@ -100,6 +108,7 @@ export const Title = styled.div`
 
 export const ArtDirection = styled.div`
   opacity: 0.5;
+  background: none;
   @media (max-width: 1194px) {
     padding-top: 10px;
     border-top: 1px solid #525252;
@@ -120,10 +129,9 @@ export const CloseModal = styled.div`
   background-color: transparent;
   svg {
     background: transparent;
-    transition: transform .2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
   }
   svg:hover {
-    fill: red;
     transform: scale(1.04);
   }
   @media (max-width: 1194px) {

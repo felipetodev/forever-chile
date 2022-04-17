@@ -242,7 +242,7 @@ export const NavContainer = styled.div`
   top: 0;
   bottom: ${({ open }) => (open ? "" : "0")};
   position: ${({ open, isAbout }) => (open || isAbout ? "fixed" : "absolute")};
-  z-index: ${({ open }) => (open ? 7 : 999)}; // <----- maybe it will be change
+  z-index: ${({ open }) => (open ? 7 : 6)};
   background-color: transparent;
   pointer-events: none;
 
