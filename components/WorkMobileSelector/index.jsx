@@ -15,15 +15,37 @@ const variants = {
   }),
 };
 
+const SVGDropdownIcon = ({ openMenu }) => {
+  const transform = openMenu ? { transform: "rotate(180deg)" } : {};
+  return (
+    <svg
+      style={{ position: "relative", zIndex: 5, ...transform }}
+      height={20}
+      width={20}
+      fill="#e6e6e6"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path d="m7 10 5 5 5-5z"></path>
+    </svg>
+  );
+};
+
 const DEFAULT_OPTION = "All";
 
-const WorkMobileSelector = ({ categories = [], workSection, onWorkSelection }) => {
+const WorkMobileSelector = ({
+  categories = [],
+  workSection,
+  onWorkSelection,
+}) => {
   const [openMenu, setOpen] = useState(false);
 
   return (
     <MobileLayout>
       <WorkSelect onClick={() => setOpen(!openMenu)}>
-        <div>{workSection || "All"}</div>
+        <div>
+          {workSection || "All"} <SVGDropdownIcon openMenu={openMenu} />
+        </div>
         <AnimatePresence>
           {openMenu && (
             <Options>
@@ -37,8 +59,8 @@ const WorkMobileSelector = ({ categories = [], workSection, onWorkSelection }) =
                   key={item}
                   value={item}
                   onClick={() => {
-                    onWorkSelection(item?.toLowerCase())
-                    setOpen(false)
+                    onWorkSelection(item?.toLowerCase());
+                    setOpen(false);
                   }}
                 >
                   {item}

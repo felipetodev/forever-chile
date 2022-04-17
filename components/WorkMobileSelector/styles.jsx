@@ -26,9 +26,11 @@ export const WorkSelect = styled.div`
   }
 
   div {
+    display: flex;
+    justify-content: space-between;
     text-transform: capitalize;
-    cursor: pointer;
     outline: 1px solid #1A1A1A;
+    cursor: pointer;
   }
   span {
     cursor: pointer;

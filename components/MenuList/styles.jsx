@@ -11,6 +11,7 @@ export const Navigation = styled.ul`
     list-style: none;
     position: relative;
     margin-right: 100px;
+    text-align: center;
     &::after {
       transition: background 300ms ease-in-out;
       content: "";
