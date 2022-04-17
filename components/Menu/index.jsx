@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   BurgerStyled,
+  HamburgerContainer,
   HamburgerMenu,
   MenuStyled,
   NavContainer,
@@ -47,10 +48,12 @@ const Menu = ({ isAbout, hasDot, isHome, isContact }) => {
         isContact={isContact}
       />
       <NavContainer open={open} isAbout={isAbout} isHome={isHome}>
-        <HamburgerMenu ref={menuRef} className={open ? "open" : "closed"}>
-          <motion.div className="line-menu start" />
-          <div className="line-menu end"></div>
-        </HamburgerMenu>
+        <HamburgerContainer ref={menuRef}>
+          <HamburgerMenu className={open ? "open" : "closed"}>
+            <motion.div className="line-menu start" />
+            <div className="line-menu end"></div>
+          </HamburgerMenu>
+        </HamburgerContainer>
       </NavContainer>
       <MenuStyled open={open} ref={drawerRef}>
         <motion.ul>

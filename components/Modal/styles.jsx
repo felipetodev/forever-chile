@@ -37,6 +37,9 @@ export const IframeContainer = styled.div`
   // border: 1px solid red;
   height: fit-content;
   width: 100%;
+  div {
+    z-index: 5;
+  }
   @media (max-width: 834px) {
     margin-top: 10vh;
   }

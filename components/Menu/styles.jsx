@@ -192,17 +192,31 @@ export const MenuStyled = styled.div`
   }
 `;
 
-export const HamburgerMenu = styled(motion.div)`
-  position: fixed;
+export const HamburgerContainer = styled.div`
+  padding: 10px;
   background: none;
-  top: 70px;
+  position: fixed;
+  top: 60px;
+  z-index: 9999;
+  pointer-events: all;
+  cursor: pointer;
+
+  @media (max-width: 830px) {
+    padding: 15px;
+    top: 50px;
+  }
+  @media (max-width: 400px) {
+    margin-left: 4.9555%;
+  }
+`
+
+export const HamburgerMenu = styled(motion.div)`
+  background: none;
   width: 40px;
   height: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: pointer;
-  pointer-events: all;
   transition: width 1s ease-in-out;
 
   .line-menu {
@@ -226,13 +240,6 @@ export const HamburgerMenu = styled(motion.div)`
       width: 40px;
     }
   }
-
-  @media (max-width: 830px) {
-    top: 55px;
-  }
-  @media (max-width: 400px) {
-    margin-left: 4.9555%;
-  }
 `;
 
 export const NavContainer = styled.div`
@@ -242,7 +249,7 @@ export const NavContainer = styled.div`
   top: 0;
   bottom: ${({ open }) => (open ? "" : "0")};
   position: ${({ open, isAbout }) => (open || isAbout ? "fixed" : "absolute")};
-  z-index: ${({ open }) => (open ? 7 : 6)};
+  z-index: 10;
   background-color: transparent;
   pointer-events: none;
 

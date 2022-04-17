@@ -33,9 +33,6 @@ export const GlobalStyles = createGlobalStyle`
   .app {
     max-width: min(2000px, 100%);
     margin: 0 auto;
-    overflow-y: hidden;
-    position: relative;
-    z-index: 1;
   }
 
   .app .works-spacing {
