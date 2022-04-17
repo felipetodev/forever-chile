@@ -7,7 +7,7 @@ import { GET_HOME_ENTRY } from "../queries/getHomeEntry";
 export default function Home({ page = {} }) {
   const { description, homeVideosCollection = {} } = page;
   return (
-    <div>
+    <>
       <Header
         noDot
         description={
@@ -36,7 +36,7 @@ export default function Home({ page = {} }) {
       </div>
       <Footer />
       <FooterMobile />
-    </div>
+    </>
   );
 }
 

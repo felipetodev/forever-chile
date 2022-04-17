@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderStyled = styled.div`
+export const HeaderStyled = styled.header`
   display: flex;
   align-items: center;
   min-height: 30vh;
