@@ -29,6 +29,7 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
   const { items = [] } = videosCollection;
   const [index, setIndex] = useState(0);
   const [videoMute, setVideoMute] = useState(false);
+  const [videoDuration, setVideoDuration] = useState(8000);
   const videoRef = useRef(null);
   const router = useRouter();
 
@@ -36,12 +37,15 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
     const actualSlider = getActiveSlide();
     if (videoRef.current) {
       videoRef.current.muted = true;
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
       videoRef.current = actualSlider;
+      setVideoDuration(videoRef.current.duration * 1000 - 1000);
       videoRef.current.defaultMuted = true;
       videoRef.current.muted = !videoMute;
       videoRef.current.volume = 0.5;
     }
-  }, [index, videoMute]);
+  }, [index]);
 
   useEffect(() => {
     getActiveSlide();
@@ -71,7 +75,7 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
         speed={500}
         loop={true}
         autoplay={{
-          delay: 6000,
+          delay: videoDuration,
           // disableOnInteraction: false,
         }}
       >
