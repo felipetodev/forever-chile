@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle`
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     position: relative;
     overflow-x: hidden;
+    min-height: 100vh;
   }
 
   a {
@@ -51,8 +52,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .ReactModal__Body--open {
+    inset: 0;
     overflow: visible;
-    position: relative;
+    // position: relative;
     width: 100%;
     height: 100%;
   }
