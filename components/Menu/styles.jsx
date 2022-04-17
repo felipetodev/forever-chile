@@ -206,7 +206,7 @@ export const HamburgerContainer = styled.div`
     top: 50px;
   }
   @media (max-width: 400px) {
-    margin-left: 4.9555%;
+    margin-left: 2%;
   }
 `
 
