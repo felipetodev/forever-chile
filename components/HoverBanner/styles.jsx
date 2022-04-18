@@ -27,6 +27,11 @@ export const Container = styled.div`
       font-size: 40px;
     }
   }
+  @media (max-width: 400px) {
+    div {
+      font-size: 35px;
+    }
+  }
 `;
 
 export const First = styled(motion.div)`
@@ -52,9 +57,10 @@ export const First = styled(motion.div)`
 
 export const Second = styled(motion.div)`
   display: flex;
+  justify-content: center;
   position: relative;
+  transition: all 300ms ease;
   &::after {
-    transition: all 300ms ease;
     content: "";
     position: absolute;
     visibility: hidden;
@@ -74,18 +80,18 @@ export const Second = styled(motion.div)`
 export const HoverWrapper = styled(motion.div)`
   &:hover div {
     &.hover-one {
-      margin-right: 200px;
+      margin-right: 210px;
       &::after {
-        width: 200px;
+        width: 190px;
         right: -210px;
         visibility: visible;
       }
     }
     &.hover-two {
-      margin-left: 300px;
+      margin-left: 310px;
       &::after {
-        width: 285px;
-        left: -295px;
+        width: 290px;
+        left: -305px;
         visibility: visible;
       }
     }
@@ -124,6 +130,27 @@ export const HoverWrapper = styled(motion.div)`
         &::after {
           left: -150px;
           width: 170px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 380px) {
+    &:hover div {
+      &.hover-one {
+        margin-right: 100px;
+        text-align: start;
+        &::after {
+          right: -100px;
+          width: 110px;
+        }
+      }
+      &.hover-two {
+        margin-left: 150px;
+        text-align: end;
+        &::after {
+          left: -150px;
+          width: 140px;
         }
       }
     }
@@ -176,6 +203,26 @@ export const HoverWrapper = styled(motion.div)`
           &::after {
             left: -150px;
             width: 170px;
+          }
+        }
+      }
+      @media (max-width: 380px) {
+        &:hover div {
+          &.hover-one {
+            margin-right: 100px;
+            text-align: start;
+            &::after {
+              right: -100px;
+              width: 110px;
+            }
+          }
+          &.hover-two {
+            margin-left: 150px;
+            text-align: end;
+            &::after {
+              left: -150px;
+              width: 140px;
+            }
           }
         }
       }
