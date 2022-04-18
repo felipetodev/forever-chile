@@ -29,7 +29,6 @@ export const Container = styled.div`
   }
   @media (max-width: 834px) {
     width: 100%;
-    overflow-y: scroll;
   }
 `;
 

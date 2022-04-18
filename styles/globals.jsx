@@ -12,8 +12,9 @@ export const GlobalStyles = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    font-family: 'Pragmatica', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: "Pragmatica", -apple-system, BlinkMacSystemFont, Segoe UI,
+      Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+      sans-serif;
     position: relative;
     overflow-x: hidden;
     min-height: 100vh;
@@ -26,8 +27,8 @@ export const GlobalStyles = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-    background: #1A1A1A;
-    color: #E6E6E6;
+    background: #1a1a1a;
+    color: #e6e6e6;
   }
 
   .app {
@@ -43,7 +44,8 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
 
-  span, img {
+  span,
+  img {
     background: transparent;
   }
 
@@ -66,7 +68,7 @@ export const GlobalStyles = createGlobalStyle`
     background: inherit !important;
   }
 
-  .ReactModal__Overlay--after-open{
+  .ReactModal__Overlay--after-open {
     opacity: 1;
     overflow-y: scroll;
     backdrop-filter: saturate(50%) blur(20px) !important;
@@ -76,8 +78,12 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  .ReactModal__Overlay--before-close{
+  .ReactModal__Overlay--before-close {
     opacity: 0;
+  }
+
+  .ReactModal__Content--after-open {
+    overflow-y: scroll;
   }
 
   .container {
@@ -117,13 +123,13 @@ export const GlobalStyles = createGlobalStyle`
   .swiper-pagination-bullet {
     background: none;
     padding: 4px;
-    border: 1px solid #E6E6E6;
+    border: 1px solid #e6e6e6;
   }
 
   .swiper-pagination-bullet-active {
     outline: none;
     border: 1px solid transparent !important;
-    background: #E6E6E6 !important;
+    background: #e6e6e6 !important;
   }
 
   .mobile-description {
@@ -135,19 +141,19 @@ export const GlobalStyles = createGlobalStyle`
     margin-right: 35px;
   }
 
-  @media(max-width: 1070px) {
+  @media (max-width: 1070px) {
     .swiper-pagination {
       margin-left: 80px;
     }
   }
 
-  @media(max-width: 675px) {
+  @media (max-width: 675px) {
     .swiper-pagination {
       margin-left: 45px;
     }
   }
 
-  @media(max-width: 400px) {
+  @media (max-width: 400px) {
     .mobile-description {
       display: inline-block;
     }
