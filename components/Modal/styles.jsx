@@ -17,9 +17,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: min(1200px, 85%);
-  // height: 100%;
+  height: auto;
   margin: 0 auto;
-  overflow-y: scroll;
   background: none;
 
   @media (min-width: 2000px) {
@@ -30,18 +29,18 @@ export const Container = styled.div`
   }
   @media (max-width: 834px) {
     width: 100%;
+    overflow-y: scroll;
   }
 `;
 
 export const IframeContainer = styled.div`
-  // border: 1px solid red;
   height: fit-content;
   width: 100%;
   div {
     z-index: 5;
   }
   @media (max-width: 834px) {
-    margin-top: 10vh;
+    margin-top: 70px;
   }
 `;
 
@@ -50,7 +49,6 @@ export const ModalDescription = styled.div`
   justify-content: space-between;
   align-items: baseline;
   margin-top: 30px;
-  margin-bottom: 50px;
   background: none;
   gap: 50px;
 
@@ -65,12 +63,8 @@ export const ModalDescription = styled.div`
     width: min(1200px, 90%);
     margin: 0 auto;
     margin-top: 30px;
-    margin-bottom: 100px;
     flex-direction: column;
     gap: 10px;
-  }
-  @media (max-width: 600px) {
-    margin-bottom: 50px;
   }
 `;
 
@@ -122,6 +116,7 @@ export const ArtDirection = styled.div`
 export const Description = styled.div`
   background: transparent;
   height: 100%;
+  margin-bottom: 50px;
 `;
 
 export const CloseModal = styled.div`

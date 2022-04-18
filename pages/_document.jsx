@@ -3,7 +3,7 @@ import { ServerStyleSheet } from "styled-components";
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <link href="https://use.typekit.net/qii7ovl.css" rel="stylesheet" />
         </Head>
