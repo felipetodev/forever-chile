@@ -97,6 +97,11 @@ const Container = styled.div`
       }
     }
   }
+  @media (max-width: 400px) {
+    &.about-dot-top {
+      margin-top: 20px;
+    }
+  }
 `;
 
 const Dots = ({ isHome, dotTop, dotBottom, lastDot, ...props }) => {

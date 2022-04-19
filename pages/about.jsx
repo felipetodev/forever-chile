@@ -42,7 +42,7 @@ const About = ({ page }) => {
           <div className="div3" />
         </Layout>
       </FoundersContainer>
-      <Dots dotTop style={{ marginTop: "200px" }} />
+      <Dots dotTop />
       <WhatWeDo />
       <Dots dotBottom style={{ marginBottom: "100px" }} />
       <AboutHero
