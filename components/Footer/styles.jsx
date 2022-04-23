@@ -43,16 +43,34 @@ export const Container = styled.div`
 
   .footer-logo {
     width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    padding-left: 50px;
-    padding-top: 100px;
+    padding-top: 50px;
 
-    img {
-      display: block;
-      object-fit: cover;
+    .denise-logo {
+      width: 100%;
+      height: 100%;
+      max-width: 146px;
+      max-height: 30px;
+      position: relative;
+      span {
+        max-height: 30px !important;
+      }
+    }
+
+    .chiloe-logo {
+      height: 100%;
+      width: 100%;
+      max-width: 72px;
+      position: relative;
+      span {
+        max-height: 80px !important;
+      }
     }
 
     &::before {
@@ -97,12 +115,13 @@ export const Container = styled.div`
   }
 
   // Mobile view
-  @media (max-width: 400px) {
+  @media (max-width: 565px) {
     display: grid;
     grid-template-columns: auto;
     gap: 30px;
     position: relative;
     z-index: 4;
+    margin-left: 10px;
 
     .footer-logo {
       display: none;
@@ -111,6 +130,9 @@ export const Container = styled.div`
     &::before {
       top: 0;
     }
+  }
+  @media (max-width: 400px) {
+    margin-left: 0px;
   }
 `;
 
@@ -175,7 +197,7 @@ export const FooterMobileStyled = styled.div`
   padding-bottom: 30px;
   z-index: 4;
 
-  @media (max-width: 400px) {
+  @media (max-width: 565px) {
     display: flex;
   }
 `;

@@ -62,12 +62,22 @@ const Footer = ({ isWork }) => {
           </a>
         </IntroStyled>
         <div className="footer-logo">
-          <Image
-            height={100}
-            width={100}
-            src="/chiloecine.png"
-            alt="chiloe-cine"
-          />
+          <div className="denise-logo">
+            <Image
+              objectFit="contain"
+              layout="fill"
+              src="/denise_logo.svg"
+              alt="Denise Lira"
+            />
+          </div>
+          <div className="chiloe-logo">
+            <Image
+              objectFit="contain"
+              layout="fill"
+              src="/chiloecine.png"
+              alt="Chiloe Cine"
+            />
+          </div>
         </div>
       </Container>
     </FooterStyled>
@@ -80,20 +90,22 @@ export const FooterMobile = () => (
   <FooterMobileStyled>
     <div>
       <Image
-        objectFit="scale-down"
+        objectFit="contain"
         height={13}
         width={146}
-        src="/denise-lira.png"
-        alt="chiloe-cine"
+        src="/denise_logo.svg"
+        alt="Denise Lira"
+        loading="lazy"
       />
     </div>
     <div>
       <Image
-        objectFit="scale-down"
+        objectFit="contain"
         height={81}
         width={88}
         src="/chiloecine.png"
-        alt="chiloe-cine"
+        alt="Chiloe Cine"
+        loading="lazy"
       />
     </div>
   </FooterMobileStyled>
