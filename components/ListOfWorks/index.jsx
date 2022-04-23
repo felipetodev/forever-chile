@@ -88,13 +88,13 @@ const ListOfWorks = ({ workVideos, workSection, setIsOpen, setModalWork }) => {
                   onClick={isPDF ? () => {} : (e) => handleWorkClick(e, work)}
                 >
                   <Image
-                    width={332}
-                    height={186}
-                    layout="responsive"
+                    layout="fill"
+                    className="work-image"
+                    objectFit="cover"
                     src={work?.workImage?.url}
                     alt={work?.title}
                   />
-                  <div>
+                  <div className="work-description">
                     <h3>{work?.title}</h3>
                     <span>{work?.client}</span>
                   </div>
