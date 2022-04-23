@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Navigation, Autoplay, Pagination } from "swiper";
 import {
@@ -25,13 +25,20 @@ const getActiveSlide = () => {
   return activeSlider;
 };
 
+const getUrlModalPath = (video, idx) => {
+  return video && video[idx]
+    ? `/work?category=${video[idx]?.filmCategory?.toLowerCase()}&project=${
+        video[idx]?.title
+      }`
+    : "/work";
+};
+
 const FullHeroCarousel = ({ videosCollection = {} }) => {
   const { items = [] } = videosCollection;
   const [index, setIndex] = useState(0);
   const [videoMute, setVideoMute] = useState(false);
   const [videoDuration, setVideoDuration] = useState(8000);
   const videoRef = useRef(null);
-  const router = useRouter();
 
   useEffect(() => {
     const actualSlider = getActiveSlide();
@@ -51,18 +58,12 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
     getActiveSlide();
   }, [index]);
 
-  const onWorkClicked = () => {
-    if (items[index]?.filmCategory) {
-      router.push(`/work?category=${items[index]?.filmCategory}`);
-    } else {
-      router.push("/work");
-    }
-  };
-
   const handleAudio = () => {
     setVideoMute(!videoMute);
     if (videoRef.current) videoRef.current.muted = videoMute;
   };
+
+  const modalPath = getUrlModalPath(items, index);
 
   return (
     <FullHeroStyled>
@@ -104,14 +105,13 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
       <Container>
         <LogoStyled />
         <IntroStyled>
-          <div
-            onClick={onWorkClicked}
-            style={{ display: "flex", flexDirection: "column" }}
-          >
-            <h2>{items[index]?.title}</h2>
-            <span>{items[index]?.filmName}</span>
-            <span>{items[index]?.filmDescription}</span>
-          </div>
+          <Link href={modalPath}>
+            <a style={{ display: "flex", flexDirection: "column" }}>
+              <h2>{items[index]?.title}</h2>
+              <span>{items[index]?.filmName}</span>
+              <span>{items[index]?.filmDescription}</span>
+            </a>
+          </Link>
         </IntroStyled>
         <AudioButton>
           <button

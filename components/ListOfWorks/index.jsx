@@ -1,6 +1,9 @@
+import { useEffect, useMemo } from "react";
 import { Grid, NewContainer, VideoContainer, PdfContainer } from "./styles";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
+import Image from "next/image";
 
 const Spacing = styled.div`
   margin-left: 5%;
@@ -29,15 +32,42 @@ const variants = {
 };
 
 const ListOfWorks = ({ workVideos, workSection, setIsOpen, setModalWork }) => {
-  const handleWorkClick = (work) => {
-    setIsOpen(true);
+  const router = useRouter();
+  const hasParams = Boolean(router.query.project);
+
+  const handleWorkClick = (evt, work) => {
+    evt.preventDefault();
     setModalWork(work);
+    setIsOpen(true);
+    router.push(
+      `/work?category=${encodeURIComponent(
+        workSection
+      )}&project=${encodeURIComponent(work.title)}`
+    );
   };
 
-  const videos =
-    workSection === "all"
-      ? workVideos
-      : workVideos.filter((it) => it?.category?.toLowerCase() === workSection);
+  const videos = useMemo(
+    () =>
+      workSection === "all"
+        ? workVideos
+        : workVideos.filter(
+            (it) =>
+              it?.category?.toLowerCase() === decodeURIComponent(workSection)
+          ),
+    [workVideos, workSection]
+  );
+
+  useEffect(() => {
+    if (hasParams) {
+      setIsOpen(true);
+      setModalWork(
+        workVideos.find(
+          (el) => el?.title === decodeURIComponent(router.query.project)
+        )
+      );
+    }
+  }, [hasParams]);
+
   return (
     <NewContainer>
       <Spacing className="works-spacing" />
@@ -55,10 +85,12 @@ const ListOfWorks = ({ workVideos, workSection, setIsOpen, setModalWork }) => {
                   variants={variants}
                   target={isPDF ? "_blank" : null}
                   href={isPDF ? work?.pdf?.url : null}
-                  onClick={isPDF ? () => {} : () => handleWorkClick(work)}
+                  onClick={isPDF ? () => {} : (e) => handleWorkClick(e, work)}
                 >
-                  <img
-                    height={230}
+                  <Image
+                    width={332}
+                    height={186}
+                    layout="responsive"
                     src={work?.workImage?.url}
                     alt={work?.title}
                   />

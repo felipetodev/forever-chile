@@ -10,7 +10,7 @@ const MenuList = ({ categories = [], workSection, setWorkSection }) => {
         {[DEFAULT_OPTION, ...categories].map((item) => (
           <li
             key={item}
-            className={item.toLowerCase() === workSection ? "active" : null}
+            className={item?.toLowerCase() === workSection ? "active" : null}
             onClick={() => setWorkSection(item?.toLowerCase())}
           >
             {item}

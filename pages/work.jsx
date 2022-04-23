@@ -9,6 +9,7 @@ import Dots from "../components/Dots";
 import Modal from "../components/Modal";
 import MenuList from "../components/MenuList";
 import { GET_WORK_ENTRY } from "../queries/getWorkEntry";
+import { useRouter } from "next/router";
 
 const Heading = styled.h1`
   max-width: 615px;
@@ -22,24 +23,19 @@ const Heading = styled.h1`
   }
 `;
 
-const getURLParams = () => {
-  let params = new URLSearchParams(document.location.search);
-  let categorySearched = params.get("category");
-  return categorySearched?.toLowerCase();
-};
-
 const WorkPage = ({ page = {} }) => {
   const { description, workVideosCollection = [] } = page;
   const [workSection, setWorkSection] = useState("all");
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalWork, setModalWork] = useState(null);
+  const router = useRouter();
+  const hasParams = Boolean(router.query.category);
 
   useEffect(() => {
-    const searchParam = getURLParams();
-    if (typeof searchParam === "string") {
-      setWorkSection(searchParam);
+    if (hasParams) {
+      setWorkSection(decodeURIComponent(router.query.category));
     }
-  }, []);
+  }, [hasParams]);
 
   const getArrayOfCategories = workVideosCollection?.items?.map(
     (item) => item?.category

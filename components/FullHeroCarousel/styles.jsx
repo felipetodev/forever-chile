@@ -68,7 +68,7 @@ export const IntroStyled = styled.div`
     width: 1px;
   }
 
-  div {
+  a {
     background: none !important;
     writing-mode: vertical-rl;
     -webkit-transform: rotate(180deg);
@@ -110,7 +110,7 @@ export const IntroStyled = styled.div`
   // Tablet view
   @media (max-width: 1070px) {
     min-width: 100%;
-    div {
+    a {
       margin-right: 20px;
       h2 {
         font-size: 16px;
@@ -127,7 +127,7 @@ export const IntroStyled = styled.div`
   // Mobile view
   @media (max-width: 400px) {
     pointer-events: none;
-    div {
+    a {
       // margin-right: 20px;
       margin-bottom: 20px;
       h2 {

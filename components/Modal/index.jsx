@@ -10,15 +10,24 @@ import {
   ModalStyled,
   Title,
 } from "./styles";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Modal = ({ modalIsOpen, setIsOpen, infoModal }) => {
+  const router = useRouter();
+
   const closeModal = () => {
     setIsOpen(false);
   };
+  const handleOnCloseRequest = () => {
+    router.replace("/work", undefined, { shallow: true });
+    setIsOpen(false);
+  };
+
   return (
     <ModalStyled
       isOpen={modalIsOpen}
-      onRequestClose={() => setIsOpen(false)}
+      onRequestClose={handleOnCloseRequest}
       closeTimeoutMS={200}
       onAfterOpen={() => {
         document.body.style.top = `-${window.scrollY}px`;
@@ -47,9 +56,13 @@ const Modal = ({ modalIsOpen, setIsOpen, infoModal }) => {
           </Left>
           <Description>{infoModal?.description}</Description>
         </ModalDescription>
-        <CloseModal onClick={closeModal}>
-          <CloseModalIcon />
-        </CloseModal>
+        <Link href="/work" replace scroll={false}>
+          <a>
+            <CloseModal onClick={closeModal}>
+              <CloseModalIcon />
+            </CloseModal>
+          </a>
+        </Link>
       </Container>
     </ModalStyled>
   );

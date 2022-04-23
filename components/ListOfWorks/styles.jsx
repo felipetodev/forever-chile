@@ -92,7 +92,7 @@ export const Navigation = styled.ul`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(366px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-gap: 20px;
   margin-right: 2px;
   width: 100%;
