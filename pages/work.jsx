@@ -16,9 +16,12 @@ const Heading = styled.h1`
   font-size: 50px;
   @media (max-width: 1070px) {
     margin-right: 6.2222%;
+    margin-bottom: 0px;
   }
   @media (max-width: 400px) {
+    font-size: 30px;
     margin: 0 auto;
+    margin-top: 70px;
     width: min(800px, 100%);
   }
 `;
@@ -26,7 +29,6 @@ const Heading = styled.h1`
 const WorkPage = ({ page = {} }) => {
   const { description, workVideosCollection = [] } = page;
   const [workSection, setWorkSection] = useState("all");
-  const [modalIsOpen, setIsOpen] = useState(false);
   const [modalWork, setModalWork] = useState(null);
   const router = useRouter();
   const hasParams = Boolean(router.query.category);

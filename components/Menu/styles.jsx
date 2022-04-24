@@ -135,7 +135,7 @@ export const MenuStyled = styled.div`
   li {
     background: none;
     text-align: right;
-    font-size: 45px;
+    font-size: 50px;
     width: 300px;
     a {
       width: 100%;

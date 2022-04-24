@@ -6,7 +6,9 @@ export const Navigation = styled.ul`
   margin: 0 auto;
   padding: 0;
   margin-right: 240px;
+  padding-top: 130px;
   li {
+    font-size: 20px;
     cursor: pointer;
     list-style: none;
     position: relative;
@@ -38,6 +40,10 @@ export const Navigation = styled.ul`
 
   @media (max-width: 1194px) {
     margin-right: 200px;
+  }
+  @media (max-width: 1070px) {
+    position: relative;
+    z-index: 4;
   }
   @media (max-width: 834px) {
     margin-right: 150px;

@@ -20,7 +20,7 @@ export const LayoutStyled = styled(Layout)`
 export const Col = styled.div`
   display: flex;
   width: 100%;
-  font-size: clamp(0.9rem, 3.5vw, 2.3rem);
+  font-size: clamp(20px, 3.5vw, 3rem);
   @media (max-width: 400px) {
     justify-content: center;
   }

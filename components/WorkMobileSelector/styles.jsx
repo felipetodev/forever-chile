@@ -8,6 +8,9 @@ export const MobileLayout = styled(NewContainer)`
   @media (max-width: 834px) {
     display: flex;
   }
+  @media (max-width: 400px) {
+    padding-top: 50px;
+  }
 `
 
 export const WorkSelect = styled.div`

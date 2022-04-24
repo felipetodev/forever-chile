@@ -11,8 +11,12 @@ export const DescriptionHeader = styled.div`
   align-items: baseline;
   margin-top: 12px;
 
+  h3 {
+    font-size: 20px;
+  }
+
   span {
-    font-size: 13px;
+    font-size: 16px;
     opacity: 0.5;
   }
 
@@ -22,7 +26,7 @@ export const DescriptionHeader = styled.div`
 `;
 
 export const Paragraph = styled.div`
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 12px;
   margin-bottom: 1rem;
 `;
@@ -37,7 +41,7 @@ export const Years = styled.div`
   position: relative;
   justify-content: space-between;
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 20px;
   margin-bottom: 20px;
 

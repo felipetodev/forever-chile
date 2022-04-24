@@ -105,7 +105,7 @@ export const Nav = styled.nav`
 export const IntroStyled = styled.div`
   position: relative;
   min-width: 570px;
-  font-size: 28px;
+  font-size: 30px;
   z-index: 1;
 
   &::before {
@@ -149,7 +149,6 @@ export const IntroStyled = styled.div`
   // Tablet view
   @media (max-width: 1070px) {
     max-width: 700px;
-    font-size: 30px;
     margin-top: 50px;
     line-height: 40px;
     margin-right: 20px;
@@ -166,14 +165,13 @@ export const IntroStyled = styled.div`
     min-width: auto;
     width: 100%;
     margin-right: 100px;
-    font-size: clamp(1.2rem, 3.5vw, 2rem);
   }
   @media (max-width: 760px) {
     width: 97%;
   }
 
   @media (max-width: 830px) {
-    margin-top: 85px;
+    margin-top: 130px;
   }
 
   @media (max-width: 400px) {

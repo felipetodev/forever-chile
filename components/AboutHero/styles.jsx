@@ -120,6 +120,7 @@ export const TextContainer = styled.div`
   background: none;
   margin-top: 40px;
   p {
+    font-size: 20px;
     max-width: 400px;
     background: none;
   }
@@ -137,6 +138,11 @@ export const TextContainer = styled.div`
     margin-right: 4%;
     margin-top: 200px;
     margin-left: 0 !important;
+  }
+  @media (max-width: 600px) {
+    p {
+      font-size: 16px;
+    }
   }
   @media (max-width: 400px) {
     max-width: 100%;

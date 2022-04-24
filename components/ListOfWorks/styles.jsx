@@ -121,9 +121,12 @@ const ContainerStyles = css`
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+    h3 {
+      font-size: 20px;
+    }
     span {
       opacity: 0.5;
-      font-size: 14px;
+      font-size: 16px;
     }
   }
   span {

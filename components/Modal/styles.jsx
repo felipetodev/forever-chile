@@ -88,9 +88,11 @@ export const Left = styled.div`
 export const Title = styled.div`
   background: none;
   h3 {
+    font-size: 20px;
     background: none;
   }
   span {
+    font-size: 16px;
     background: none;
     opacity: 0.5;
   }
@@ -105,6 +107,7 @@ export const Title = styled.div`
 export const ArtDirection = styled.div`
   opacity: 0.5;
   background: none;
+  font-size: 16px;
   @media (max-width: 1194px) {
     padding-top: 10px;
     border-top: 1px solid #525252;
@@ -113,6 +116,7 @@ export const ArtDirection = styled.div`
 `;
 
 export const Description = styled.div`
+  font-size: 16px;
   background: transparent;
   height: 100%;
   margin-bottom: 50px;

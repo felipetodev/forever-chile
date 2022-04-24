@@ -29,7 +29,7 @@ export const AboutTitle = styled.div`
     grid-area: empty2;
   }
   p {
-    font-size: 18px;
+    font-size: 20px;
     min-width: 400px;
     color: #e6e6e6;
     margin: 0;
@@ -60,6 +60,7 @@ export const AboutTitle = styled.div`
     width: 95%;
   }
   @media (max-width: 400px) {
+    font-size: 30px;
     min-width: 100%;
     h2 {
       min-width: 100%;
