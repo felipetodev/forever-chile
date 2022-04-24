@@ -149,7 +149,7 @@ export const IntroStyled = styled.div`
   // Tablet view
   @media (max-width: 1070px) {
     max-width: 700px;
-    margin-top: 50px;
+    margin-top: 100px;
     line-height: 40px;
     margin-right: 20px;
 
