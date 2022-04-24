@@ -1,11 +1,10 @@
-import Layout from "../Layout";
-import { Navigation } from "./styles";
+import { Container, Navigation } from "./styles";
 
 const DEFAULT_OPTION = "All";
 
 const MenuList = ({ categories = [], workSection, setWorkSection }) => {
   return (
-    <Layout>
+    <Container>
       <Navigation className="_1">
         {[DEFAULT_OPTION, ...categories].map((item) => (
           <li
@@ -18,7 +17,7 @@ const MenuList = ({ categories = [], workSection, setWorkSection }) => {
         ))}
       </Navigation>
       <div className="_3"></div>
-    </Layout>
+    </Container>
   );
 };
 

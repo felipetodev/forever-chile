@@ -1,4 +1,13 @@
+import Layout from "../Layout";
 import styled from "styled-components";
+
+export const Container = styled(Layout)`
+  @media (max-width: 1250px) {
+    position: relative;
+    z-index: 5;
+    padding-right: 6.2222% !important;
+  }
+`
 
 export const Navigation = styled.ul`
   width: 100%;
@@ -38,12 +47,14 @@ export const Navigation = styled.ul`
     }
   }
 
-  @media (max-width: 1194px) {
-    margin-right: 200px;
-  }
   @media (max-width: 1070px) {
     position: relative;
-    z-index: 4;
+    z-index: 5;
+    justify-content: space-between !important;
+    margin: 0;
+    li {
+      margin: 0;
+    }
   }
   @media (max-width: 834px) {
     margin-right: 150px;
