@@ -59,11 +59,13 @@ export const ModalDescription = styled.div`
   }
 
   @media (max-width: 1194px) {
-    width: min(1200px, 90%);
     margin: 0 auto;
     margin-top: 30px;
     flex-direction: column;
     gap: 10px;
+  }
+  @media (max-width: 834px) {
+    width: min(1200px, 90%);
   }
 `;
 
