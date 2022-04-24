@@ -14,6 +14,18 @@ query GetLayoutPage($slug: String!) {
       }
       videoBannerDescription
       blueBannerTitle
+      collectiveBannerCollection {
+        items {
+          sys {
+            id
+          }
+          title
+          image {
+            title
+            url
+          }
+        }
+      }
       teamCollection {
         items {
           title
