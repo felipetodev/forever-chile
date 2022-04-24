@@ -62,22 +62,32 @@ const Footer = ({ isWork }) => {
           </a>
         </IntroStyled>
         <div className="footer-logo">
-          <div className="denise-logo">
+          <a
+            href="https://www.deniseliraratinoff.com"
+            target="_blank"
+            rel="noreferrer"
+            className="denise-logo"
+          >
             <Image
               objectFit="contain"
               layout="fill"
               src="/denise_logo.svg"
               alt="Denise Lira"
             />
-          </div>
-          <div className="chiloe-logo">
+          </a>
+          <a
+            href="https://www.chiloecine.com"
+            target="_blank"
+            rel="noreferrer"
+            className="chiloe-logo"
+          >
             <Image
               objectFit="contain"
               layout="fill"
               src="/chiloecine.png"
               alt="Chiloe Cine"
             />
-          </div>
+          </a>
         </div>
       </Container>
     </FooterStyled>
@@ -88,25 +98,27 @@ export default Footer;
 
 export const FooterMobile = () => (
   <FooterMobileStyled>
-    <div>
+    <a
+      href="https://www.deniseliraratinoff.com"
+      target="_blank"
+      rel="noreferrer"
+    >
       <Image
         objectFit="contain"
         height={13}
         width={146}
         src="/denise_logo.svg"
         alt="Denise Lira"
-        loading="lazy"
       />
-    </div>
-    <div>
+    </a>
+    <a href="https://www.chiloecine.com" target="_blank" rel="noreferrer">
       <Image
         objectFit="contain"
         height={81}
         width={88}
         src="/chiloecine.png"
         alt="Chiloe Cine"
-        loading="lazy"
       />
-    </div>
+    </a>
   </FooterMobileStyled>
 );
