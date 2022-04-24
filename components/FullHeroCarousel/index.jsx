@@ -25,14 +25,6 @@ const getActiveSlide = () => {
   return activeSlider;
 };
 
-const getUrlModalPath = (video, idx) => {
-  return video && video[idx]
-    ? `/work?category=${video[idx]?.filmCategory?.toLowerCase()}&project=${
-        video[idx]?.title
-      }`
-    : "/work";
-};
-
 const FullHeroCarousel = ({ videosCollection = {} }) => {
   const { items = [] } = videosCollection;
   const [index, setIndex] = useState(0);
@@ -62,8 +54,6 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
     setVideoMute(!videoMute);
     if (videoRef.current) videoRef.current.muted = videoMute;
   };
-
-  const modalPath = getUrlModalPath(items, index);
 
   return (
     <FullHeroStyled>
@@ -105,7 +95,13 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
       <Container>
         <LogoStyled />
         <IntroStyled>
-          <Link href={modalPath}>
+          <Link
+            href={{ pathname: '/work', query: { 
+                category: items[index]?.filmCategory,
+                project: items[index]?.title
+              },
+            }}
+          >
             <a style={{ display: "flex", flexDirection: "column" }}>
               <h2>{items[index]?.title}</h2>
               <span>{items[index]?.filmName}</span>

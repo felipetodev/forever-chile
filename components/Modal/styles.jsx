@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ReactModal from "react-modal";
 
-ReactModal.setAppElement("#modal-root");
+ReactModal.setAppElement("#__next");
 
 export const ModalStyled = styled(ReactModal)`
   position: absolute;

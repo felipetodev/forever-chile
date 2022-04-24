@@ -33,7 +33,7 @@ const WorkPage = ({ page = {} }) => {
 
   useEffect(() => {
     if (hasParams) {
-      setWorkSection(decodeURIComponent(router.query.category));
+      setWorkSection(router.query.category.toLowerCase());
     }
   }, [hasParams]);
 
@@ -64,13 +64,11 @@ const WorkPage = ({ page = {} }) => {
       <ListOfWorks
         workSection={workSection}
         workVideos={workVideosCollection?.items}
-        setIsOpen={setIsOpen}
         setModalWork={setModalWork}
       />
       <Modal
-        modalIsOpen={modalIsOpen}
+        modalIsOpen={Boolean(router.query.project)}
         infoModal={modalWork}
-        setIsOpen={setIsOpen}
       />
       {/* DIVISOR LINE */}
       <div

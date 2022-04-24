@@ -92,7 +92,7 @@ export const Navigation = styled.ul`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   grid-gap: 30px;
   margin-right: 2px;
   width: 100%;
@@ -113,6 +113,7 @@ export const Grid = styled.div`
 
 const ContainerStyles = css`
   width: 100%;
+  position: relative;
   margin-bottom: 40px;
   .work-description {
     margin-top: 10px;
@@ -130,10 +131,17 @@ const ContainerStyles = css`
     img {
       width: 100% !important;
       position: relative !important;
-      height: 250px !important;
+      height: 261px !important;
     }
     &:hover {
-      filter: hue-rotate(220deg);
+      filter: hue-rotate(220deg) contrast(1.15) saturate(1);
+    }
+  }
+  @media (max-width: 1920px) {
+    span {
+      img {
+        height: 220px !important;
+      }
     }
   }
   @media (max-width: 840px) {
@@ -141,11 +149,17 @@ const ContainerStyles = css`
       flex-direction: column;
     }
     span {
-      max-height: 186px !important;
+      img {
+        height: 186px !important;
+      }
     }
   }
-  @media (max-width: 650px) {
-    width: 100%;
+  @media (max-width: 400px) {
+    span {
+      img {
+        height: 169px !important;
+      }
+    }
   }
 `;
 

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Link from "next/link";
 
 const Spacing = styled.div`
   margin-left: 5%;
@@ -31,40 +32,25 @@ const variants = {
   },
 };
 
-const ListOfWorks = ({ workVideos, workSection, setIsOpen, setModalWork }) => {
+const DEFAULT_SECTION = "all";
+
+const ListOfWorks = ({ workVideos, workSection, setModalWork }) => {
   const router = useRouter();
   const hasParams = Boolean(router.query.project);
 
-  const handleWorkClick = (evt, work) => {
-    evt.preventDefault();
-    setModalWork(work);
-    setIsOpen(true);
-    router.push(
-      `/work?category=${encodeURIComponent(
-        workSection
-      )}&project=${encodeURIComponent(work.title)}`
-    );
-  };
-
   const videos = useMemo(
     () =>
-      workSection === "all"
+      workSection === DEFAULT_SECTION
         ? workVideos
         : workVideos.filter(
-            (it) =>
-              it?.category?.toLowerCase() === decodeURIComponent(workSection)
+            (it) => it?.category?.toLowerCase() === workSection
           ),
     [workVideos, workSection]
   );
 
   useEffect(() => {
-    if (hasParams) {
-      setIsOpen(true);
-      setModalWork(
-        workVideos.find(
-          (el) => el?.title === decodeURIComponent(router.query.project)
-        )
-      );
+    if (router.isReady && hasParams) {
+      setModalWork(workVideos.find((el) => el?.title === router.query.project));
     }
   }, [hasParams]);
 
@@ -72,39 +58,71 @@ const ListOfWorks = ({ workVideos, workSection, setIsOpen, setModalWork }) => {
     <NewContainer>
       <Spacing className="works-spacing" />
       <Grid>
-        <AnimatePresence>
-          {videos?.length > 0 ? (
-            videos?.map((work) => {
-              const isPDF = work?.pdf;
-              const Component = isPDF ? PdfContainer : VideoContainer;
-              return (
-                <Component
-                  key={work?.sys?.id}
-                  initial="hidden"
-                  animate="visible"
-                  variants={variants}
-                  target={isPDF ? "_blank" : null}
-                  href={isPDF ? work?.pdf?.url : null}
-                  onClick={isPDF ? () => {} : (e) => handleWorkClick(e, work)}
-                >
-                  <Image
-                    layout="fill"
-                    className="work-image"
-                    objectFit="cover"
-                    src={work?.workImage?.url}
+        {videos?.length > 0 ? (
+          videos?.map((work) => {
+            const isPDF = Boolean(work?.pdf);
+            return (
+              <AnimatePresence key={work?.sys?.id}>
+                {isPDF ? (
+                  <PdfContainer
+                    initial="hidden"
+                    animate="visible"
+                    variants={variants}
+                    target="_blank"
+                    href={work?.pdf?.url}
                     alt={work?.title}
-                  />
-                  <div className="work-description">
-                    <h3>{work?.title}</h3>
-                    <span>{work?.client}</span>
-                  </div>
-                </Component>
-              );
-            })
-          ) : (
-            <span>{`Were sorry, there is no content published for this section`}</span>
-          )}
-        </AnimatePresence>
+                  >
+                    <Image
+                      layout="fill"
+                      className="work-image"
+                      objectFit="cover"
+                      src={work?.workImage?.url}
+                      alt={work?.title}
+                    />
+                    <div className="work-description">
+                      <h3>{work?.title}</h3>
+                      <span>{work?.client}</span>
+                    </div>
+                  </PdfContainer>
+                ) : (
+                  <Link
+                    replace
+                    scroll={false}
+                    href={{
+                      pathname: "/work",
+                      query: {
+                        category: work?.category,
+                        project: work?.title,
+                      },
+                    }}
+                  >
+                    <a>
+                      <VideoContainer
+                        initial="hidden"
+                        animate="visible"
+                        variants={variants}
+                      >
+                        <Image
+                          layout="fill"
+                          className="work-image"
+                          objectFit="cover"
+                          src={work?.workImage?.url}
+                          alt={work?.title}
+                        />
+                        <div className="work-description">
+                          <h3>{work?.title}</h3>
+                          <span>{work?.client}</span>
+                        </div>
+                      </VideoContainer>
+                    </a>
+                  </Link>
+                )}
+              </AnimatePresence>
+            );
+          })
+        ) : (
+          <span>{`Were sorry, there is no content published for this section`}</span>
+        )}
       </Grid>
       <div className="_3" />
     </NewContainer>

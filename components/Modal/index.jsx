@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import CloseModalIcon from "./SVGModal";
 import {
   ArtDirection,
@@ -10,24 +11,15 @@ import {
   ModalStyled,
   Title,
 } from "./styles";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
-const Modal = ({ modalIsOpen, setIsOpen, infoModal }) => {
+const Modal = ({ modalIsOpen, infoModal }) => {
   const router = useRouter();
-
-  const closeModal = () => {
-    setIsOpen(false);
-  };
-  const handleOnCloseRequest = () => {
-    router.replace("/work", undefined, { shallow: true });
-    setIsOpen(false);
-  };
 
   return (
     <ModalStyled
       isOpen={modalIsOpen}
-      onRequestClose={handleOnCloseRequest}
+      onRequestClose={() => router.push("/work", undefined, { shallow: true })}
       closeTimeoutMS={200}
       onAfterOpen={() => {
         document.body.style.top = `-${window.scrollY}px`;
@@ -39,7 +31,7 @@ const Modal = ({ modalIsOpen, setIsOpen, infoModal }) => {
         document.body.style.top = "";
         window.scrollTo(0, parseInt(scrollY || "0") * -1);
       }}
-      // shouldFocusAfterRender={false}
+      // shouldCloseOnOverlayClick
       shouldCloseOnEsc
     >
       <Container>
@@ -56,13 +48,9 @@ const Modal = ({ modalIsOpen, setIsOpen, infoModal }) => {
           </Left>
           <Description>{infoModal?.description}</Description>
         </ModalDescription>
-        <Link href="/work" replace scroll={false}>
-          <a>
-            <CloseModal onClick={closeModal}>
-              <CloseModalIcon />
-            </CloseModal>
-          </a>
-        </Link>
+        <CloseModal onClick={() => router.push("/work", undefined, { shallow: true })}>
+          <CloseModalIcon />
+        </CloseModal>
       </Container>
     </ModalStyled>
   );
