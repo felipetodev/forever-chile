@@ -106,6 +106,7 @@ export const IntroStyled = styled.div`
   position: relative;
   min-width: 570px;
   font-size: 30px;
+  padding-right: 2%;
   z-index: 1;
 
   &::before {
@@ -135,11 +136,14 @@ export const IntroStyled = styled.div`
     }
   }
 
-  ${({ isWork }) => isWork ? `
+  ${({ isWork }) =>
+    isWork
+      ? `
     &::before {
       display: none !important;
     }
-  ` : ""}
+  `
+      : ""}
 
   // Tablet Landscape view
   @media (max-width: 1194px) {
