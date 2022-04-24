@@ -126,7 +126,6 @@ export const IntroStyled = styled.div`
 
   // Mobile view
   @media (max-width: 400px) {
-    pointer-events: none;
     a {
       // margin-right: 20px;
       margin-bottom: 20px;
@@ -135,6 +134,17 @@ export const IntroStyled = styled.div`
       }
       span {
         font-size: 10px;
+      }
+      &:hover {
+        h2 {
+          transform: none;
+          &::after {
+            display: none;
+          }
+        }
+        span {
+          visibility: visible;
+        }
       }
     }
   }
