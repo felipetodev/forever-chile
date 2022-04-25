@@ -26,7 +26,7 @@ const About = ({ page }) => {
       <AboutDescription title={mainTitle} description={description} />
       <FoundersContainer>
         <Layout>
-          <h2>Meet the founders</h2>
+          <h2 style={{ fontSize: "30px", fontWeight: 500 }}>Meet the founders</h2>
         </Layout>
         <Layout isFounders>
           {teamCollection?.items?.map((team) => (

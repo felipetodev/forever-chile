@@ -1,8 +1,7 @@
-import { useEffect, useRef } from "react";
 import Image from "next/image";
-import Layout from "../Layout";
 import {
   Video,
+  TitleContainer,
   BannerContainer,
   OverlapText,
   RightImage,
@@ -30,9 +29,9 @@ export const TrashDesignMobile = () => (
 const AboutHero = ({ videoBanner = {}, description }) => {
   return (
     <div>
-      <Layout>
+      <TitleContainer>
         <h2>Why we do it</h2>
-      </Layout>
+      </TitleContainer>
       <BannerContainer>
         <Video
           id={videoBanner?.title}

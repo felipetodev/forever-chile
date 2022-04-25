@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HeaderStyled = styled.header`
   display: flex;
   align-items: center;
-  min-height: 30vh;
+  min-height: ${({ isWork }) => (isWork ? "25vh" : "30vh")};
   margin-left: 40px;
 
   // Tablet view

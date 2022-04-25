@@ -11,7 +11,7 @@ import Menu from "../Menu";
 
 const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
   return (
-    <HeaderStyled isAbout={isAbout}>
+    <HeaderStyled isAbout={isAbout} isWork={isWork}>
       <Container>
         <LogoStyled>
           <Link href="/">

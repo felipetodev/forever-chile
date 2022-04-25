@@ -10,9 +10,24 @@ export const Container = styled.div`
 `;
 
 export const LayoutStyled = styled(Layout)`
+  h2 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 200px;
+  }
   @media (max-width: 740px) {
     .div3 {
       display: none;
+    }
+  }
+  @media (max-width: 675px) {
+    h2 {
+      margin-top: 0px;
+    }
+  }
+  @media (max-width: 400px) {
+    h2 {
+      font-size: 30px;
     }
   }
 `;

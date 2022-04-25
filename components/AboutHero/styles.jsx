@@ -18,6 +18,18 @@ export const Video = styled.video`
   object-fit: cover;
 `;
 
+export const TitleContainer = styled(Layout)`
+  h2 {
+    font-size: 50px;
+    font-weight: bold;
+  }
+  @media (max-width: 400px) {
+    h2 {
+      font-size: 30px;
+    }
+  }
+`;
+
 export const BannerContainer = styled.div`
   position: relative;
   height: 60vh;
