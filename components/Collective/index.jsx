@@ -1,5 +1,9 @@
-import Image from "next/image"
-import styled from "styled-components"
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
+import styled from "styled-components";
+import useMediaQuery from "../../hooks/useMediaQuery";
+import "swiper/css";
 
 const Container = styled.div`
   display: flex;
@@ -7,68 +11,126 @@ const Container = styled.div`
   z-index: 4;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #052CAB;
+  background-color: #052cab;
   width: 100%;
   height: 50vh;
-  
+  padding: 0 6%;
+
   div {
     background: none;
   }
 
-  @media(max-width: 996px) {
+  @media (max-width: 996px) {
     text-align: center;
     flex-direction: column;
     height: auto;
   }
-  @media(max-width: 740px) {
+  @media (max-width: 740px) {
     margin-top: 180px;
   }
 `;
 
 const BannerTitle = styled.div`
-  font-size: clamp(15px,3.5vw,34px);
+  font-size: clamp(25px, 3.5vw, 80px);
   h2 {
-    color: #1A1A1A;
+    color: #1a1a1a;
     background: none;
   }
-  @media(max-width: 996px) {
+  @media (max-width: 996px) {
     margin-top: 50px;
     margin-bottom: 50px;
   }
-`
+`;
 
 const ImageContainer = styled.div`
-  width: 150px;
-  height: 100px;
   position: relative;
-  img {
-    background: transparent;
-    object-fit: scale-down;
+  width: 200px;
+  span {
+    position: unset !important;
+    img {
+      position: relative !important;
+      height: 90px !important;
+    }
   }
-  @media(max-width: 996px) {
+  @media (max-width: 996px) {
     &:not(:last-child) {
       margin-bottom: 80px;
     }
   }
-`
+  @media (max-width: 675px) {
+    margin: 0 auto;
+    span {
+      position: unset !important;
+      img {
+        position: relative !important;
+        height: 90px !important;
+      }
+    }
+  }
+`;
+
+const images = [
+  {
+    name: "chiloe",
+    url: "/chiloecine.png",
+  },
+  {
+    name: "grupo137",
+    url: "/forever-logo.svg",
+  },
+  {
+    name: "denise",
+    url: "/denise_logo.svg",
+  },
+];
+
+const MQ = "(max-width: 675px)";
 
 const Collective = ({ title }) => {
+  const isMobile = useMediaQuery(MQ);
   return (
     <Container>
       <BannerTitle>
         <h2 dangerouslySetInnerHTML={{ __html: title }} />
       </BannerTitle>
-      <ImageContainer>
-        <Image layout="fill" src="/chiloecine.png" alt="" />
-      </ImageContainer>
-      <ImageContainer>
-        <Image layout="fill" src="/Grupo-137.png" alt="" />
-      </ImageContainer>
-      <ImageContainer>
-        <Image layout="fill" src="/denise-lira.png" alt="" />
-      </ImageContainer>
+      {isMobile ? (
+        <Swiper
+          loop
+          grabCursor
+          style={{ width: "100%" }}
+          pagination={{ clickable: true }}
+          modules={[Autoplay]}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+        >
+          {images.map((el) => (
+            <SwiperSlide key={el?.name} style={{ paddingBottom: "50px" }}>
+              <ImageContainer>
+                <Image
+                  objectFit="contain"
+                  layout="fill"
+                  src={el?.url}
+                  alt={el?.name}
+                />
+              </ImageContainer>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <>
+          {images.map((el) => (
+            <ImageContainer key={el?.name}>
+              <Image
+                objectFit="contain"
+                layout="fill"
+                src={el?.url}
+                alt={el?.name}
+              />
+            </ImageContainer>
+          ))}
+        </>
+      )}
     </Container>
-  )
-}
+  );
+};
 
 export default Collective;
