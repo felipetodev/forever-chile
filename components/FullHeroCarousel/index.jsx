@@ -67,7 +67,7 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
         loop={true}
         autoplay={{
           delay: videoDuration,
-          // disableOnInteraction: false,
+          disableOnInteraction: false,
         }}
       >
         {items &&
