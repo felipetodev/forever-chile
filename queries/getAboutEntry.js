@@ -50,6 +50,30 @@ query GetLayoutPage($slug: String!) {
           }
         }
       }
+      categoriesColumn1Collection {
+        items {
+          sys {
+            id
+          }
+          title
+          image {
+            title
+            url
+          }
+        }
+      }
+      categoriesColumn2Collection {
+        items {
+          sys {
+            id
+          }
+          title
+          image {
+            title
+            url
+          }
+        }
+      }
     }
   }
 }

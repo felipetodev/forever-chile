@@ -15,6 +15,8 @@ const About = ({ page }) => {
   const {
     mainTitle,
     description,
+    categoriesColumn1Collection = {},
+    categoriesColumn2Collection = {},
     videoBanner = {},
     teamCollection = {},
     videoBannerDescription,
@@ -26,7 +28,9 @@ const About = ({ page }) => {
       <AboutDescription title={mainTitle} description={description} />
       <FoundersContainer>
         <Layout>
-          <h2 style={{ fontSize: "30px", fontWeight: 500 }}>Meet the founders</h2>
+          <h2 style={{ fontSize: "30px", fontWeight: 500 }}>
+            Meet the founders
+          </h2>
         </Layout>
         <Layout isFounders>
           {teamCollection?.items?.map((team) => (
@@ -43,7 +47,10 @@ const About = ({ page }) => {
         </Layout>
       </FoundersContainer>
       <Dots dotTop />
-      <WhatWeDo />
+      <WhatWeDo
+        firstColumnItems={categoriesColumn1Collection}
+        secondColumnItems={categoriesColumn2Collection}
+      />
       <Dots dotBottom style={{ marginBottom: "100px" }} />
       <AboutHero
         videoBanner={videoBanner}
