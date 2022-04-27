@@ -59,8 +59,8 @@ export const Second = styled(motion.div)`
   display: flex;
   justify-content: center;
   position: relative;
-  transition: all 300ms ease;
   &::after {
+    transition: all 300ms ease;
     content: "";
     position: absolute;
     visibility: hidden;
