@@ -7,14 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Spacing = styled.div`
-  margin-left: 5%;
-  width: min(1200px, 13.5555%) !important;
-  @media (max-width: 1888px) {
-    width: min(1200px, 5%) !important;
-  }
-  @media (max-width: 1579px) {
-    width: min(250px, 1%) !important;
-  }
   @media (max-width: 1070px) {
     display: none;
   }

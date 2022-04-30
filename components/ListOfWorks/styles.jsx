@@ -6,6 +6,7 @@ export const Container = styled.div`
   z-index: 4;
   display: flex;
   margin: 0 auto;
+  padding-left: 180px;
 
   ._1 {
     width: 100%;
@@ -37,6 +38,10 @@ export const Container = styled.div`
     @media (max-width: 830px) {
       min-width: 124px;
     }
+  }
+
+  @media (max-width: 1070px) {
+    padding-left: 0px;
   }
 `;
 
@@ -92,7 +97,7 @@ export const Navigation = styled.ul`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 30px;
   margin-right: 2px;
   width: 100%;
