@@ -104,6 +104,7 @@ export const Wrap = styled(motion.div)`
     }
   }
   @media (max-width: 500px) {
+    top: -60px;
     margin-left: 0px;
   }
 `;

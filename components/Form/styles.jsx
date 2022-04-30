@@ -5,6 +5,10 @@ export const FormStyled = styled.form`
   flex-direction: column;
   background: transparent;
   position: relative;
+  @media (max-width: 500px) {
+    top: -170px;
+    margin-bottom: 80px;
+  }
 `;
 
 export const Label = styled.label`

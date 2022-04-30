@@ -15,6 +15,13 @@ const Container = styled.div`
   }
 `;
 
+const Spacing = styled.div`
+  min-height: 20vh;
+  @media (max-width: 500px) {
+    min-height: 20px;
+  }
+`;
+
 const ContactPage = () => {
   return (
     <>
@@ -23,7 +30,7 @@ const ContactPage = () => {
         <FormImage />
         <Form />
       </Container>
-      <div style={{ minHeight: "20vh" }} />
+      <Spacing />
       <Footer />
       <FooterMobile />
     </>
