@@ -1,73 +1,59 @@
+import Layout from "../Layout";
 import styled from "styled-components";
 
+export const Container = styled(Layout)`
+`
+
 export const AboutTitle = styled.div`
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 2;
-  grid-template-rows: 1fr auto;
-  grid-template-areas:
-    "h2 empty1"
-    "empty2 parragraph";
-  margin-right: 150px;
-  z-index: 4;
   position: relative;
-  padding-top: 30px;
-
-  h2 {
-    width: 100%;
-    min-width: 400px;
-    font-size: 38px;
-    grid-area: h2;
-    margin: 0;
-  }
-  & .empty1 {
-    grid-area: empty1;
-    display: none;
-  }
-  & .empty2 {
-    display: none;
-    grid-area: empty2;
-  }
-  p {
-    font-size: 20px;
-    min-width: 400px;
-    color: #e6e6e6;
-    margin: 0;
-    grid-area: parragraph;
-  }
-
-  @media (max-width: 1194px) {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  .top-header {
+    position: relative;
+    margin-right: 30%;
+    z-index: 4;
     h2 {
-      margin-bottom: 40px;
       font-size: 50px;
     }
-    p {
-      margin-left: 30%;
+    @media (max-width: 1070px) {
+      margin-right: 0px;
     }
   }
-
-  @media (max-width: 1070px) {
-    display: flex;
-    flex-direction: column;
-    p {
-      min-width: 100%;
-      margin-left: 0;
+  .sub-header {
+    margin-left: 30%;
+    margin-right: 25%;
+    h3 {
+      font-size: 20px;
+      font-weight: normal;
     }
+    @media (max-width: 1070px) {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+  @media (max-width: 1194px) {
+    margin-right: 210px;
+  }
+  @media (max-width: 1070px) {
+    margin-right: 150px;
   }
   @media (max-width: 830px) {
-    width: 95%;
+    margin-right: 124px;
+  }
+  @media (max-width: 675px) {
+    margin-right: 50px;
   }
   @media (max-width: 400px) {
-    font-size: 30px;
-    min-width: 100%;
-    h2 {
-      min-width: 100%;
-      font-size: 30px;
+    margin: 0;
+    .top-header {
+      h2 {
+        font-size: 30px;
+      }
     }
-    p {
-      font-size: 16px;
+    .sub-header {
+      h3 {
+        font-size: 16px;
+      }
     }
   }
 `;

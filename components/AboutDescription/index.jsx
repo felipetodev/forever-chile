@@ -1,19 +1,17 @@
-import { AboutTitle } from "./styles";
+import { Container, AboutTitle } from "./styles";
 
 const AboutDescription = ({ title, description }) => {
   return (
-    <div className="container">
+    <Container>
       <AboutTitle>
-        <h2>
-          {title}
-        </h2>
-        <div className="empty1" />
-        <div className="empty2" />
-        <p>
-          {description}
-        </p>
+        <div className="top-header">
+          <h2>{title}</h2>
+        </div>
+        <div className="sub-header">
+          <h3>{description}</h3>
+        </div>
       </AboutTitle>
-    </div>
+    </Container>
   );
 };
 
