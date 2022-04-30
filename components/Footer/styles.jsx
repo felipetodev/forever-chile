@@ -7,7 +7,7 @@ export const FooterStyled = styled.div`
   align-items: center;
   min-height: 230px;
   margin-left: 40px;
-  overflow: hidden;
+  // overflow: hidden;
   z-index: 4;
 
   // Tablet view
@@ -51,6 +51,7 @@ export const Container = styled.div`
     right: 0;
     bottom: 0;
     padding-top: 50px;
+    background: none;
 
     .denise-logo {
       width: 100%;
@@ -109,6 +110,31 @@ export const Container = styled.div`
       width: 1px;
     }
 
+    .footer-logo {
+      padding-left: 8px;
+      padding-right: 8px;
+      top: -40px;
+      width: 150px;      
+      right: -80px;
+      &::before {
+        left: 0;
+      }
+      @media (max-width: 889px) {
+        top: -50px;
+      }
+    }
+  }
+
+  @media (max-width: 830px) {
+    .footer-logo {
+      width: 124px; 
+      &::before {
+        left: 0px;
+      }
+    }
+  }
+
+  @media (max-width: 675px) {
     .footer-logo {
       display: none;
     }
