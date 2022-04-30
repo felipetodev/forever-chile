@@ -17,7 +17,7 @@ const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
           <Link href="/">
             <a>
               <Image
-                objectFit="cover"
+                objectFit="contain"
                 src="/forever-logo.svg"
                 width="135"
                 height="77px"
