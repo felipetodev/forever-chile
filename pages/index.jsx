@@ -29,7 +29,7 @@ export default function Home({ page = {} }) {
           position: "relative",
           height: "40px",
           backgroundColor: "#1A1A1A",
-          zIndex: 4,
+          zIndex: 5,
         }}
       >
         <div style={{ position: "absolute", zIndex: 4 }}></div>

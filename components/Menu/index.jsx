@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -9,6 +9,7 @@ import {
   NavContainer,
 } from "./styles";
 import useOutsideClickHandler from "../../hooks/useOutsideClickHandler";
+import { useRouter } from "next/router";
 
 const InstagramIcon = () => (
   <svg

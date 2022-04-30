@@ -10,6 +10,7 @@ import Modal from "../components/Modal";
 import MenuList from "../components/MenuList";
 import { GET_WORK_ENTRY } from "../queries/getWorkEntry";
 import { useRouter } from "next/router";
+import { Container } from "../components/MenuList/styles";
 
 const Heading = styled.h1`
   max-width: 615px;
@@ -47,12 +48,12 @@ const WorkPage = ({ page = {} }) => {
     <>
       <Header noDot isAbout isWork />
       <Dots />
-      <Layout>
+      <Container>
         <Heading>
           {description ||
             "We deliver and achieve the best combination of results for each spectator."}
         </Heading>
-      </Layout>
+      </Container>
       <MenuList
         categories={categories}
         workSection={workSection}

@@ -32,6 +32,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .app {
+    overflow: hidden;
     max-width: min(2000px, 100%);
     margin: 0 auto;
   }
@@ -84,11 +85,6 @@ export const GlobalStyles = createGlobalStyle`
 
   .ReactModal__Content--after-open {
     overflow-y: scroll;
-  }
-
-  .container {
-    width: min(800px, 90%);
-    margin: 0 auto;
   }
 
   @media (max-width: 1070px) {

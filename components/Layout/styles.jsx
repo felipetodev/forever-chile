@@ -4,6 +4,7 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   width: min(1400px, 90%);
+  padding-left: 180px;
   margin: 0 auto;
 
   .div1 {
@@ -38,6 +39,7 @@ export const Container = styled.div`
 
   @media (max-width: 1070px) {
     // border: 1px solid red;
+    padding-left: 0%;
     margin-left: 80px;
   }
 
