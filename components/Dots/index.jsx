@@ -88,6 +88,74 @@ const Container = styled.div`
     }
   }
   &.home-dot {
+    /* Horrible Dot Patch */
+    ._2 {
+      &::before {
+        content: "";
+        position: absolute;
+        left: -45px;
+        top: -9px;
+        height: 8px;
+        width: 8px;
+        border-radius: 9999px;
+        border: 1px solid #707070;
+      }
+      @media (max-width: 1950px) {
+        &::before {
+          left: -55px;
+        }
+      }
+      @media (max-width: 1850px) {
+        &::before {
+          left: -65px;
+        }
+      }
+      @media (max-width: 1750px) {
+        &::before {
+          left: -75px;
+        }
+      }
+      @media (max-width: 1650px) {
+        &::before {
+          left: -85px;
+        }
+      }
+      @media (max-width: 1550px) {
+        &::before {
+          left: -95px;
+        }
+      }
+      @media (max-width: 1450px) {
+        &::before {
+          left: -101px;
+        }
+      }
+      @media (max-width: 1350px) {
+        &::before {
+          left: -110px;
+        }
+      }
+      @media (max-width: 1250px) {
+        &::before {
+          left: -125px;
+        }
+      }
+      @media (max-width: 1194px) {
+        &::before {
+          left: -155px;
+        }
+      }
+      @media (max-width: 1180px) {
+        &::before {
+          left: -160px;
+        }
+      }
+      @media (max-width: 1070px) {
+        display: none;
+      }
+      /* Horrible Patch */
+    }
+
     @media (max-width: 400px) {
       z-index: 4;
       ._2 {

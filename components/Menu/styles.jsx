@@ -209,7 +209,7 @@ export const HamburgerContainer = styled.div`
     top: 42px;
     margin-left: 2%;
   }
-`
+`;
 
 export const HamburgerMenu = styled(motion.div)`
   background: none;

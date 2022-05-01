@@ -131,7 +131,7 @@ export const IntroStyled = styled.div`
   }
 
   &.remove-dot {
-    &&::after {
+    &::after {
       display: none;
     }
   }

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -39,6 +39,10 @@ const Menu = ({ isAbout, hasDot, isHome, isContact }) => {
   });
   useOutsideClickHandler({ ref: menuRef, onClick: onClickBurgerMenu });
 
+  const handleCloseMenu = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <BurgerStyled
@@ -60,26 +64,27 @@ const Menu = ({ isAbout, hasDot, isHome, isContact }) => {
         <motion.ul>
           <li>
             <Link href="/">
-              <a>Home</a>
+              <a onClick={handleCloseMenu}>Home</a>
             </Link>
           </li>
           <li>
             <Link href="/work">
-              <a>Work</a>
+              <a onClick={handleCloseMenu}>Work</a>
             </Link>
           </li>
           <li>
             <Link href="/about">
-              <a>About</a>
+              <a onClick={handleCloseMenu}>About</a>
             </Link>
           </li>
           <li>
             <Link href="/contact">
-              <a>Contact</a>
+              <a onClick={handleCloseMenu}>Contact</a>
             </Link>
           </li>
           <li>
             <a
+              onClick={handleCloseMenu}
               href="https://instagram.com"
               rel="noopener noreferrer"
               target="_blank"
