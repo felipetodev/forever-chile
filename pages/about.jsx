@@ -17,6 +17,7 @@ const About = ({ page }) => {
     description,
     categoriesColumn1Collection = {},
     categoriesColumn2Collection = {},
+    collectiveBannerCollection = {},
     videoBanner = {},
     teamCollection = {},
     videoBannerDescription,
@@ -58,7 +59,7 @@ const About = ({ page }) => {
       />
       <Dots lastDot />
       <TrashDesignMobile />
-      <Collective title={blueBannerTitle} />
+      <Collective title={blueBannerTitle} brands={collectiveBannerCollection} />
       <HoverBanner />
       <Footer />
       <FooterMobile />

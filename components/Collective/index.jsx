@@ -76,7 +76,7 @@ const images = [
   },
   {
     name: "grupo137",
-    url: "/forever-logo.svg",
+    url: "/logo/forever-logo.svg",
   },
   {
     name: "denise",
@@ -86,7 +86,7 @@ const images = [
 
 const MQ = "(max-width: 675px)";
 
-const Collective = ({ title }) => {
+const Collective = ({ title, brands }) => {
   const isMobile = useMediaQuery(MQ);
   return (
     <Container>
@@ -102,14 +102,14 @@ const Collective = ({ title }) => {
           modules={[Autoplay]}
           autoplay={{ delay: 2000, disableOnInteraction: false }}
         >
-          {images.map((el) => (
-            <SwiperSlide key={el?.name} style={{ paddingBottom: "50px" }}>
+          {brands?.items?.map(({ sys, title, image }) => (
+            <SwiperSlide key={sys?.id} style={{ paddingBottom: "50px" }}>
               <ImageContainer>
                 <Image
                   objectFit="contain"
                   layout="fill"
-                  src={el?.url}
-                  alt={el?.name}
+                  src={image?.url}
+                  alt={title}
                 />
               </ImageContainer>
             </SwiperSlide>
@@ -117,13 +117,13 @@ const Collective = ({ title }) => {
         </Swiper>
       ) : (
         <>
-          {images.map((el) => (
-            <ImageContainer key={el?.name}>
+          {brands?.items?.map(({ sys, title, image }) => (
+            <ImageContainer key={sys?.id}>
               <Image
                 objectFit="contain"
                 layout="fill"
-                src={el?.url}
-                alt={el?.name}
+                src={image?.url}
+                alt={title}
               />
             </ImageContainer>
           ))}
