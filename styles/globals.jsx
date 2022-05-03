@@ -26,6 +26,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   * {
+    touch-action: manipulation;
     box-sizing: border-box;
     background: #1a1a1a;
     color: #e6e6e6;

@@ -49,14 +49,14 @@ const ListOfWorks = ({ workVideos, workSection, setModalWork }) => {
   return (
     <NewContainer>
       <Spacing className="works-spacing" />
-      <Grid>
-        {videos?.length > 0 ? (
-          videos?.map((work) => {
-            const isPDF = Boolean(work?.pdf);
-            return (
-              <AnimatePresence key={work?.sys?.id}>
-                {isPDF ? (
+      <AnimatePresence>
+        <Grid>
+          {videos?.length > 0 ? (
+            videos?.map((work) => (
+              <>
+                {Boolean(work?.pdf) ? (
                   <PdfContainer
+                    key={work?.sys?.id}
                     initial="hidden"
                     animate="visible"
                     variants={variants}
@@ -79,11 +79,13 @@ const ListOfWorks = ({ workVideos, workSection, setModalWork }) => {
                 ) : (
                   <Link
                     replace
+                    key={work?.sys?.id}
+                    style={{ textDecoration: "none" }}
                     scroll={false}
                     href={{
                       pathname: "/work",
                       query: {
-                        category: work?.category,
+                        category: workSection,
                         project: work?.title,
                       },
                     }}
@@ -109,13 +111,13 @@ const ListOfWorks = ({ workVideos, workSection, setModalWork }) => {
                     </a>
                   </Link>
                 )}
-              </AnimatePresence>
-            );
-          })
-        ) : (
-          <span>{`Were sorry, there is no content published for this section`}</span>
-        )}
-      </Grid>
+              </>
+            ))
+          ) : (
+            <span>{`Were sorry, there is no content published for this section`}</span>
+          )}
+        </Grid>
+      </AnimatePresence>
       <div className="_3" />
     </NewContainer>
   );
