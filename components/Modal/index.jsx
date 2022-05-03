@@ -22,14 +22,10 @@ const Modal = ({ modalIsOpen, infoModal }) => {
       onRequestClose={() => router.push("/work", undefined, { shallow: true })}
       closeTimeoutMS={200}
       onAfterOpen={() => {
-        document.body.style.top = `-${window.scrollY}px`;
-        document.body.style.position = "fixed";
+        document.querySelector("html").style.overflowY = "hidden";
       }}
       onAfterClose={() => {
-        const scrollY = document.body.style.top;
-        document.body.style.position = "";
-        document.body.style.top = "";
-        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+        document.querySelector("html").style.overflowY = "";
       }}
       // shouldCloseOnOverlayClick
       shouldCloseOnEsc
