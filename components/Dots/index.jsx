@@ -151,7 +151,9 @@ const Container = styled.div`
         }
       }
       @media (max-width: 1070px) {
-        display: none;
+        &::before {
+          display: none;
+        }
       }
       /* Horrible Patch */
     }
@@ -160,7 +162,8 @@ const Container = styled.div`
       z-index: 4;
       ._2 {
         &::after {
-          right: 90px;
+          top: -9.5px;
+          right: 94px;
         }
       }
     }
