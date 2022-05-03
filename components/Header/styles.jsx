@@ -78,6 +78,25 @@ export const LogoStyled = styled.div`
     }
     left: 9%;
   }
+
+  .img-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background: transparent;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 53%;
+    img {
+      border-radius: 9999px;
+      overflow: hidden;
+      width: 40px !important;
+      height: 40px !important;
+    }
+  }
 `;
 
 export const Nav = styled.nav`

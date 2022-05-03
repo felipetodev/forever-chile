@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Container,
   HeaderStyled,
@@ -8,8 +9,29 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import Menu from "../Menu";
+import { motion } from "framer-motion";
+
+const spin = {
+  repeat: Infinity,
+  ease: "linear",
+  duration: 2,
+};
+
+const DEFAULT_BG_ANIMATION = "/logo/f1.svg";
 
 const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
+  const [svg, setSvg] = useState(DEFAULT_BG_ANIMATION);
+
+  useEffect(() => {
+    let idx = 0;
+    const animationLogo = setInterval(() => {
+      if (idx === 9) idx = 0;
+      idx++;
+      setSvg(`/logo/f${idx}.svg`);
+    }, 1200);
+    return () => clearInterval(animationLogo);
+  }, []);
+
   return (
     <HeaderStyled isAbout={isAbout} isWork={isWork}>
       <Container>
@@ -18,16 +40,27 @@ const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
             <a>
               <Image
                 objectFit="contain"
-                src="/forever-logo.svg"
+                src="/logo/forever-logo.svg"
                 width="135"
-                height="77px"
+                height="75px"
                 alt="Forever Collective"
                 title="Logo Forever"
               />
+              <div className="img-animation">
+                <motion.img
+                  animate={{ rotate: 360 }}
+                  transition={spin}
+                  src={svg}
+                />
+              </div>
             </a>
           </Link>
         </LogoStyled>
-        <IntroStyled hasDot={hasDot} className={noDot ? "remove-dot" : null} isWork={isWork}>
+        <IntroStyled
+          hasDot={hasDot}
+          className={noDot ? "remove-dot" : null}
+          isWork={isWork}
+        >
           {description}
         </IntroStyled>
         <Nav isAbout={isAbout}>
