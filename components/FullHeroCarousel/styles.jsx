@@ -63,7 +63,7 @@ export const IntroStyled = styled.div`
     position: absolute;
     background: transparent url("/line.png") 0% 0% repeat padding-box;
     left: -30px;
-    top: -800px;
+    top: -800px; // <-- increase 100vh
     height: 1200px;
     width: 1px;
   }
@@ -72,14 +72,13 @@ export const IntroStyled = styled.div`
     background: none !important;
     writing-mode: vertical-rl;
     -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
     white-space: nowrap;
     margin-bottom: 2vw;
     cursor: pointer;
 
     h2 {
       position: relative;
-      transition: transform 150ms ease;
+      transition: all 150ms ease-in-out;
       margin-right: -4px;
     }
 
@@ -91,16 +90,20 @@ export const IntroStyled = styled.div`
       background: none;
     }
     &:hover {
+      h2 {
+        margin-right: -10px;
+        font-size: 35px;
+      }
       h2::after {
         content: "SEE PROJECT";
         top: 0;
-        right: 40px;
-        font-size: 12px;
+        right: 50px;
+        font-size: 16px;
         position: absolute;
       }
-      h2 {
+      /* h2 {
         transform: scale(1.3) translateY(39.5px);
-      }
+      } */
       span {
         visibility: hidden;
       }
@@ -110,13 +113,23 @@ export const IntroStyled = styled.div`
   // Tablet view
   @media (max-width: 1070px) {
     min-width: 100%;
+    margin-right: 12px;
     a {
-      margin-right: 20px;
+      height: 300px;
+      &:hover {
+        h2 {
+          margin-right: -5px;
+          font-size: 30px;
+        }
+        h2::after {
+          font-size: 14px;
+        }
+      }
       h2 {
-        font-size: 16px;
+        font-size: 18px;
       }
       span {
-        font-size: 12px;
+        font-size: 14px;
       }
     }
     &::before {
@@ -130,6 +143,7 @@ export const IntroStyled = styled.div`
       // margin-right: 20px;
       margin-bottom: 20px;
       h2 {
+        margin-right: 0;
         font-size: 12px;
       }
       span {
@@ -137,7 +151,8 @@ export const IntroStyled = styled.div`
       }
       &:hover {
         h2 {
-          transform: none;
+          margin-right: 0px;
+          font-size: 13px;
           &::after {
             display: none;
           }

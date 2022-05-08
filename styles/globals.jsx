@@ -109,6 +109,10 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+  .swiper {
+    width: 100%;
+  }
+
   .swiper-pagination {
     background: none;
     text-align: start !important;

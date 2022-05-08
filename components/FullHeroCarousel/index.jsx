@@ -60,7 +60,6 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
       <Swiper
         onTransitionStart={(e) => setIndex(e.realIndex)}
         effect="fade"
-        style={{ width: "100%" }}
         pagination={{ clickable: true }}
         modules={[EffectFade, Navigation, Pagination, Autoplay]}
         speed={500}
