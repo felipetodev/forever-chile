@@ -31,7 +31,7 @@ const Container = styled.div`
 `;
 
 const BannerTitle = styled.div`
-  font-size: clamp(25px, 3.5vw, 80px);
+  font-size: clamp(25px, 3vw, 50px);
   h2 {
     color: #1a1a1a;
     background: none;
