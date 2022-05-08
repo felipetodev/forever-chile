@@ -59,6 +59,9 @@ export const Container = styled.div`
       max-width: 146px;
       max-height: 30px;
       position: relative;
+      &:hover {
+        opacity: 0.5;
+      }
       span {
         max-height: 30px !important;
       }
@@ -69,6 +72,9 @@ export const Container = styled.div`
       width: 100%;
       max-width: 72px;
       position: relative;
+      &:hover {
+        opacity: 0.5;
+      }
       span {
         max-height: 80px !important;
       }
@@ -172,6 +178,12 @@ export const LogoStyled = styled.div`
 
   @media (max-width: 1070px) {
     padding-left: 0px;
+  }
+
+  a {
+    .hover {
+      text-decoration: underline;
+    }
   }
 
   a:hover {
