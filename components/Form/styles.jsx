@@ -21,6 +21,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   color: #fff;
+  font-family: inherit;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -63,10 +64,11 @@ export const Button = styled.button`
   cursor: pointer;
   width: fit-content;
   outline: none;
-  font-size: 30px;
+  font-size: 22px;
   padding: 10px 80px;
   margin-top: 50px;
   border: 1px solid #E6E6E6;
+  font-family: inherit;
   transition: background 200ms ease;
   &:hover,
   &:focus {
