@@ -1,27 +1,7 @@
 import Image from "next/image";
 import { Col, LayoutStyled, Container, NavigationList } from "./styles";
 
-const columnOne = [
-  "Films",
-  "Photography",
-  "Advertising",
-  "Art Direction",
-  "SFX",
-  "Production",
-  "Postproduction",
-];
-
-const columnTwo = [
-  "Design",
-  "Editorial",
-  "3D & Videogames",
-  "Multimedia",
-  "Installations",
-  "Public Art",
-  "Industrial (soon)",
-];
-
-const WhatWeDo = () => {
+const WhatWeDo = ({ firstColumnItems, secondColumnItems }) => {
   return (
     <Container>
       <LayoutStyled>
@@ -30,56 +10,56 @@ const WhatWeDo = () => {
       <LayoutStyled>
         <Col>
           <NavigationList>
-            {columnOne &&
-              columnOne.map(section => (
-                <li key={section}>
-                  <div
-                    style={{
-                      position: "relative",
-                      background: "transparent",
-                    }}
-                  >
-                    <span>{section}</span>
-                    <div className="image-container">
+            {firstColumnItems?.items?.map((section) => (
+              <li key={section?.sys?.id}>
+                <div
+                  style={{
+                    position: "relative",
+                    background: "transparent",
+                  }}
+                >
+                  <span>{section?.title}</span>
+                  <div className="image-container">
+                    {section?.image?.url && (
                       <Image
-                        quality={100}
-                        layout="fixed"
-                        width={589}
-                        height={466}
-                        src="/films.png"
-                        alt={section}
+                        layout="fill"
+                        className="work-image"
+                        objectFit="cover"
+                        src={section?.image?.url}
+                        alt={section?.title}
                       />
-                    </div>
+                    )}
                   </div>
-                </li>
-              ))}
+                </div>
+              </li>
+            ))}
           </NavigationList>
         </Col>
         <Col>
           <NavigationList>
-            {columnTwo &&
-              columnTwo.map(section => (
-                <li key={section}>
-                  <div
-                    style={{
-                      position: "relative",
-                      background: "transparent",
-                    }}
-                  >
-                    <span data-text={section}>{section}</span>
-                    <div className="image-container">
+            {secondColumnItems?.items?.map((section) => (
+              <li key={section?.sys?.id}>
+                <div
+                  style={{
+                    position: "relative",
+                    background: "transparent",
+                  }}
+                >
+                  <span>{section?.title}</span>
+                  <div className="image-container">
+                    {section?.image?.url && (
                       <Image
-                        quality={100}
-                        layout="fixed"
-                        width={589}
-                        height={466}
-                        src="/films.png"
-                        alt={section}
+                        layout="fill"
+                        className="work-image"
+                        objectFit="cover"
+                        src={section?.image?.url}
+                        alt={section?.title}
                       />
-                    </div>
+                    )}
                   </div>
-                </li>
-              ))}
+                </div>
+              </li>
+            ))}
           </NavigationList>
         </Col>
         <div className="div3"></div>

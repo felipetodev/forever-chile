@@ -60,10 +60,6 @@ export const NavigationList = styled.ul`
     }
   }
 
-  li:hover span {
-    color: transparent;
-  }
-
   li:hover .image-container {
     visibility: visible;
     opacity: 1;
@@ -74,13 +70,21 @@ export const NavigationList = styled.ul`
     height: 100%;
     position: absolute;
     top: -75px;
-    left: 0;
+    left: 100px;
     z-index: 1;
     opacity: 0;
     visibility: hidden;
     transition: all 0.7s ease-in-out;
-    img {
-      background: none;
+    span {
+      position: unset !important;
+      width: 400px !important;
+      height: 400px !important;
+      border-radius: 9999px !important;
+      img {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
     }
   }
 
