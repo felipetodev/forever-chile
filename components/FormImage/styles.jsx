@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 export const Wrap = styled(motion.div)`
   position: relative;
   display: flex;
-  transition: all 300ms ease;
+  transition: all 400ms ease;
+  max-height: 600px;
   h1 {
     margin-top: 200px;
     margin-left: 10%;
@@ -110,7 +111,7 @@ export const Wrap = styled(motion.div)`
 `;
 
 export const Triangle = styled(motion.div)`
-  transition: all 200ms ease;
+  transition: all 400ms ease;
   overflow: hidden;
   width: 200px;
   height: 200px;
@@ -133,7 +134,7 @@ export const Triangle = styled(motion.div)`
 `;
 
 export const Square = styled(motion.div)`
-  transition: all 200ms ease;
+  transition: all 400ms ease;
   overflow: hidden;
   width: 400px;
   height: 400px;
@@ -159,7 +160,7 @@ export const Square = styled(motion.div)`
 `;
 
 export const Circle = styled(motion.div)`
-  transition: all 200ms ease;
+  transition: all 400ms ease;
   overflow: hidden;
   width: 300px;
   height: 300px;
