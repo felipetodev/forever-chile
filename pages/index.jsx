@@ -14,6 +14,7 @@ export default function Home({ page = {} }) {
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       </Head>
       <Header
+        isHome
         noDot
         description={
           description ||
@@ -39,7 +40,7 @@ export default function Home({ page = {} }) {
       >
         <div style={{ position: "absolute", zIndex: 4 }}></div>
       </div>
-      <Footer />
+      <Footer isHome />
       <FooterMobile />
     </>
   );

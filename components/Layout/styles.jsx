@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const MaxContainer = styled.div`
+  max-width: min(2000px, 100%);
+  margin: 0 auto;
+  &.is-home-container {
+    max-width: 100%;
+  }
+`;
+
 export const Container = styled.div`
   position: relative;
   display: flex;

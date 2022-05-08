@@ -34,7 +34,6 @@ export const GlobalStyles = createGlobalStyle`
 
   .app {
     overflow: hidden;
-    max-width: min(2000px, 100%);
     margin: 0 auto;
   }
 

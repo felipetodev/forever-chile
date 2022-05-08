@@ -22,7 +22,7 @@ export const Container = styled.div`
   background: none;
 
   @media (min-width: 2000px) {
-    width: 100%;
+    width: 80%;
   }
   @media (max-width: 1194px) {
     width: min(1200px, 80%);
@@ -52,9 +52,6 @@ export const ModalDescription = styled.div`
   gap: 50px;
 
   @media (min-width: 2000px) {
-    width: 100%;
-    max-width: min(2000px, 100%);
-    margin: 0 auto;
     margin-top: 80px;
   }
 

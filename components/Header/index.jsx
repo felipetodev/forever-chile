@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Menu from "../Menu";
 import { motion } from "framer-motion";
+import { MaxContainer } from "../Layout/styles";
 
 const spin = {
   repeat: Infinity,
@@ -19,7 +20,15 @@ const spin = {
 
 const DEFAULT_BG_ANIMATION = "/logo/f1.svg";
 
-const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
+const Header = ({
+  isHome,
+  noDot,
+  isAbout,
+  hasDot,
+  isWork,
+  isContact,
+  description,
+}) => {
   const [svg, setSvg] = useState(DEFAULT_BG_ANIMATION);
 
   useEffect(() => {
@@ -33,41 +42,43 @@ const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
   }, []);
 
   return (
-    <HeaderStyled isAbout={isAbout} isWork={isWork}>
-      <Container>
-        <LogoStyled>
-          <Link href="/">
-            <a>
-              <Image
-                objectFit="contain"
-                src="/logo/forever-logo.svg"
-                width="135"
-                height="75px"
-                alt="Forever Collective"
-                title="Logo Forever"
-              />
-              <div className="img-animation">
-                <motion.img
-                  animate={{ rotate: 360 }}
-                  transition={spin}
-                  src={svg}
+    <MaxContainer className={isHome ? "is-home-container" : null}>
+      <HeaderStyled isAbout={isAbout} isWork={isWork}>
+        <Container>
+          <LogoStyled>
+            <Link href="/">
+              <a>
+                <Image
+                  objectFit="contain"
+                  src="/logo/forever-logo.svg"
+                  width="135"
+                  height="75px"
+                  alt="Forever Collective"
+                  title="Logo Forever"
                 />
-              </div>
-            </a>
-          </Link>
-        </LogoStyled>
-        <IntroStyled
-          hasDot={hasDot}
-          className={noDot ? "remove-dot" : null}
-          isWork={isWork}
-        >
-          {description}
-        </IntroStyled>
-        <Nav isAbout={isAbout}>
-          <Menu isAbout={isAbout} hasDot={hasDot} isContact={isContact} />
-        </Nav>
-      </Container>
-    </HeaderStyled>
+                <div className="img-animation">
+                  <motion.img
+                    animate={{ rotate: 360 }}
+                    transition={spin}
+                    src={svg}
+                  />
+                </div>
+              </a>
+            </Link>
+          </LogoStyled>
+          <IntroStyled
+            hasDot={hasDot}
+            className={noDot ? "remove-dot" : null}
+            isWork={isWork}
+          >
+            {description}
+          </IntroStyled>
+          <Nav isAbout={isAbout}>
+            <Menu isAbout={isAbout} hasDot={hasDot} isContact={isContact} />
+          </Nav>
+        </Container>
+      </HeaderStyled>
+    </MaxContainer>
   );
 };
 

@@ -9,7 +9,6 @@ import {
   NavContainer,
 } from "./styles";
 import useOutsideClickHandler from "../../hooks/useOutsideClickHandler";
-import { useRouter } from "next/router";
 
 const InstagramIcon = () => (
   <svg

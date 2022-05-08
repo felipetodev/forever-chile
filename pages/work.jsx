@@ -11,6 +11,7 @@ import MenuList from "../components/MenuList";
 import { GET_WORK_ENTRY } from "../queries/getWorkEntry";
 import { useRouter } from "next/router";
 import { Container } from "../components/MenuList/styles";
+import { MaxContainer } from "../components/Layout/styles";
 
 const Heading = styled.h1`
   max-width: 615px;
@@ -48,32 +49,33 @@ const WorkPage = ({ page = {} }) => {
     <>
       <Header noDot isAbout isWork />
       <Dots />
-      <Container>
-        <Heading>
-          {description ||
-            "We deliver and achieve the best combination of results for each spectator."}
-        </Heading>
-      </Container>
-      <MenuList
-        categories={categories}
-        workSection={workSection}
-        setWorkSection={setWorkSection}
-      />
-      <WorkMobileSelector
-        categories={categories}
-        workSection={workSection}
-        onWorkSelection={setWorkSection}
-      />
-      <ListOfWorks
-        workSection={workSection}
-        workVideos={workVideosCollection?.items}
-        setModalWork={setModalWork}
-      />
+      <MaxContainer>
+        <Container>
+          <Heading>
+            {description ||
+              "We deliver and achieve the best combination of results for each spectator."}
+          </Heading>
+        </Container>
+        <MenuList
+          categories={categories}
+          workSection={workSection}
+          setWorkSection={setWorkSection}
+        />
+        <WorkMobileSelector
+          categories={categories}
+          workSection={workSection}
+          onWorkSelection={setWorkSection}
+        />
+        <ListOfWorks
+          workSection={workSection}
+          workVideos={workVideosCollection?.items}
+          setModalWork={setModalWork}
+        />
+      </MaxContainer>
       <Modal
         modalIsOpen={Boolean(router.query.project)}
         infoModal={modalWork}
       />
-      {/* DIVISOR LINE */}
       <div
         style={{
           position: "relative",

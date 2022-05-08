@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MaxContainer } from "../Layout/styles";
 
 const Container = styled.div`
   position: relative;
@@ -168,6 +169,11 @@ const Container = styled.div`
       }
     }
   }
+  @media (min-width: 2000px) {
+    &.home-dot {
+      display: none;
+    }
+  }
   @media (max-width: 400px) {
     &.about-dot-top {
       margin-top: 20px;
@@ -186,11 +192,13 @@ const Dots = ({ isHome, dotTop, dotBottom, lastDot, ...props }) => {
     ? "home-dot"
     : null;
   return (
-    <Container className={isDot} {...props}>
-      <div className="_1" />
-      <div className="_2" />
-      <div className="_3" />
-    </Container>
+    <MaxContainer>
+      <Container className={isDot} {...props}>
+        <div className="_1" />
+        <div className="_2" />
+        <div className="_3" />
+      </Container>
+    </MaxContainer>
   );
 };
 
