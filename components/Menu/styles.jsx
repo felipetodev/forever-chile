@@ -224,7 +224,6 @@ export const HamburgerMenu = styled(motion.div)`
     transition: all 300ms ease;
     align-self: flex-end !important;
     background-color: #fff;
-    border-radius: 5px;
     width: 100%;
     height: 2px;
   }
