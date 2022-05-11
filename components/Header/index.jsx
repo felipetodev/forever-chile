@@ -42,7 +42,7 @@ const Header = ({
   }, []);
 
   return (
-    <MaxContainer className={isHome ? "is-home-container" : null}>
+    <MaxContainer>
       <HeaderStyled isAbout={isAbout} isWork={isWork}>
         <Container>
           <LogoStyled>

@@ -26,6 +26,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   * {
+    text-rendering: geometricPrecision;
     touch-action: manipulation;
     box-sizing: border-box;
     background: #1a1a1a;
@@ -65,7 +66,7 @@ export const GlobalStyles = createGlobalStyle`
   .ReactModal__Overlay {
     z-index: 1000;
     opacity: 0;
-    transition: opacity 200ms ease-in-out;
+    transition: opacity 400ms ease-in-out;
     background: inherit !important;
   }
 
