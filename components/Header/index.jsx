@@ -15,13 +15,12 @@ import { MaxContainer } from "../Layout/styles";
 const spin = {
   repeat: Infinity,
   ease: "linear",
-  duration: 2,
+  duration: 7,
 };
 
 const DEFAULT_BG_ANIMATION = "/logo/f1.svg";
 
 const Header = ({
-  isHome,
   noDot,
   isAbout,
   hasDot,
