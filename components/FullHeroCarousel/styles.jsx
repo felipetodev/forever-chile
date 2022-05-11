@@ -234,6 +234,10 @@ export const AudioButton = styled.div`
     }
   }
   @media (max-width: 400px) {
-    display: none;
+    margin-top: 40px;
+    button {
+      bottom: 16px;
+      left: 0px;
+    }
   }
 `;
