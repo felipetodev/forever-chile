@@ -55,13 +55,13 @@ export const ModalDescription = styled.div`
     margin-top: 80px;
   }
 
-  @media (max-width: 1194px) {
+  @media (max-width: 835px) {
     margin: 0 auto;
     margin-top: 30px;
     flex-direction: column;
     gap: 10px;
   }
-  @media (max-width: 834px) {
+  @media (max-width: 835px) {
     width: min(1200px, 90%);
   }
 `;
@@ -76,7 +76,7 @@ export const Left = styled.div`
   border-bottom: 1px solid #525252;
   background: none;
 
-  @media (max-width: 1194px) {
+  @media (max-width: 835px) {
     border-bottom: none;
     flex-direction: column;
     align-items: flex-start;
@@ -89,13 +89,14 @@ export const Title = styled.div`
   h3 {
     font-size: 20px;
     background: none;
+    margin-bottom: 6px;
   }
   span {
     font-size: 16px;
     background: none;
     opacity: 0.5;
   }
-  @media (max-width: 1194px) {
+  @media (max-width: 835px) {
     margin-bottom: 10px;
     h3 {
       margin-bottom: 12px;
@@ -107,7 +108,7 @@ export const ArtDirection = styled.div`
   opacity: 0.5;
   background: none;
   font-size: 16px;
-  @media (max-width: 1194px) {
+  @media (max-width: 835px) {
     padding-top: 10px;
     border-top: 1px solid #525252;
     width: 100%;
