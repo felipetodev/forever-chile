@@ -33,6 +33,10 @@ export const Container = styled.div`
   background: none;
   overflow: hidden;
 
+  @media (min-width: 2000px) {
+    width: 100%;
+  }
+
   // Tablet view
   @media (max-width: 1070px) {
     grid-template-columns: 1fr;
@@ -57,6 +61,7 @@ export const IntroStyled = styled.div`
   min-width: 570px;
   background: none;
   z-index: 1;
+  pointer-events: none;
 
   &::before {
     content: "";
@@ -75,6 +80,7 @@ export const IntroStyled = styled.div`
     white-space: nowrap;
     margin-bottom: 2vw;
     cursor: pointer;
+    pointer-events: all;
 
     h2 {
       position: relative;
@@ -107,6 +113,12 @@ export const IntroStyled = styled.div`
       span {
         visibility: hidden;
       }
+    }
+  }
+
+  @media (min-width: 2000px) {
+    &::before {
+      content: none;
     }
   }
 
@@ -197,21 +209,15 @@ export const AudioButton = styled.div`
     border-radius: 2.5em;
     cursor: pointer;
     pointer-events: auto;
-    span {
-      margin-left: 4px;
-    }
-  }
-  .is-enabled {
     width: 40px;
     padding: 0 0.7em;
     font-size: 18px;
     svg {
-      max-width: 1em;
       -webkit-flex-shrink: 0;
       flex-shrink: 0;
       height: 1em;
       width: auto;
-      max-width: 0.8em;
+      max-width: 1em;
       display: block;
       fill: currentColor;
       pointer-events: none;
