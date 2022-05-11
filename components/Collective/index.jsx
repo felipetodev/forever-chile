@@ -8,6 +8,7 @@ import "swiper/css";
 const Container = styled.div`
   display: flex;
   position: relative;
+  gap: 20px;
   z-index: 4;
   justify-content: space-evenly;
   align-items: center;
@@ -24,9 +25,11 @@ const Container = styled.div`
     text-align: center;
     flex-direction: column;
     height: auto;
+    padding-bottom: 50px;
   }
   @media (max-width: 740px) {
     margin-top: 180px;
+    padding-bottom: 0px;
   }
 `;
 
@@ -38,7 +41,7 @@ const BannerTitle = styled.div`
   }
   @media (max-width: 996px) {
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 `;
 
@@ -69,20 +72,47 @@ const ImageContainer = styled.div`
   }
 `;
 
-const images = [
-  {
-    name: "chiloe",
-    url: "/chiloecine.png",
-  },
-  {
-    name: "grupo137",
-    url: "/logo/forever-logo.svg",
-  },
-  {
-    name: "denise",
-    url: "/denise_logo.svg",
-  },
-];
+const SwiperStyled = styled(Swiper)`
+  &::before,
+  &::after {
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(transparent),
+      to(rgba(5, 44, 171, 20%))
+    );
+    background: linear-gradient(
+      to right,
+      #052cab 0%,
+      rgba(5, 44, 171, 0) 100%
+    );
+    content: "";
+    height: 175px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+  &::after {
+    right: 0;
+    top: 0;
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+
+  .swiper-slide {
+    max-width: 400px !important;
+  }
+
+  .swiper-wrapper {
+    transition-timing-function : linear !important;
+  }
+`;
 
 const MQ = "(max-width: 675px)";
 
@@ -117,16 +147,47 @@ const Collective = ({ title, brands }) => {
         </Swiper>
       ) : (
         <>
-          {brands?.items?.map(({ sys, title, image }) => (
-            <ImageContainer key={sys?.id}>
-              <Image
-                objectFit="contain"
-                layout="fill"
-                src={image?.url}
-                alt={title}
-              />
-            </ImageContainer>
-          ))}
+          {brands.items.length > 3 ? (
+            <SwiperStyled
+              loop
+              style={{ width: "100%" }}
+              slidesPerView="auto"
+              speed={7000}
+              allowTouchMove={false}
+              freeMode={{
+                enabled: true,
+                sticky: false,
+              }}
+              modules={[Autoplay]}
+              autoplay={{ delay: 0 }}
+            >
+              {brands?.items?.map(({ sys, title, image }) => (
+                <SwiperSlide key={sys?.id}>
+                  <ImageContainer>
+                    <Image
+                      objectFit="contain"
+                      layout="fill"
+                      src={image?.url}
+                      alt={title}
+                    />
+                  </ImageContainer>
+                </SwiperSlide>
+              ))}
+            </SwiperStyled>
+          ) : (
+            <>
+              {brands?.items?.map(({ sys, title, image }) => (
+                <ImageContainer key={sys?.id}>
+                  <Image
+                    objectFit="contain"
+                    layout="fill"
+                    src={image?.url}
+                    alt={title}
+                  />
+                </ImageContainer>
+              ))}
+            </>
+          )}
         </>
       )}
     </Container>
