@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ReactModal from "react-modal";
+import { motion } from "framer-motion";
 
 ReactModal.setAppElement("#__next");
 
@@ -32,7 +33,7 @@ export const Container = styled.div`
   }
 `;
 
-export const IframeContainer = styled.div`
+export const IframeContainer = styled(motion.div)`
   height: fit-content;
   width: 100%;
   div {
@@ -43,7 +44,7 @@ export const IframeContainer = styled.div`
   }
 `;
 
-export const ModalDescription = styled.div`
+export const ModalDescription = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -97,7 +98,7 @@ export const Title = styled.div`
     opacity: 0.5;
   }
   @media (max-width: 835px) {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     h3 {
       margin-bottom: 12px;
     }
@@ -109,8 +110,8 @@ export const ArtDirection = styled.div`
   background: none;
   font-size: 16px;
   @media (max-width: 835px) {
-    padding-top: 10px;
-    border-top: 1px solid #525252;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #525252;
     width: 100%;
   }
 `;

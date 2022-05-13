@@ -31,10 +31,18 @@ const Modal = ({ modalIsOpen, infoModal }) => {
       shouldCloseOnEsc
     >
       <Container>
-        <IframeContainer>
+        <IframeContainer
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <div dangerouslySetInnerHTML={{ __html: infoModal?.vimeoEmbedUrl }} />
         </IframeContainer>
-        <ModalDescription>
+        <ModalDescription
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+        >
           <Left>
             <Title>
               <h3>{infoModal?.title}</h3>
