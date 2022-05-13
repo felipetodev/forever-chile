@@ -38,7 +38,7 @@ export const First = styled(motion.div)`
   display: flex;
   position: relative;
   &::after {
-    transition: all 300ms ease;
+    transition: all 700ms ease;
     content: "";
     position: absolute;
     visibility: hidden;
@@ -60,7 +60,7 @@ export const Second = styled(motion.div)`
   justify-content: center;
   position: relative;
   &::after {
-    transition: all 300ms ease;
+    transition: all 700ms ease;
     content: "";
     position: absolute;
     visibility: hidden;
@@ -78,11 +78,14 @@ export const Second = styled(motion.div)`
 `;
 
 export const HoverWrapper = styled(motion.div)`
+  .hover-one, .hover-two {
+    transition: margin 700ms ease;
+  }
   &:hover div {
     &.hover-one {
       margin-right: 210px;
       &::after {
-        width: 190px;
+        width: 200px;
         right: -210px;
         visibility: visible;
       }

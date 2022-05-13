@@ -114,7 +114,7 @@ export const BurgerStyled = styled.div`
 export const MenuStyled = styled.div`
   position: fixed;
   background-color: #1a1a1a;
-  transition: transform 300ms ease;
+  transition: transform 700ms ease;
   transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(100%)")};
   right: 0;
   top: 0;
@@ -218,10 +218,10 @@ export const HamburgerMenu = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: width 1s ease-in-out;
+  transition: width 700ms ease-in-out;
 
   .line-menu {
-    transition: all 300ms ease;
+    transition: all 700ms ease;
     align-self: flex-end !important;
     background-color: #fff;
     width: 100%;

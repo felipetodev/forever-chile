@@ -142,7 +142,7 @@ const ContainerStyles = css`
       height: 261px !important;
     }
     &:hover {
-      filter: hue-rotate(220deg) contrast(1.15) saturate(1);
+      filter: contrast(1.2) saturate(1.1);
     }
   }
   @media (max-width: 1920px) {
