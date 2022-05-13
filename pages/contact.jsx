@@ -13,6 +13,10 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
   }
+  @media (max-width: 500px) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 `;
 
 const Spacing = styled.div`
