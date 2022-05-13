@@ -122,4 +122,10 @@ export const SwiperStyled = styled(Swiper)`
       max-width: 350px !important;
     }
   }
+
+  @media (max-width: 400px) {
+    .swiper-slide {
+      max-width: 300px !important;
+    }
+  }
 `;
