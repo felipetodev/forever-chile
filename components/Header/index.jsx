@@ -49,7 +49,7 @@ const Header = ({
               <a>
                 <Image
                   objectFit="contain"
-                  src="/logo/forever-logo.svg"
+                  src="/logo/forever-chile-logo.svg"
                   width="135"
                   height="75px"
                   alt="Forever Collective"

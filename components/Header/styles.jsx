@@ -55,7 +55,7 @@ export const LogoStyled = styled.div`
 
     img {
       background: none;
-      width: 106px !important;
+      width: 80px !important;
       height: 56.33px !important;
     }
   }
@@ -89,12 +89,22 @@ export const LogoStyled = styled.div`
     top: 0;
     left: 0;
     height: 100%;
-    width: 53%;
+    width: 70%;
     img {
       border-radius: 9999px;
       overflow: hidden;
       width: 40px !important;
       height: 40px !important;
+    }
+  }
+  @media (max-width: 1070px) {
+    .img-animation {
+      top: -1px;
+      width: 62%;
+      img {
+        width: 34px !important;
+        height: 34px !important;
+      }
     }
   }
 `;
