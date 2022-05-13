@@ -91,15 +91,21 @@ export const NavigationList = styled.ul`
   @media (max-width: 740px) {
     justify-content: center;
     padding: 0;
-    li {
+    .image-container {
+      left: 80px;
       span {
-        &::before {
-          display: none;
-        }
+        width: 300px !important;
+        height: 300px !important;
       }
     }
+  }
+  @media (max-width: 400px) {
     .image-container {
-      display: none;
+      left: 20px;
+      span {
+        width: 200px !important;
+        height: 200px !important;
+      }
     }
   }
 `;
