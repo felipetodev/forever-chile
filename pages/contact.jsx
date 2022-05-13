@@ -22,7 +22,7 @@ const Container = styled.div`
 const Spacing = styled.div`
   min-height: 20vh;
   @media (max-width: 500px) {
-    min-height: 20px;
+    display: none;
   }
 `;
 

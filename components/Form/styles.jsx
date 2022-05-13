@@ -7,7 +7,7 @@ export const FormStyled = styled.form`
   position: relative;
   @media (max-width: 500px) {
     top: -170px;
-    margin-bottom: 80px;
+    margin-bottom: -35px;
   }
 `;
 

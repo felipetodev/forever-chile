@@ -28,6 +28,16 @@ const Heading = styled.h1`
   }
 `;
 
+const WorksSpacing = styled.div`
+  position: relative;
+  height: 150px;
+  background-color: #1a1a1a;
+  z-index: 5;
+  @media (max-width: 400px) {
+    display: none;
+  }
+`;
+
 const WorkPage = ({ page = {} }) => {
   const { description, workVideosCollection = [] } = page;
   const [workSection, setWorkSection] = useState("all");
@@ -76,16 +86,7 @@ const WorkPage = ({ page = {} }) => {
         modalIsOpen={Boolean(router.query.project)}
         infoModal={modalWork}
       />
-      <div
-        style={{
-          position: "relative",
-          height: "150px",
-          backgroundColor: "#1A1A1A",
-          zIndex: 4,
-        }}
-      >
-        <div style={{ position: "absolute", zIndex: 4 }}></div>
-      </div>
+      <WorksSpacing />
       <Footer isWork />
       <FooterMobile />
     </>
