@@ -67,7 +67,7 @@ export const Wrap = styled(motion.div)`
   }
   @media (max-width: 950px) {
     min-height: 600px;
-    margin-left: 15%;
+    margin-left: 18%;
     h1 {
       margin-right: 80px;
     }
@@ -106,7 +106,6 @@ export const Wrap = styled(motion.div)`
   }
   @media (max-width: 500px) {
     top: -60px;
-    margin-left: 0px;
   }
 `;
 

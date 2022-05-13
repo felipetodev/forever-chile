@@ -10,12 +10,9 @@ const Container = styled.div`
   width: min(1400px, 90%);
   margin: 0 auto;
   @media (max-width: 950px) {
+    width: auto;
     display: flex;
     flex-direction: column;
-  }
-  @media (max-width: 500px) {
-    padding-left: 12px;
-    padding-right: 12px;
   }
 `;
 

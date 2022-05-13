@@ -5,6 +5,7 @@ import {
   Input,
   TextArea,
   Button,
+  Container,
   CallbackMessage,
 } from "./styles";
 
@@ -33,6 +34,7 @@ const Form = () => {
     }
   };
   return (
+    <Container>
     <FormStyled onSubmit={handleOnSubmit} style={{ minHeight: "60vh" }}>
       <Label>
         Name*
@@ -78,6 +80,7 @@ const Form = () => {
       {message && <CallbackMessage>{message}</CallbackMessage>}
       <Button type="submit">Submit</Button>
     </FormStyled>
+    </Container>
   );
 };
 

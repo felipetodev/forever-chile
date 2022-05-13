@@ -1,5 +1,25 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  @media (max-width: 1070px) {
+    margin-left: 80px;
+    margin-right: 6.2222%;
+    & .margin-left {
+      display: none;
+    }
+    & ._3 {
+      display: none;
+    }
+  }
+  @media (max-width: 675px) {
+    margin-left: 50px;
+  }
+  @media (max-width: 400px) {
+    width: min(800px, 84%);
+    margin: 0 auto;
+  }
+`;
+
 export const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
@@ -22,6 +42,7 @@ export const Label = styled.label`
 export const Input = styled.input`
   color: #fff;
   font-family: inherit;
+  border-radius: 0%;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -38,6 +59,7 @@ export const Input = styled.input`
 
 export const TextArea = styled.textarea`
   color: #fff;
+  border-radius: 0%;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -67,7 +89,7 @@ export const Button = styled.button`
   font-size: 22px;
   padding: 10px 80px;
   margin-top: 50px;
-  border: 1px solid #E6E6E6;
+  border: 1px solid #e6e6e6;
   font-family: inherit;
   transition: background 200ms ease;
   &:hover,
