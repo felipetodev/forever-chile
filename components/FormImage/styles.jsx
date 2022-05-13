@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export const Wrap = styled(motion.div)`
   position: relative;
   display: flex;
-  transition: all 400ms ease;
+  transition: all 700ms ease;
   max-height: 600px;
   h1 {
     margin-top: 200px;
@@ -84,14 +84,15 @@ export const Wrap = styled(motion.div)`
     }
   }
   @media (max-width: 600px) {
-    margin-left: 10%;
+    margin-left: 5%;
+    pointer-events: none;
     h1 {
       font-size: 20px;
     }
     &:hover {
       .triangle {
-        top: 1%;
-        left: 10%;
+        top: 10px;
+        left: 36px;
       }
       .square {
         top: 150px;
@@ -110,7 +111,7 @@ export const Wrap = styled(motion.div)`
 `;
 
 export const Triangle = styled(motion.div)`
-  transition: all 400ms ease;
+  transition: all 700ms ease;
   overflow: hidden;
   width: 200px;
   height: 200px;
@@ -128,12 +129,16 @@ export const Triangle = styled(motion.div)`
     left: 30px;
   }
   @media (max-width: 600px) {
+    pointer-events: all;
     left: 18px;
+  }
+  @media (max-width: 400px) {
+    left: 14px;
   }
 `;
 
 export const Square = styled(motion.div)`
-  transition: all 400ms ease;
+  transition: all 700ms ease;
   overflow: hidden;
   width: 400px;
   height: 400px;
@@ -151,6 +156,7 @@ export const Square = styled(motion.div)`
     left: 135px;
   }
   @media (max-width: 600px) {
+    pointer-events: all;
     width: 230px;
     height: 230px;
     left: 100px;
@@ -159,7 +165,7 @@ export const Square = styled(motion.div)`
 `;
 
 export const Circle = styled(motion.div)`
-  transition: all 400ms ease;
+  transition: all 700ms ease;
   overflow: hidden;
   width: 300px;
   height: 300px;
@@ -177,6 +183,7 @@ export const Circle = styled(motion.div)`
     bottom: 50px;
   }
   @media (max-width: 600px) {
+    pointer-events: all;
     width: 200px;
     height: 200px;
     left: 35px;
