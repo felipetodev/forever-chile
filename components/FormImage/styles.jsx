@@ -13,13 +13,13 @@ export const Wrap = styled(motion.div)`
   }
   &:hover {
     .triangle {
-      top: -10%;
-      left: 16%;
+      top: -80px;
+      left: 100px;
       transform: rotate(-5deg);
     }
     .square {
       top: 100px;
-      left: 52%;
+      left: 350px;
       transform: rotate(35deg);
     }
     .circle {
