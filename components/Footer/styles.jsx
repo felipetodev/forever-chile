@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FooterStyled = styled.div`
+export const FooterStyled = styled.footer`
   display: flex;
   font-size: 13px;
   position: relative;
@@ -229,7 +229,7 @@ export const IntroStyled = styled.div`
   }
 `;
 
-export const FooterMobileStyled = styled.div`
+export const FooterMobileStyled = styled.footer`
   display: none;
   justify-content: space-evenly;
   align-items: center;
