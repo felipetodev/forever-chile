@@ -46,8 +46,7 @@ export const Input = styled.input`
   border-top: none;
   border-left: none;
   border-right: none;
-  border-color: #e6e6e6;
-  opacity: 0.5;
+  border-color: rgba(230, 230, 230, 0.5);
   padding: 10px 0px;
   min-height: 35px;
   font-size: 25px;
@@ -66,14 +65,12 @@ export const TextArea = styled.textarea`
   border-left: none;
   border-right: none;
   border-bottom-width: 2px;
-  border-color: #e6e6e6;
-  opacity: 0.5 !important;
+  border-color: rgba(230, 230, 230, 0.5);
   padding: 10px 0px;
   font-size: 25px;
   font-family: inherit;
   resize: none;
   outline: none;
-  opacity: 1;
   min-height: fit-content;
   background: none;
   transition: all 300ms ease;
