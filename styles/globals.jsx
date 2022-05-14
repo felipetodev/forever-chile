@@ -7,6 +7,13 @@ export const FoundersContainer = styled.div`
   }
 `;
 
+export const HomeSpaceing = styled.div`
+  position: relative;
+  height: 40px;
+  background-color: #1A1A1A;
+  z-index: 5;
+`;
+
 export const GlobalStyles = createGlobalStyle`
   html,
   body {

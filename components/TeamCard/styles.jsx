@@ -48,7 +48,8 @@ export const Years = styled.div`
   &::before {
     content: "";
     position: absolute;
-    background: transparent url("/line.png") 0% 0% repeat padding-box;
+    background: #E6E6E6;
+    opacity: 0.4;
     top: -15px;
     right: 0;
     left: 0;

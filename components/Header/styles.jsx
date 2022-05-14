@@ -141,7 +141,8 @@ export const IntroStyled = styled.div`
   &::before {
     content: "";
     position: absolute;
-    background: transparent url("/line.png") 0% 0% no-repeat padding-box;
+    background: #E6E6E6;
+    opacity: 0.4;
     left: -30px;
     top: -150px;
     height: 500px;

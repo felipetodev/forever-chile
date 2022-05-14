@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer, { FooterMobile } from "../components/Footer";
 import FullHeroCarousel from "../components/FullHeroCarousel";
 import Dots from "../components/Dots";
+import { HomeSpaceing } from "../styles/globals";
 import { GET_HOME_ENTRY } from "../queries/getHomeEntry";
 import Head from "next/head";
 
@@ -29,17 +30,7 @@ export default function Home({ page = {} }) {
         {description}
       </div>
       <FullHeroCarousel videosCollection={homeVideosCollection} />
-      {/* DIVISOR LINE */}
-      <div
-        style={{
-          position: "relative",
-          height: "40px",
-          backgroundColor: "#1A1A1A",
-          zIndex: 5,
-        }}
-      >
-        <div style={{ position: "absolute", zIndex: 4 }}></div>
-      </div>
+      <HomeSpaceing />
       <Footer isHome />
       <FooterMobile />
     </>

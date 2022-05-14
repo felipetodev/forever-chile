@@ -20,14 +20,7 @@ const spin = {
 
 const DEFAULT_BG_ANIMATION = "/logo/f1.svg";
 
-const Header = ({
-  noDot,
-  isAbout,
-  hasDot,
-  isWork,
-  isContact,
-  description,
-}) => {
+const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
   const [svg, setSvg] = useState(DEFAULT_BG_ANIMATION);
 
   useEffect(() => {

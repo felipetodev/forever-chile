@@ -83,7 +83,8 @@ export const Container = styled.div`
     &::before {
       content: "";
       position: absolute;
-      background: transparent url("/line.png") 0% 0% repeat padding-box;
+      background: #E6E6E6;
+      opacity: 0.4;
       top: 0;
       left: -30px;
       height: 100%;
@@ -109,7 +110,8 @@ export const Container = styled.div`
     &::before {
       content: "";
       position: absolute;
-      background: transparent url("/line.png") 0% 0% repeat padding-box;
+      background: #E6E6E6;
+      opacity: 0.4;
       top: 0;
       left: 0;
       height: 100%;
@@ -209,7 +211,8 @@ export const IntroStyled = styled.div`
   &::before {
     content: "";
     position: absolute;
-    background: transparent url("/line.png") 0% 0% repeat padding-box;
+    background: #E6E6E6;
+    opacity: 0.4;
     top: -80px;
     left: -30px;
     height: 1000px;

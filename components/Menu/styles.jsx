@@ -15,7 +15,8 @@ export const BurgerStyled = styled.div`
   &::before {
     content: "";
     position: absolute;
-    background: transparent url("/line.png") 0% 0% repeat padding-box;
+    background: #E6E6E6;
+    opacity: 0.4;
     left: -30px;
     top: 0;
     height: 100%;
@@ -23,12 +24,10 @@ export const BurgerStyled = styled.div`
     visibility: ${({ open }) => (open ? "hidden" : "visible")};
   }
 
-  // Tablet Landscape view
   @media (max-width: 1194px) {
     width: 180px;
   }
 
-  // Tablet view
   @media (max-width: 1070px) {
     width: 150px;
     position: fixed;
@@ -75,40 +74,9 @@ export const BurgerStyled = styled.div`
     }
   }
 
-  // Mobile view
   @media (max-width: 400px) {
     width: 115px;
   }
-
-  /* &.menu-dot {
-    &::after {
-      content: "";
-      position: absolute;
-      top: 150px;
-      left: -17px;
-      height: 8px;
-      width: 8px;
-      border-radius: 9999px;
-      z-index: 4;
-      border: 1px solid #707070;
-      visibility: ${({ open }) => (open ? "hidden" : "visible")};
-    }
-    @media (max-width: 1070px) {
-      &::after {
-        left: 13px;
-      }
-    }
-    @media (max-width: 1070px) {
-      &::after {
-        top: 119px;
-      }
-    }
-    @media (max-width: 400px) {
-      &::after {
-        left: -20px;
-      }
-    }
-  } */
 `;
 
 export const MenuStyled = styled.div`
@@ -166,7 +134,8 @@ export const MenuStyled = styled.div`
   &::before {
     content: "";
     position: absolute;
-    background: transparent url("/line.png") 0% 0% repeat padding-box;
+    background: #E6E6E6;
+    opacity: 0.4;
     left: 0;
     top: 0;
     height: 100%;
