@@ -166,7 +166,7 @@ export const HamburgerContainer = styled.div`
   background: none;
   position: fixed;
   top: 60px;
-  z-index: 9999;
+  z-index: 50;
   pointer-events: all;
   cursor: pointer;
 
