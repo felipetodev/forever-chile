@@ -40,12 +40,14 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  color: #fff;
+  color: inherit;
   font-family: inherit;
   border-radius: 0%;
   border-top: none;
   border-left: none;
   border-right: none;
+  border-color: #e6e6e6;
+  opacity: 0.5;
   padding: 10px 0px;
   min-height: 35px;
   font-size: 25px;
@@ -58,12 +60,14 @@ export const Input = styled.input`
 `;
 
 export const TextArea = styled.textarea`
-  color: #fff;
+  color: inherit;
   border-radius: 0%;
   border-top: none;
   border-left: none;
   border-right: none;
   border-bottom-width: 2px;
+  border-color: #e6e6e6;
+  opacity: 0.5 !important;
   padding: 10px 0px;
   font-size: 25px;
   font-family: inherit;
