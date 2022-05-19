@@ -144,7 +144,7 @@ export const IntroStyled = styled.div`
     background: #E6E6E6;
     opacity: 0.4;
     left: -30px;
-    top: -150px;
+    top: -300px;
     height: 500px;
     width: 1px;
   }
