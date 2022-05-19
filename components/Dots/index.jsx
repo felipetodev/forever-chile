@@ -101,6 +101,9 @@ const Container = styled.div`
         border-radius: 9999px;
         border: 1px solid #707070;
       }
+      &::after {
+        z-index: 1;
+      }
       @media (max-width: 1950px) {
         &::before {
           left: -55px;
