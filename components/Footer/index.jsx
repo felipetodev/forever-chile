@@ -9,7 +9,7 @@ import {
 } from "./styles";
 import { MaxContainer } from "../Layout/styles";
 
-const Footer = ({ isWork }) => {
+const Footer = ({ isWork, style }) => {
   const [nativeMapsApp, setNativeMapsApp] = useState(false);
   useEffect(() => {
     const userAgent =
@@ -18,7 +18,7 @@ const Footer = ({ isWork }) => {
     setNativeMapsApp(isIphone);
   }, []);
   return (
-    <MaxContainer>
+    <MaxContainer style={style}>
       <FooterStyled className={isWork ? "is-work-footer" : null}>
         <Container>
           <LogoStyled>

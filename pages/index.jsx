@@ -31,7 +31,7 @@ export default function Home({ page = {} }) {
       </div>
       <FullHeroCarousel videosCollection={homeVideosCollection} />
       <HomeSpaceing />
-      <Footer isHome />
+      <Footer style={{ overflow: "hidden" }} />
       <FooterMobile />
     </>
   );
