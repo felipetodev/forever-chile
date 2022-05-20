@@ -8,6 +8,7 @@ export const AboutTitle = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  z-index: 1;
   .top-header {
     position: relative;
     margin-right: 30%;
