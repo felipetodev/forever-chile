@@ -66,7 +66,8 @@ export const IntroStyled = styled.div`
   &::before {
     content: "";
     position: absolute;
-    background: transparent url("/line.png") 0% 0% repeat padding-box;
+    background: #E6E6E6;
+    opacity: 0.4;
     left: -30px;
     top: -800px; // <-- increase 100vh
     height: 1200px;
@@ -152,6 +153,7 @@ export const IntroStyled = styled.div`
   // Mobile view
   @media (max-width: 400px) {
     a {
+      height: fit-content;
       // margin-right: 20px;
       margin-bottom: 20px;
       h2 {
@@ -188,13 +190,9 @@ export const AudioButton = styled.div`
     box-sizing: border-box;
     margin: 0;
     z-index: 20;
-    display: -webkit-flex;
     display: flex;
-    -webkit-flex-direction: row;
     flex-direction: row;
-    -webkit-align-items: center;
     align-items: center;
-    -webkit-justify-content: center;
     justify-content: center;
     padding: 0 1em;
     min-width: 40px;
@@ -202,10 +200,7 @@ export const AudioButton = styled.div`
     font-size: 14px;
     line-height: 1em;
     color: inherit;
-    background-color: hsla(0, 0%, 100%, 0.2);
-    box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
-    transition: box-shadow 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95),
-      background 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    background: transparent;
     border-radius: 2.5em;
     cursor: pointer;
     pointer-events: auto;
@@ -234,10 +229,11 @@ export const AudioButton = styled.div`
     }
   }
   @media (max-width: 400px) {
-    margin-top: 40px;
+    display: none;
+    /* margin-top: 40px;
     button {
       bottom: 16px;
-      left: 0px;
-    }
+      left: 2px;
+    } */
   }
 `;
