@@ -17,10 +17,7 @@ export default function Home({ page = {} }) {
       <Header
         isHome
         noDot
-        description={
-          description ||
-          "We are a team of professionals from different artistic areas that unite to deliver and achieve the best combination of results for each spectator."
-        }
+        description={description}
       />
       <Dots isHome />
       <div

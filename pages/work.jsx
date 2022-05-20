@@ -62,8 +62,7 @@ const WorkPage = ({ page = {} }) => {
       <MaxContainer>
         <Container>
           <Heading>
-            {description ||
-              "We deliver and achieve the best combination of results for each spectator."}
+            {description}
           </Heading>
         </Container>
         <MenuList
