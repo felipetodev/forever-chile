@@ -22,6 +22,15 @@ export const GET_HOME_ENTRY = `
             }
           }
         }
+        footer {
+          email
+          primaryNumber
+          primaryAddress
+          primaryGoogleAddressUrl
+          secondaryNumber
+          secondaryAddress
+          secondaryGoogleAddressUrl
+        }
       }
     }
   }

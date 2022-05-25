@@ -74,6 +74,15 @@ query GetLayoutPage($slug: String!) {
           }
         }
       }
+      footer {
+        email
+        primaryNumber
+        primaryAddress
+        primaryGoogleAddressUrl
+        secondaryNumber
+        secondaryAddress
+        secondaryGoogleAddressUrl
+      }
     }
   }
 }

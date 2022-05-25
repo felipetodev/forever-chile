@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
   Container,
@@ -9,14 +8,7 @@ import {
 } from "./styles";
 import { MaxContainer } from "../Layout/styles";
 
-const Footer = ({ isWork, style }) => {
-  const [nativeMapsApp, setNativeMapsApp] = useState(false);
-  useEffect(() => {
-    const userAgent =
-      typeof navigator === "undefined" ? "" : navigator.userAgent;
-    const isIphone = userAgent?.includes("iPhone");
-    setNativeMapsApp(isIphone);
-  }, []);
+const Footer = ({ footer, isWork, style }) => {
   return (
     <MaxContainer style={style}>
       <FooterStyled className={isWork ? "is-work-footer" : null}>
@@ -24,7 +16,7 @@ const Footer = ({ isWork, style }) => {
           <LogoStyled>
             <span>Copyright © 2021 forever-chile.</span>
             <span>All Rights Reserved FOREVER CHILE</span>
-            <span>contact@forever-chile.com</span>
+            <span>{footer?.email}</span>
             <span style={{ marginTop: "30px" }}>
               <a
                 href="https://www.sebastianhansonstudio.com"
@@ -37,30 +29,21 @@ const Footer = ({ isWork, style }) => {
             </span>
           </LogoStyled>
           <IntroStyled>
-            <span>+569-9330-7139 +569-9793-7881</span>
+            <span>{footer?.primaryNumber}</span>
             <a
-              href={
-                nativeMapsApp
-                  ? "https://maps.apple.com/?address=C%C3%A9sar%20Cascabel%204369,%20Las%20Condes,%20Chile&ll=-33.423054,-70.581238&q=C%C3%A9sar%20Cascabel%204369&_ext=EiYp/yTjzLm2QMAxWinaK4ulUcA5gU+9cJO1QMBBHvA01NqkUcBQBA%3D%3D"
-                  : "https://goo.gl/maps/a29zZrUXiTgthMMRA"
-              }
+              href={footer?.primaryGoogleAddressUrl}
               target="_blank"
               rel="noreferrer"
             >
-              César Cascabel 4369 Apt. 1022, Las Condes, Santiago - 7550372,
-              Chile.
+              {footer?.primaryAddress}
             </a>
-            <span style={{ marginTop: "30px" }}>+1-646-652-6162</span>
+            <span style={{ marginTop: "30px" }}>{footer?.secondaryNumber}</span>
             <a
-              href={
-                nativeMapsApp
-                  ? "https://maps.apple.com/?address=1330%20Sixth%20Ave,%20FL%2023,%20New%20York,%20NY%20%2010019,%20United%20States&ll=40.761968,-73.978413&q=1330%20Sixth%20Ave,%20FL%2023&_ext=EiYpimNu+fRgREAxzyGpeP9+UsA5CDmUVRtiREBBDR3xJz1+UsBQBA%3D%3D&t=m"
-                  : "https://goo.gl/maps/TeBATtpueDLLGUrz6"
-              }
+              href={footer?.secondaryGoogleAddressUrl}
               target="_blank"
               rel="noreferrer"
             >
-              1330 Avenue of the Americas Suite 23A, New York, NY-10019, USA.
+              {footer?.secondaryAddress}
             </a>
           </IntroStyled>
           <div className="footer-logo">

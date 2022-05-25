@@ -14,7 +14,7 @@ const CollectiveImage = ({ image, title }) => (
 );
 
 const Collective = ({ title, brands }) => {
-  const sliderWrap = brands.items.length > 3;
+  const sliderWrap = brands.items?.length > 3;
   const isMobile = useMediaQuery(MQ);
   return (
     <Container className={sliderWrap ? "collective-slider" : null}>

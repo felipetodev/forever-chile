@@ -7,7 +7,7 @@ import { GET_HOME_ENTRY } from "../queries/getHomeEntry";
 import Head from "next/head";
 
 export default function Home({ page = {} }) {
-  const { description, homeVideosCollection = {} } = page;
+  const { description, homeVideosCollection = {}, footer = {} } = page;
   return (
     <>
       <Head>
@@ -28,7 +28,7 @@ export default function Home({ page = {} }) {
       </div>
       <FullHeroCarousel videosCollection={homeVideosCollection} />
       <HomeSpaceing />
-      <Footer style={{ overflow: "hidden" }} />
+      <Footer footer={footer} style={{ overflow: "hidden" }} />
       <FooterMobile />
     </>
   );

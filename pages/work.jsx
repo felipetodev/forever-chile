@@ -39,7 +39,7 @@ const WorksSpacing = styled.div`
 `;
 
 const WorkPage = ({ page = {} }) => {
-  const { description, workVideosCollection = [] } = page;
+  const { description, workVideosCollection = [], footer = {} } = page;
   const [workSection, setWorkSection] = useState("all");
   const [modalWork, setModalWork] = useState(null);
   const router = useRouter();
@@ -61,9 +61,7 @@ const WorkPage = ({ page = {} }) => {
       <Dots />
       <MaxContainer>
         <Container>
-          <Heading>
-            {description}
-          </Heading>
+          <Heading>{description}</Heading>
         </Container>
         <MenuList
           categories={categories}
@@ -86,7 +84,7 @@ const WorkPage = ({ page = {} }) => {
         infoModal={modalWork}
       />
       <WorksSpacing />
-      <Footer isWork />
+      <Footer isWork footer={footer} />
       <FooterMobile />
     </>
   );

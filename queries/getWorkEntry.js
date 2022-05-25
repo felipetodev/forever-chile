@@ -30,6 +30,15 @@ export const GET_WORK_ENTRY = `
             }
           }
         }
+        footer {
+          email
+          primaryNumber
+          primaryAddress
+          primaryGoogleAddressUrl
+          secondaryNumber
+          secondaryAddress
+          secondaryGoogleAddressUrl
+        }
       }
     }
   }

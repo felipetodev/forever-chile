@@ -22,6 +22,7 @@ const About = ({ page }) => {
     teamCollection = {},
     videoBannerDescription,
     blueBannerTitle,
+    footer = {},
   } = page;
   return (
     <>
@@ -61,7 +62,7 @@ const About = ({ page }) => {
       <TrashDesignMobile />
       <Collective title={blueBannerTitle} brands={collectiveBannerCollection} />
       <HoverBanner />
-      <Footer />
+      <Footer footer={footer} />
       <FooterMobile />
     </>
   );

@@ -3,6 +3,7 @@ import Form from "../components/Form";
 import FormImage from "../components/FormImage";
 import Footer, { FooterMobile } from "../components/Footer";
 import styled from "styled-components";
+import { GET_CONTACT_ENTRY } from "../queries/getContactEntry";
 
 const Container = styled.div`
   display: grid;
@@ -23,7 +24,8 @@ const Spacing = styled.div`
   }
 `;
 
-const ContactPage = () => {
+const ContactPage = ({ page = {} }) => {
+  const { footer = {} } = page;
   return (
     <>
       <Header noDot isAbout isWork isContact />
@@ -32,10 +34,25 @@ const ContactPage = () => {
         <Form />
       </Container>
       <Spacing />
-      <Footer />
+      <Footer footer={footer} />
       <FooterMobile />
     </>
   );
 };
 
 export default ContactPage;
+
+export async function getStaticProps() {
+  const { contentful } = require("../contentful/service");
+  const page = await contentful(
+    "contact",
+    "contactPageCollection",
+    GET_CONTACT_ENTRY
+  );
+
+  return {
+    props: {
+      page,
+    },
+  };
+}
