@@ -5,15 +5,10 @@ import Dots from "../components/Dots";
 import { HomeSpaceing } from "../styles/globals";
 import { GET_HOME_ENTRY } from "../queries/getHomeEntry";
 
-export default function Home({ page = {} }) {
-  const { description, homeVideosCollection = {}, footer = {} } = page;
+export default function Home({ description, homeVideosCollection, footer }) {
   return (
     <>
-      <Header
-        isHome
-        noDot
-        description={description}
-      />
+      <Header isHome noDot description={description} />
       <Dots isHome />
       <div
         className="mobile-description"
@@ -32,10 +27,13 @@ export default function Home({ page = {} }) {
 export async function getStaticProps() {
   const { contentful } = require("../contentful/service");
   const page = await contentful("home", "homePageCollection", GET_HOME_ENTRY);
+  const { description, homeVideosCollection = {}, footer = {} } = page;
 
   return {
     props: {
-      page,
+      description,
+      homeVideosCollection,
+      footer,
     },
   };
 }
