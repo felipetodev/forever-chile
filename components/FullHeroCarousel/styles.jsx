@@ -229,11 +229,10 @@ export const AudioButton = styled.div`
     }
   }
   @media (max-width: 400px) {
-    display: none;
-    /* margin-top: 40px;
+    position: absolute;
     button {
-      bottom: 16px;
-      left: 2px;
-    } */
+      bottom: 6px;
+      left: 55px;
+    }
   }
 `;
