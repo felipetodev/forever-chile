@@ -5,6 +5,7 @@ query GetLayoutPage($slug: String!) {
   }, limit: 1) {
     items {
       title
+      formMessage
       slug
       footer {
         copyright
@@ -15,6 +16,14 @@ query GetLayoutPage($slug: String!) {
         secondaryNumber
         secondaryAddress
         secondaryGoogleAddressUrl
+        logoImage1 {
+          url
+          title
+        }
+        logoImage2 {
+          url
+          title
+        }
       }
     }
   }

@@ -83,6 +83,14 @@ query GetLayoutPage($slug: String!) {
         secondaryNumber
         secondaryAddress
         secondaryGoogleAddressUrl
+        logoImage1 {
+          url
+          title
+        }
+        logoImage2 {
+          url
+          title
+        }
       }
     }
   }

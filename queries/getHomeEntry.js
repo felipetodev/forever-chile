@@ -31,6 +31,14 @@ export const GET_HOME_ENTRY = `
           secondaryNumber
           secondaryAddress
           secondaryGoogleAddressUrl
+          logoImage1 {
+            url
+            title
+          }
+          logoImage2 {
+            url
+            title
+          }
         }
       }
     }
