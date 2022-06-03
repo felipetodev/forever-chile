@@ -4,16 +4,11 @@ import FullHeroCarousel from "../components/FullHeroCarousel";
 import Dots from "../components/Dots";
 import { HomeSpaceing } from "../styles/globals";
 import { GET_HOME_ENTRY } from "../queries/getHomeEntry";
-import Head from "next/head";
 
 export default function Home({ page = {} }) {
   const { description, homeVideosCollection = {}, footer = {} } = page;
   return (
     <>
-      <Head>
-        <title>Forever | Home</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-      </Head>
       <Header
         isHome
         noDot

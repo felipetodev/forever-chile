@@ -40,9 +40,9 @@ export const GlobalStyles = createGlobalStyle`
     color: #e6e6e6;
   }
 
-  .app {
+  #__next, .app {
     overflow: hidden;
-    margin: 0 auto;
+    height: 100%;
   }
 
   .app .works-spacing {

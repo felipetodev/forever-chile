@@ -1,12 +1,16 @@
+import SeoLayout from "../components/Seo";
 import { GlobalStyles } from "../styles/globals";
 
 function MyApp({ Component, pageProps }) {
+  const { page } = pageProps;
   return (
     <>
       <GlobalStyles />
-      <div className="app">
-        <Component {...pageProps} />
-      </div>
+      <SeoLayout section={page?.slug?.toUpperCase()}>
+        <div className="app">
+          <Component {...pageProps} />
+        </div>
+      </SeoLayout>
     </>
   );
 }

@@ -14,7 +14,7 @@ const Footer = ({ footer, isWork, style }) => {
       <FooterStyled className={isWork ? "is-work-footer" : null}>
         <Container>
           <LogoStyled>
-            <span>Copyright © 2021 forever-chile.</span>
+            <span>{footer?.copyright}</span>
             <span>All Rights Reserved FOREVER CHILE</span>
             <span>{footer?.email}</span>
             <span style={{ marginTop: "30px" }}>
