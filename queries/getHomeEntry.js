@@ -23,6 +23,7 @@ export const GET_HOME_ENTRY = `
           }
         }
         footer {
+          copyright
           email
           primaryNumber
           primaryAddress

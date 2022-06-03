@@ -75,6 +75,7 @@ query GetLayoutPage($slug: String!) {
         }
       }
       footer {
+        copyright
         email
         primaryNumber
         primaryAddress

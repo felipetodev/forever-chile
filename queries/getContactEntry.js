@@ -7,6 +7,7 @@ query GetLayoutPage($slug: String!) {
       title
       slug
       footer {
+        copyright
         email
         primaryNumber
         primaryAddress

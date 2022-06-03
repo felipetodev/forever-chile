@@ -31,6 +31,7 @@ export const GET_WORK_ENTRY = `
           }
         }
         footer {
+          copyright
           email
           primaryNumber
           primaryAddress
