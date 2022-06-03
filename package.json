@@ -1,7 +1,12 @@
 {
   "name": "forever-agency",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Felipe Ossandon",
+    "email": "fe.ossandon.u@gmail.com"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,13 +14,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "framer-motion": "6.3.4",
+    "framer-motion": "6.3.10",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-modal": "3.15.1",
     "styled-components": "5.3.5",
-    "swiper": "8.1.6"
+    "swiper": "8.2.2"
   },
   "devDependencies": {
     "eslint": "8.16.0",
