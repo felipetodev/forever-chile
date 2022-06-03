@@ -25,13 +25,13 @@ const Spacing = styled.div`
 `;
 
 const ContactPage = ({ page = {} }) => {
-  const { footer = {} } = page;
+  const { formMessage, footer = {} } = page;
   return (
     <>
       <Header noDot isAbout isWork isContact />
       <Container>
         <FormImage />
-        <Form />
+        <Form submitMessage={formMessage} />
       </Container>
       <Spacing />
       <Footer footer={footer} />
