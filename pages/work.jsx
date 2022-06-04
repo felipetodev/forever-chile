@@ -85,7 +85,7 @@ const WorkPage = ({ page = {} }) => {
       />
       <WorksSpacing />
       <Footer isWork footer={footer} />
-      <FooterMobile />
+      <FooterMobile footer={footer} />
     </>
   );
 };

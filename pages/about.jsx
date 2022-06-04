@@ -63,7 +63,7 @@ const About = ({ page }) => {
       <Collective title={blueBannerTitle} brands={collectiveBannerCollection} />
       <HoverBanner />
       <Footer footer={footer} />
-      <FooterMobile />
+      <FooterMobile footer={footer} />
     </>
   );
 };

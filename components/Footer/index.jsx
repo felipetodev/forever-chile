@@ -9,6 +9,7 @@ import {
 import { MaxContainer } from "../Layout/styles";
 
 const Footer = ({ footer, isWork, style }) => {
+  const { imageRowOne = {}, imageRowTwo = {} } = footer ?? {};
   return (
     <MaxContainer style={style}>
       <FooterStyled className={isWork ? "is-work-footer" : null}>
@@ -48,30 +49,34 @@ const Footer = ({ footer, isWork, style }) => {
           </IntroStyled>
           <div className="footer-logo">
             <a
-              href="https://www.deniseliraratinoff.com"
+              href={imageRowOne.imageUrl}
               target="_blank"
               rel="noreferrer"
               className="denise-logo"
             >
-              <Image
-                objectFit="contain"
-                layout="fill"
-                src="/denise_logo.svg"
-                alt="Denise Lira"
-              />
+              {imageRowOne.image.url && (
+                <Image
+                  objectFit="contain"
+                  layout="fill"
+                  src={imageRowOne.image.url}
+                  alt={imageRowOne.image.title}
+                />
+              )}
             </a>
             <a
-              href="https://www.chiloecine.com"
+              href={imageRowTwo.imageUrl}
               target="_blank"
               rel="noreferrer"
               className="chiloe-logo"
             >
-              <Image
-                objectFit="contain"
-                layout="fill"
-                src="/chiloecine.png"
-                alt="Chiloe Cine"
-              />
+              {imageRowTwo.image.url && (
+                <Image
+                  objectFit="contain"
+                  layout="fill"
+                  src={imageRowTwo.image.url}
+                  alt={imageRowTwo.image.title}
+                />
+              )}
             </a>
           </div>
         </Container>
@@ -82,29 +87,32 @@ const Footer = ({ footer, isWork, style }) => {
 
 export default Footer;
 
-export const FooterMobile = () => (
-  <FooterMobileStyled>
-    <a
-      href="https://www.deniseliraratinoff.com"
-      target="_blank"
-      rel="noreferrer"
-    >
-      <Image
-        objectFit="contain"
-        height={13}
-        width={146}
-        src="/denise_logo.svg"
-        alt="Denise Lira"
-      />
-    </a>
-    <a href="https://www.chiloecine.com" target="_blank" rel="noreferrer">
-      <Image
-        objectFit="contain"
-        height={81}
-        width={88}
-        src="/chiloecine.png"
-        alt="Chiloe Cine"
-      />
-    </a>
-  </FooterMobileStyled>
-);
+export const FooterMobile = ({ footer }) => {
+  const { imageRowOne = {}, imageRowTwo = {} } = footer ?? {};
+  return (
+    <FooterMobileStyled>
+      <a target="_blank" rel="noreferrer">
+        {imageRowOne.image?.url && (
+          <Image
+            objectFit="contain"
+            height={13}
+            width={146}
+            src={imageRowOne.image?.url}
+            alt={imageRowOne.image?.title}
+          />
+        )}
+      </a>
+      <a href={imageRowTwo.imageUrl} target="_blank" rel="noreferrer">
+        {imageRowTwo.image?.url && (
+          <Image
+            objectFit="contain"
+            height={81}
+            width={88}
+            src={imageRowTwo.image?.url}
+            alt={imageRowTwo.image?.title}
+          />
+        )}
+      </a>
+    </FooterMobileStyled>
+  );
+};

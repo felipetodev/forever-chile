@@ -19,7 +19,7 @@ export default function Home({ description, homeVideosCollection, footer }) {
       <FullHeroCarousel videosCollection={homeVideosCollection} />
       <HomeSpaceing />
       <Footer footer={footer} />
-      <FooterMobile />
+      <FooterMobile footer={footer} />
     </>
   );
 }
