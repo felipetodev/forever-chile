@@ -34,7 +34,7 @@ const ContactPage = ({ page = {} }) => {
         <Form submitMessage={formMessage} />
       </Container>
       <Spacing />
-      <Footer footer={footer} />
+      <Footer footer={footer} style={{ overflow: "hidden" }} />
       <FooterMobile />
     </>
   );
