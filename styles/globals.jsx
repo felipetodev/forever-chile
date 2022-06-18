@@ -15,6 +15,10 @@ export const HomeSpaceing = styled.div`
 `;
 
 export const GlobalStyles = createGlobalStyle`
+  html {
+    scrollbar-gutter: stable;
+  }
+
   html,
   body {
     padding: 0;
@@ -79,7 +83,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .ReactModal__Overlay--after-open {
     opacity: 1;
-    overflow-y: scroll;
+    overflow-y: hidden;
     backdrop-filter: saturate(50%) blur(20px) !important;
     background: rgba(0, 0, 0, 0.5) !important;
     @media (max-width: 834px) {
