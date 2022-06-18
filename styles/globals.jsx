@@ -83,7 +83,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .ReactModal__Overlay--after-open {
     opacity: 1;
-    overflow-y: hidden;
+    overflow-y: scroll;
     backdrop-filter: saturate(50%) blur(20px) !important;
     background: rgba(0, 0, 0, 0.5) !important;
     @media (max-width: 834px) {
