@@ -6,6 +6,7 @@ export const Wrap = styled(motion.div)`
   display: flex;
   transition: all 700ms ease;
   max-height: 600px;
+  min-height: 570px;
   h1 {
     margin-top: 200px;
     margin-left: 10%;
@@ -68,6 +69,7 @@ export const Wrap = styled(motion.div)`
   @media (max-width: 950px) {
     min-height: 600px;
     margin-left: 18%;
+    width: 450px;
     h1 {
       margin-right: 80px;
     }
@@ -86,6 +88,7 @@ export const Wrap = styled(motion.div)`
   @media (max-width: 600px) {
     margin-left: 5%;
     pointer-events: none;
+    width: auto;
     h1 {
       font-size: 20px;
     }
@@ -117,7 +120,7 @@ export const Triangle = styled(motion.div)`
   height: 200px;
   position: absolute;
   top: 70px;
-  left: 40px;
+  left: 30px;
   background: none;
   z-index: 1;
   @media (max-width: 1300px) {
