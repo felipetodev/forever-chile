@@ -80,7 +80,8 @@ export const LogoStyled = styled.div`
   }
 
   .img-animation {
-    display: flex;
+    display: none;
+    visibility: hidden;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -95,6 +96,10 @@ export const LogoStyled = styled.div`
       overflow: hidden;
       width: 40px !important;
       height: 40px !important;
+    }
+    &.is-active {
+      display: flex;
+      visibility: visible;
     }
   }
   @media (max-width: 1070px) {

@@ -18,20 +18,30 @@ const spin = {
   duration: 7,
 };
 
-const DEFAULT_BG_ANIMATION = "/logo/f1.svg";
+const DEFAULT_BG_ANIMATION = 1;
+const getIndexMaxLength = (idx) => (idx - 1 === 0 ? 9 : idx - 1);
 
 const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
-  const [svg, setSvg] = useState(DEFAULT_BG_ANIMATION);
+  const [svgIndex, setSvgIndex] = useState(DEFAULT_BG_ANIMATION);
 
   useEffect(() => {
     let idx = 0;
     const animationLogo = setInterval(() => {
       if (idx === 9) idx = 0;
       idx++;
-      setSvg(`/logo/f${idx}.svg`);
+      setSvgIndex(idx);
     }, 1200);
     return () => clearInterval(animationLogo);
   }, []);
+
+  useEffect(() => {
+    const indexRemove = getIndexMaxLength(svgIndex);
+    document
+      .querySelector(`.img-animation-${indexRemove}`)
+      .classList.remove("is-active");
+    const spinSVG = document.querySelector(`.img-animation-${svgIndex}`);
+    spinSVG.classList.add("is-active");
+  }, [svgIndex]);
 
   return (
     <MaxContainer>
@@ -48,13 +58,18 @@ const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
                   alt="Forever Collective"
                   title="Logo Forever"
                 />
-                <div className="img-animation">
-                  <motion.img
-                    animate={{ rotate: 360 }}
-                    transition={spin}
-                    src={svg}
-                  />
-                </div>
+                {Array.from({ length: 9 }).map((_, i) => (
+                  <div
+                    className={`img-animation img-animation-${i + 1}`}
+                    key={i}
+                  >
+                    <motion.img
+                      animate={{ rotate: 360 }}
+                      transition={spin}
+                      src={`/logo/f${i + 1}.svg`}
+                    />
+                  </div>
+                ))}
               </a>
             </Link>
           </LogoStyled>

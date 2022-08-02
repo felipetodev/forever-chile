@@ -26,6 +26,10 @@ const getActiveSlide = () => {
   return activeSlider;
 };
 
+const iOSDevice = () =>
+  navigator.userAgent.includes("iPhone") ||
+  navigator.userAgent.includes("iPad");
+
 const FullHeroCarousel = ({ videosCollection = {} }) => {
   const { items = [] } = videosCollection;
   const [index, setIndex] = useState(0);
@@ -43,12 +47,16 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
       videoRef.current = actualSlider;
       setVideoDuration(videoRef.current.duration * 1000 - 1000);
       videoRef.current.defaultMuted = true;
+      if (iOSDevice()) {
+        return;
+      }
       videoRef.current.muted = !videoMute;
       // videoRef.current.volume = 0.5;
     }
   }, [index]);
 
   useEffect(() => {
+    if (iOSDevice()) setVideoMute(false);
     getActiveSlide();
   }, [index]);
 
@@ -100,9 +108,14 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
       fadeIn();
       if (videoRef.current) videoRef.current.muted = videoMute;
     }
-    if (videoMute) fadeOut();
-    // if (videoRef.current) videoRef.current.volume = 0;
-    // if (videoRef.current) videoRef.current.muted = videoMute;
+    if (videoMute) {
+      if (iOSDevice()) {
+        if (videoRef.current) videoRef.current.volume = 0;
+        if (videoRef.current) videoRef.current.muted = videoMute;
+        return;
+      }
+      fadeOut();
+    }
   };
 
   return (
