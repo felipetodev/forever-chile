@@ -91,7 +91,7 @@ export const FooterMobile = ({ footer }) => {
   const { imageRowOne = {}, imageRowTwo = {} } = footer ?? {};
   return (
     <FooterMobileStyled>
-      <a target="_blank" rel="noreferrer">
+      <a href={imageRowOne.imageUrl} target="_blank" rel="noreferrer">
         {imageRowOne.image?.url && (
           <Image
             objectFit="contain"
