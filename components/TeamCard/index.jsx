@@ -10,7 +10,7 @@ const TeamCard = ({ name, title, src, description, timeline }) => {
           <h3>{name}</h3>
           <span>{title}</span>
         </DescriptionHeader>
-        <Paragraph>{description}</Paragraph>
+        <Paragraph dangerouslySetInnerHTML={{ __html: description }} />
         <Timeline>
           {timeline?.items.map(el => (
             <Years key={el?.sys?.id}>

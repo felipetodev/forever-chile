@@ -48,7 +48,6 @@ export const Container = styled.div`
 export const NewContainer = styled(Container)`
   min-height: 50vh;
   padding-top: 80px;
-  // border: 1px solid red;
   @media (max-width: 1070px) {
     margin-left: 80px;
     margin-right: 6.2222%;

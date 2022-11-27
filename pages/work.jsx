@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
+import Head from "next/head";
 import Header from "../components/Header";
-import Layout from "../components/Layout";
 import styled from "styled-components";
 import ListOfWorks from "../components/ListOfWorks";
 import Footer, { FooterMobile } from "../components/Footer";
@@ -42,12 +42,12 @@ const WorkPage = ({ page = {} }) => {
   const { description, workVideosCollection = [], footer = {} } = page;
   const [workSection, setWorkSection] = useState("all");
   const [modalWork, setModalWork] = useState(null);
-  const router = useRouter();
-  const hasParams = Boolean(router.query.category);
+  const { query } = useRouter();
+  const hasParams = Boolean(query.category);
 
   useEffect(() => {
     if (hasParams) {
-      setWorkSection(router.query.category.toLowerCase());
+      setWorkSection(query.category.toLowerCase());
     }
   }, [hasParams]);
 
@@ -57,6 +57,9 @@ const WorkPage = ({ page = {} }) => {
   const categories = [...new Set(getArrayOfCategories)];
   return (
     <>
+      <Head>
+        <title>Forever Chile | WORK</title>
+      </Head>
       <Header noDot isAbout isWork />
       <Dots />
       <MaxContainer>
@@ -80,7 +83,7 @@ const WorkPage = ({ page = {} }) => {
         />
       </MaxContainer>
       <Modal
-        modalIsOpen={Boolean(router.query.project)}
+        modalIsOpen={Boolean(query.project)}
         infoModal={modalWork}
       />
       <WorksSpacing />

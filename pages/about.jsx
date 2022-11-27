@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Header from "../components/Header";
 import WhatWeDo from "../components/WhatWeDo";
 import AboutHero, { TrashDesignMobile } from "../components/AboutHero";
@@ -26,6 +27,9 @@ const About = ({ page }) => {
   } = page;
   return (
     <>
+      <Head>
+        <title>Forever Chile | ABOUT</title>
+      </Head>
       <Header isAbout hasDot />
       <AboutDescription title={mainTitle} description={description} />
       <FoundersContainer>

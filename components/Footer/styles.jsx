@@ -150,8 +150,8 @@ export const Container = styled.div`
 
   // Mobile view
   @media (max-width: 565px) {
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column-reverse;
     gap: 30px;
     position: relative;
     z-index: 4;

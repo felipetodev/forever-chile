@@ -167,6 +167,8 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
             }}
           >
             <motion.a
+              href="/work"
+              alt="works-project"
               key={items[index]?.title}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

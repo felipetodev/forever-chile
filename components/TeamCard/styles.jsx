@@ -9,7 +9,7 @@ export const DescriptionHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 12px;
+  margin-top: 22px;
 
   h3 {
     font-size: 20px;
@@ -27,7 +27,7 @@ export const DescriptionHeader = styled.div`
 
 export const Paragraph = styled.div`
   font-size: 16px;
-  margin-top: 12px;
+  margin-top: 22px;
   margin-bottom: 1rem;
 `;
 
@@ -43,7 +43,7 @@ export const Years = styled.div`
   width: 100%;
   font-size: 16px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   &::before {
     content: "";

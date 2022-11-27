@@ -53,9 +53,9 @@ const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
                 <Image
                   objectFit="contain"
                   src="/logo/forever-chile-logo.svg"
-                  width="135"
+                  width="135px"
                   height="75px"
-                  alt="Forever Collective"
+                  alt="forever-collective"
                   title="Logo Forever"
                 />
                 {Array.from({ length: 9 }).map((_, i) => (
@@ -66,6 +66,7 @@ const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
                     <motion.img
                       animate={{ rotate: 360 }}
                       transition={spin}
+                      alt="forever-collective"
                       src={`/logo/f${i + 1}.svg`}
                     />
                   </div>

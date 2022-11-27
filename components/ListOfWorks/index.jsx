@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { Fragment, useEffect, useMemo } from "react";
 import { Grid, NewContainer, VideoContainer, PdfContainer } from "./styles";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
@@ -52,11 +52,10 @@ const ListOfWorks = ({ workVideos, workSection, setModalWork }) => {
       <AnimatePresence>
         <Grid>
           {videos?.length > 0 ? (
-            videos?.map((work) => (
-              <>
+            videos?.map((work, idx) => (
+              <Fragment key={work?.sys.id || idx}>
                 {Boolean(work?.pdf) ? (
                   <PdfContainer
-                    key={work?.sys?.id}
                     initial="hidden"
                     animate="visible"
                     variants={variants}
@@ -79,7 +78,6 @@ const ListOfWorks = ({ workVideos, workSection, setModalWork }) => {
                 ) : (
                   <Link
                     replace
-                    key={work?.sys?.id}
                     style={{ textDecoration: "none" }}
                     scroll={false}
                     href={{
@@ -111,7 +109,7 @@ const ListOfWorks = ({ workVideos, workSection, setModalWork }) => {
                     </a>
                   </Link>
                 )}
-              </>
+              </Fragment>
             ))
           ) : (
             <span>{`Were sorry, there is no content published for this section`}</span>

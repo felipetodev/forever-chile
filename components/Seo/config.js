@@ -1,5 +1,5 @@
 export const META = {
-  favicon: "/favicon.ico",
+  favicon: "/favicon.svg",
   theme: "#1a1a1a",
   // fbapp: "",
   title: "Forever Chile",
@@ -8,7 +8,7 @@ export const META = {
   keywords: "chile, agency, films, multimedia, editorial, advertising",
   author: "Forever",
   twitter: "@forever-chile",
-  url: "https://forever-chile.vercel.app",
+  url: "https://www.forever-chile.com",
   banner: {
     url: "/og-image.jpg",
     format: "image/jpeg",

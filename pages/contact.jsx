@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Header from "../components/Header";
 import Form from "../components/Form";
 import FormImage from "../components/FormImage";
@@ -28,6 +29,9 @@ const ContactPage = ({ page = {} }) => {
   const { formMessage, footer = {} } = page;
   return (
     <>
+      <Head>
+        <title>Forever Chile | CONTACT</title>
+      </Head>
       <Header noDot isAbout isWork isContact />
       <Container>
         <FormImage />

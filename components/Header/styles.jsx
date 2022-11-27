@@ -136,8 +136,10 @@ export const Nav = styled.nav`
   }
 `;
 
-export const IntroStyled = styled.div`
+export const IntroStyled = styled.h1`
   position: relative;
+  font-weight: normal;
+  margin: 0;
   min-width: 570px;
   font-size: 30px;
   padding-right: 2%;

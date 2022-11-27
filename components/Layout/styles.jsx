@@ -46,7 +46,6 @@ export const Container = styled.div`
   }
 
   @media (max-width: 1070px) {
-    // border: 1px solid red;
     padding-left: 0%;
     margin-left: 80px;
   }
