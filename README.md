@@ -7,4 +7,4 @@
 - [Hanson Studio](https://www.sebastianhansonstudio.com/foreverchile).
 - [Official Website](https://www.forever-chile.com/).
 
-#### All Rights Reserved FOREVER CHILE <br/> Copyright © 2022 forever-chile.
+#### All Rights Reserved FOREVER CHILE <br/> Copyright © 2023 forever-chile.
