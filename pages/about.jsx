@@ -44,7 +44,7 @@ const About = ({ page }) => {
               key={team?.sys?.id}
               name={team?.fullName}
               src={team?.image.url}
-              title={team?.title}
+              discipline={team?.discipline}
               description={team?.description}
               timeline={team?.timelineCollection}
             />

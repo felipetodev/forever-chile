@@ -28,7 +28,6 @@ query GetLayoutPage($slug: String!) {
       }
       teamCollection {
         items {
-          title
           image {
             title
             url
