@@ -84,7 +84,7 @@ const Menu = ({ isAbout, hasDot, isHome, isContact }) => {
           <li>
             <a
               onClick={handleCloseMenu}
-              href="https://instagram.com"
+              href="https://www.instagram.com/dliraratinoff"
               rel="noopener noreferrer"
               target="_blank"
               className="instagram"
