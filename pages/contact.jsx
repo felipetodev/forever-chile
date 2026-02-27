@@ -6,7 +6,7 @@ import Footer, { FooterMobile } from "../components/Footer";
 import styled from "styled-components";
 import { GET_CONTACT_ENTRY } from "../queries/getContactEntry";
 
-const Container = styled.div`
+const Container = styled.main`
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: min(1400px, 90%);

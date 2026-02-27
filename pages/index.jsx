@@ -10,14 +10,16 @@ export default function Home({ description, homeVideosCollection, footer }) {
     <>
       <Header isHome noDot description={description} />
       <Dots isHome />
-      <div
-        className="mobile-description"
-        style={{ position: "relative", zIndex: 4 }}
-      >
-        {description}
-      </div>
-      <FullHeroCarousel videosCollection={homeVideosCollection} />
-      <HomeSpaceing />
+      <main>
+        <div
+          className="mobile-description"
+          style={{ position: "relative", zIndex: 4 }}
+        >
+          {description}
+        </div>
+        <FullHeroCarousel videosCollection={homeVideosCollection} />
+        <HomeSpaceing />
+      </main>
       <Footer footer={footer} />
       <FooterMobile footer={footer} />
     </>
