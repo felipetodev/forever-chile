@@ -1,6 +1,6 @@
 import Image from "next/legacy/image";
 import { SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
+import { Autoplay } from "swiper/modules";
 import { Container, BannerTitle, SwiperStyled, ImageContainer } from "./styles";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import "swiper/css";
@@ -35,7 +35,7 @@ const Collective = ({ title, brands }) => {
                 sticky: false,
               }}
               modules={[Autoplay]}
-              autoplay={{ delay: 1 }}
+              autoplay={{ delay: 1, disableOnInteraction: false}}
             >
               {brands?.items?.map(({ sys, title, image }) => (
                 <SwiperSlide key={sys?.id}>

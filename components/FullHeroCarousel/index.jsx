@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade, Navigation, Autoplay, Pagination } from "swiper";
+import { EffectFade, Navigation, Autoplay, Pagination } from "swiper/modules";
 import {
   FullHeroStyled,
   Video,
