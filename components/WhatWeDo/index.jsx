@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Col, LayoutStyled, Container, NavigationList } from "./styles";
 
 const WhatWeDo = ({ firstColumnItems, secondColumnItems }) => {

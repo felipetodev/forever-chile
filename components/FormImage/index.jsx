@@ -1,5 +1,5 @@
 import { Square, Triangle, Circle, Wrap } from "./styles";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const FormImage = () => {
   return (

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import { Container, BannerTitle, SwiperStyled, ImageContainer } from "./styles";

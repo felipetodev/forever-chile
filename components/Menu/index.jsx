@@ -62,22 +62,22 @@ const Menu = ({ isAbout, hasDot, isHome, isContact }) => {
       <MenuStyled open={open} ref={drawerRef}>
         <motion.ul>
           <li>
-            <Link href="/">
+            <Link href="/" legacyBehavior>
               <a onClick={handleCloseMenu}>Home</a>
             </Link>
           </li>
           <li>
-            <Link href="/work">
+            <Link href="/work" legacyBehavior>
               <a onClick={handleCloseMenu}>Work</a>
             </Link>
           </li>
           <li>
-            <Link href="/about">
+            <Link href="/about" legacyBehavior>
               <a onClick={handleCloseMenu}>About</a>
             </Link>
           </li>
           <li>
-            <Link href="/contact">
+            <Link href="/contact" legacyBehavior>
               <a onClick={handleCloseMenu}>Contact</a>
             </Link>
           </li>

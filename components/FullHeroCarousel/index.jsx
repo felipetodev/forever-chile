@@ -158,6 +158,7 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
         <LogoStyled />
         <IntroStyled>
           <Link
+            legacyBehavior
             href={{
               pathname: "/work",
               query: {

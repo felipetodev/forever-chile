@@ -12,7 +12,7 @@ const HoverBanner = () => {
   });
   return (
     <Container ref={hoverBannerRef}>
-      <Link href="/contact">
+      <Link href="/contact" legacyBehavior>
         <a>
           <HoverWrapper className={isIntersecting ? "is-intersecting" : null}>
             <First className="hover-one">

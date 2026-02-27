@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Description, DescriptionHeader, Paragraph, Timeline, Years } from "./styles"
 
 const TeamCard = ({ name, discipline, src, description, timeline }) => {

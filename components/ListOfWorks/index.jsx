@@ -3,7 +3,7 @@ import { Grid, NewContainer, VideoContainer, PdfContainer } from "./styles";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 const Spacing = styled.div`
@@ -77,6 +77,7 @@ const ListOfWorks = ({ workVideos, workSection, setModalWork }) => {
                   </PdfContainer>
                 ) : (
                   <Link
+                    legacyBehavior
                     replace
                     style={{ textDecoration: "none" }}
                     scroll={false}

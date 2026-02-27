@@ -6,7 +6,7 @@ import {
   LogoStyled,
   Nav,
 } from "./styles";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import Menu from "../Menu";
 import { motion } from "framer-motion";
@@ -48,13 +48,13 @@ const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
       <HeaderStyled isAbout={isAbout} isWork={isWork}>
         <Container>
           <LogoStyled>
-            <Link href="/">
+            <Link href="/" legacyBehavior>
               <a>
                 <Image
                   objectFit="contain"
                   src="/logo/forever-chile-logo.svg"
-                  width="135px"
-                  height="75px"
+                  width="135"
+                  height="75"
                   alt="forever-collective"
                   title="Logo Forever"
                 />
