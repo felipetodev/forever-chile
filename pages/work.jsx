@@ -62,7 +62,7 @@ const WorkPage = ({ page = {} }) => {
       </Head>
       <Header noDot isAbout isWork />
       <Dots />
-      <MaxContainer>
+      <MaxContainer as="main">
         <Container>
           <Heading>{description}</Heading>
         </Container>
