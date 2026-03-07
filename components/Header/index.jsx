@@ -21,6 +21,8 @@ const spin = {
 const DEFAULT_BG_ANIMATION = 1;
 const getIndexMaxLength = (idx) => (idx - 1 === 0 ? 9 : idx - 1);
 
+const MotionLink = motion.create(Link);
+
 const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
   const [svgIndex, setSvgIndex] = useState(DEFAULT_BG_ANIMATION);
 
@@ -45,43 +47,41 @@ const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
 
   return (
     <MaxContainer>
-      <HeaderStyled isAbout={isAbout} isWork={isWork}>
+      <HeaderStyled $isAbout={isAbout} $isWork={isWork}>
         <Container>
           <LogoStyled>
-            <Link href="/" legacyBehavior>
-              <a>
-                <Image
-                  objectFit="contain"
-                  src="/logo/forever-chile-logo.svg"
-                  width="135"
-                  height="75"
-                  alt="forever-collective"
-                  title="Logo Forever"
-                />
-                {Array.from({ length: 9 }).map((_, i) => (
-                  <div
-                    className={`img-animation img-animation-${i + 1}`}
-                    key={i}
-                  >
-                    <motion.img
-                      animate={{ rotate: 360 }}
-                      transition={spin}
-                      alt="forever-collective"
-                      src={`/logo/f${i + 1}.svg`}
-                    />
-                  </div>
-                ))}
-              </a>
-            </Link>
+            <MotionLink href="/">
+              <Image
+                objectFit="contain"
+                src="/logo/forever-chile-logo.svg"
+                width="135"
+                height="75"
+                alt="forever-collective"
+                title="Logo Forever"
+              />
+              {Array.from({ length: 9 }).map((_, i) => (
+                <div
+                  className={`img-animation img-animation-${i + 1}`}
+                  key={i}
+                >
+                  <motion.img
+                    animate={{ rotate: 360 }}
+                    transition={spin}
+                    alt="forever-collective"
+                    src={`/logo/f${i + 1}.svg`}
+                  />
+                </div>
+              ))}
+            </MotionLink>
           </LogoStyled>
           <IntroStyled
-            hasDot={hasDot}
+            $hasDot={hasDot}
             className={noDot ? "remove-dot" : null}
-            isWork={isWork}
+            $isWork={isWork}
           >
             {description}
           </IntroStyled>
-          <Nav isAbout={isAbout}>
+          <Nav $isAbout={isAbout}>
             <Menu isAbout={isAbout} hasDot={hasDot} isContact={isContact} />
           </Nav>
         </Container>

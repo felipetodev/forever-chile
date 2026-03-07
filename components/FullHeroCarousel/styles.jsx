@@ -4,6 +4,7 @@ export const FullHeroStyled = styled.div`
   display: flex;
   position: relative;
   max-height: 70vh;
+  min-height: 70vh;
 
   // Tablet view
   @media (max-width: 1070px) {

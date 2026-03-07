@@ -38,8 +38,8 @@ export const BurgerStyled = styled.div`
   }
 
   @media (min-width: 830px) {
-    ${({ isContact }) =>
-      isContact
+    ${({ $isContact }) =>
+      $isContact
         ? `
       &::before {
         display: none;
@@ -51,14 +51,14 @@ export const BurgerStyled = styled.div`
   @media (max-width: 830px) {
     width: 124px;
     pointer-events: none;
-    ${({ isAbout }) => (isAbout ? "height: 15vh;" : "")};
-    ${({ isAbout }) => (isAbout ? "position: static;" : "")};
+    ${({ $isAbout }) => ($isAbout ? "height: 15vh;" : "")};
+    ${({ $isAbout }) => ($isAbout ? "position: static;" : "")};
     &::before {
-      ${({ isAbout }) => (isAbout ? "height: 15vh;" : "")};
+      ${({ $isAbout }) => ($isAbout ? "height: 15vh;" : "")};
     }
     &::after {
-      ${({ isAbout, open }) =>
-        isAbout
+      ${({ $isAbout, open }) =>
+        $isAbout
           ? `
             content: '';
             position: absolute;
@@ -217,7 +217,7 @@ export const NavContainer = styled.div`
   justify-content: center;
   top: 0;
   bottom: ${({ open }) => (open ? "" : "0")};
-  position: ${({ open, isAbout }) => (open || isAbout ? "fixed" : "absolute")};
+  position: ${({ open, $isAbout }) => (open || $isAbout ? "fixed" : "absolute")};
   z-index: 10;
   background-color: transparent;
   pointer-events: none;

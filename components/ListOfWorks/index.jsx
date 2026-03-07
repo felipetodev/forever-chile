@@ -35,8 +35,8 @@ const ListOfWorks = ({ workVideos, workSection, setModalWork }) => {
       workSection === DEFAULT_SECTION
         ? workVideos
         : workVideos.filter(
-            (it) => it?.category?.toLowerCase() === workSection
-          ),
+          (it) => it?.category?.toLowerCase() === workSection
+        ),
     [workVideos, workSection]
   );
 
@@ -77,7 +77,6 @@ const ListOfWorks = ({ workVideos, workSection, setModalWork }) => {
                   </PdfContainer>
                 ) : (
                   <Link
-                    legacyBehavior
                     replace
                     style={{ textDecoration: "none" }}
                     scroll={false}
@@ -89,25 +88,23 @@ const ListOfWorks = ({ workVideos, workSection, setModalWork }) => {
                       },
                     }}
                   >
-                    <a>
-                      <VideoContainer
-                        initial="hidden"
-                        animate="visible"
-                        variants={variants}
-                      >
-                        <Image
-                          layout="fill"
-                          className="work-image"
-                          objectFit="cover"
-                          src={work?.workImage?.url}
-                          alt={work?.title}
-                        />
-                        <div className="work-description">
-                          <h3>{work?.title}</h3>
-                          <span>{work?.client}</span>
-                        </div>
-                      </VideoContainer>
-                    </a>
+                    <VideoContainer
+                      initial="hidden"
+                      animate="visible"
+                      variants={variants}
+                    >
+                      <Image
+                        layout="fill"
+                        className="work-image"
+                        objectFit="cover"
+                        src={work?.workImage?.url}
+                        alt={work?.title}
+                      />
+                      <div className="work-description">
+                        <h3>{work?.title}</h3>
+                        <span>{work?.client}</span>
+                      </div>
+                    </VideoContainer>
                   </Link>
                 )}
               </Fragment>

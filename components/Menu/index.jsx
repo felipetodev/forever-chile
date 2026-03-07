@@ -24,6 +24,8 @@ const InstagramIcon = () => (
   </svg>
 );
 
+const MotionLink = motion.create(Link);
+
 const Menu = ({ isAbout, hasDot, isHome, isContact }) => {
   const drawerRef = useRef(null);
   const menuRef = useRef(null);
@@ -47,11 +49,11 @@ const Menu = ({ isAbout, hasDot, isHome, isContact }) => {
       <BurgerStyled
         className={hasDot ? "menu-dot" : null}
         open={open}
-        isAbout={isAbout}
+        $isAbout={isAbout}
         isHome={isHome}
-        isContact={isContact}
+        $isContact={isContact}
       />
-      <NavContainer open={open} isAbout={isAbout} isHome={isHome}>
+      <NavContainer open={open} $isAbout={isAbout} isHome={isHome}>
         <HamburgerContainer ref={menuRef}>
           <HamburgerMenu className={open ? "open" : "closed"}>
             <motion.div className="line-menu start" />
@@ -62,24 +64,24 @@ const Menu = ({ isAbout, hasDot, isHome, isContact }) => {
       <MenuStyled open={open} ref={drawerRef}>
         <motion.ul>
           <li>
-            <Link href="/" legacyBehavior>
-              <a onClick={handleCloseMenu}>Home</a>
-            </Link>
+            <MotionLink href="/" onClick={handleCloseMenu}>
+              Home
+            </MotionLink>
           </li>
           <li>
-            <Link href="/work" legacyBehavior>
-              <a onClick={handleCloseMenu}>Work</a>
-            </Link>
+            <MotionLink href="/work" onClick={handleCloseMenu}>
+              Work
+            </MotionLink>
           </li>
           <li>
-            <Link href="/about" legacyBehavior>
-              <a onClick={handleCloseMenu}>About</a>
-            </Link>
+            <MotionLink href="/about" onClick={handleCloseMenu}>
+              About
+            </MotionLink>
           </li>
           <li>
-            <Link href="/contact" legacyBehavior>
-              <a onClick={handleCloseMenu}>Contact</a>
-            </Link>
+            <MotionLink href="/contact" onClick={handleCloseMenu}>
+              Contact
+            </MotionLink>
           </li>
           <li>
             <a

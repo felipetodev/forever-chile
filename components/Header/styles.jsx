@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const HeaderStyled = styled.header`
   display: flex;
   align-items: center;
-  min-height: ${({ isWork }) => (isWork ? "25vh" : "30vh")};
+  min-height: ${({ $isWork }) => ($isWork ? "25vh" : "30vh")};
   margin-left: 40px;
 
   // Tablet view
   @media (max-width: 1070px) {
     position: relative;
-    min-height: ${({ isAbout }) => (isAbout ? "20vh" : "380px")};
+    min-height: ${({ $isAbout }) => ($isAbout ? "20vh" : "380px")};
     margin-left: 80px;
   }
 
@@ -126,8 +126,8 @@ export const Nav = styled.nav`
   }
 
   @media (max-width: 830px) {
-    ${({ isAbout }) =>
-      isAbout
+    ${({ $isAbout }) =>
+      $isAbout
         ? `
           top: 0;
           right: 0;
@@ -173,8 +173,8 @@ export const IntroStyled = styled.h1`
     }
   }
 
-  ${({ isWork }) =>
-    isWork
+  ${({ $isWork }) =>
+    $isWork
       ? `
     &::before {
       display: none !important;

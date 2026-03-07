@@ -30,6 +30,8 @@ const iOSDevice = () =>
   navigator.userAgent.includes("iPhone") ||
   navigator.userAgent.includes("iPad");
 
+const MotionLink = motion.create(Link);
+
 const FullHeroCarousel = ({ videosCollection = {} }) => {
   const { items = [] } = videosCollection;
   const [index, setIndex] = useState(0);
@@ -157,8 +159,7 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
       <Container>
         <LogoStyled />
         <IntroStyled>
-          <Link
-            legacyBehavior
+          <MotionLink
             href={{
               pathname: "/work",
               query: {
@@ -166,21 +167,17 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
                 project: items[index]?.title,
               },
             }}
-          >
-            <motion.a
-              href="/work"
-              alt="works-project"
+                          alt="works-project"
               key={items[index]?.title}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
               style={{ display: "flex", flexDirection: "column" }}
-            >
-              <h2>{items[index]?.title}</h2>
-              <span>{items[index]?.filmName}</span>
-              <span>{items[index]?.filmDescription}</span>
-            </motion.a>
-          </Link>
+          >
+            <h2>{items[index]?.title}</h2>
+            <span>{items[index]?.filmName}</span>
+            <span>{items[index]?.filmDescription}</span>
+          </MotionLink>
         </IntroStyled>
         <AudioButton>
           <button
