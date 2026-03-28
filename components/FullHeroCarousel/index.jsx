@@ -167,12 +167,12 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
                 project: items[index]?.title,
               },
             }}
-                          alt="works-project"
-              key={items[index]?.title}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              style={{ display: "flex", flexDirection: "column" }}
+            alt="works-project"
+            key={items[index]?.title}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            style={{ display: "flex", flexDirection: "column" }}
           >
             <h2>{items[index]?.title}</h2>
             <span>{items[index]?.filmName}</span>
