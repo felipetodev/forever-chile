@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NewContainer } from "../ListOfWorks/styles"
+import { NewContainer } from "../ListOfWorks/styles";
 
 export const MobileLayout = styled(NewContainer)`
   min-height: auto;
@@ -11,7 +11,7 @@ export const MobileLayout = styled(NewContainer)`
   @media (max-width: 400px) {
     padding-top: 50px;
   }
-`
+`;
 
 export const WorkSelect = styled.div`
   padding: 20px 0px;
@@ -32,7 +32,7 @@ export const WorkSelect = styled.div`
     display: flex;
     justify-content: space-between;
     text-transform: capitalize;
-    outline: 1px solid #1A1A1A;
+    outline: 1px solid #1a1a1a;
     cursor: pointer;
   }
   span {

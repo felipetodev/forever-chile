@@ -49,4 +49,4 @@ export const GET_HOME_ENTRY = `
       }
     }
   }
-`
+`;

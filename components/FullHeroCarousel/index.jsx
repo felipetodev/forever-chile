@@ -20,7 +20,7 @@ import "swiper/css/pagination";
 
 const getActiveSlide = () => {
   const activeSlider = document.querySelector(
-    ".swiper-slide-active"
+    ".swiper-slide-active",
   )?.lastChild;
   if (activeSlider) activeSlider.play();
   return activeSlider;

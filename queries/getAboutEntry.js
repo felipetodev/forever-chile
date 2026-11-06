@@ -100,4 +100,4 @@ query GetLayoutPage($slug: String!) {
     }
   }
 }
-`
+`;

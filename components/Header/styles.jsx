@@ -148,7 +148,7 @@ export const IntroStyled = styled.h1`
   &::before {
     content: "";
     position: absolute;
-    background: #E6E6E6;
+    background: #e6e6e6;
     opacity: 0.4;
     left: -30px;
     top: -300px;

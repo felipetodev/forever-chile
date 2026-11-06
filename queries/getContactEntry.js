@@ -34,4 +34,4 @@ query GetLayoutPage($slug: String!) {
     }
   }
 }
-`
+`;

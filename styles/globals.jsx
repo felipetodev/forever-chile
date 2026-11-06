@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from "styled-components";
 
 export const FoundersContainer = styled.div`
   margin-top: 170px;
-  @media(max-width: 400px) {
+  @media (max-width: 400px) {
     margin-top: 100px;
   }
 `;
@@ -10,7 +10,7 @@ export const FoundersContainer = styled.div`
 export const HomeSpaceing = styled.div`
   position: relative;
   height: 40px;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   z-index: 5;
 `;
 

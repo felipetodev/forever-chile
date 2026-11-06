@@ -60,10 +60,7 @@ const Header = ({ noDot, isAbout, hasDot, isWork, isContact, description }) => {
                 title="Logo Forever"
               />
               {Array.from({ length: 9 }).map((_, i) => (
-                <div
-                  className={`img-animation img-animation-${i + 1}`}
-                  key={i}
-                >
+                <div className={`img-animation img-animation-${i + 1}`} key={i}>
                   <motion.img
                     animate={{ rotate: 360 }}
                     transition={spin}

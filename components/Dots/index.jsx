@@ -188,12 +188,12 @@ const Dots = ({ isHome, dotTop, dotBottom, lastDot, ...props }) => {
   const isDot = dotTop
     ? "about-dot-top"
     : dotBottom
-    ? "about-dot-bottom"
-    : lastDot
-    ? "last-dot"
-    : isHome
-    ? "home-dot"
-    : null;
+      ? "about-dot-bottom"
+      : lastDot
+        ? "last-dot"
+        : isHome
+          ? "home-dot"
+          : null;
   return (
     <MaxContainer>
       <Container className={isDot} {...props}>

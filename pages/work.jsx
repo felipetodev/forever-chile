@@ -52,7 +52,7 @@ const WorkPage = ({ page = {} }) => {
   }, [hasParams]);
 
   const getArrayOfCategories = workVideosCollection?.items?.map(
-    (item) => item?.category
+    (item) => item?.category,
   );
   const categories = [...new Set(getArrayOfCategories)];
   return (
@@ -82,10 +82,7 @@ const WorkPage = ({ page = {} }) => {
           setModalWork={setModalWork}
         />
       </MaxContainer>
-      <Modal
-        modalIsOpen={Boolean(query.project)}
-        infoModal={modalWork}
-      />
+      <Modal modalIsOpen={Boolean(query.project)} infoModal={modalWork} />
       <WorksSpacing />
       <Footer isWork footer={footer} />
       <FooterMobile footer={footer} />

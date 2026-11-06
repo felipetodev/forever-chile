@@ -52,7 +52,9 @@ const Modal = ({ modalIsOpen, infoModal }) => {
           </Left>
           <Description>{infoModal?.description}</Description>
         </ModalDescription>
-        <CloseModal onClick={() => router.push("/work", undefined, { shallow: true })}>
+        <CloseModal
+          onClick={() => router.push("/work", undefined, { shallow: true })}
+        >
           <CloseModalIcon />
         </CloseModal>
       </Container>

@@ -35,9 +35,9 @@ const ListOfWorks = ({ workVideos, workSection, setModalWork }) => {
       workSection === DEFAULT_SECTION
         ? workVideos
         : workVideos.filter(
-          (it) => it?.category?.toLowerCase() === workSection
-        ),
-    [workVideos, workSection]
+            (it) => it?.category?.toLowerCase() === workSection,
+          ),
+    [workVideos, workSection],
   );
 
   useEffect(() => {

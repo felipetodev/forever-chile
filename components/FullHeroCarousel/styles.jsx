@@ -67,7 +67,7 @@ export const IntroStyled = styled.div`
   &::before {
     content: "";
     position: absolute;
-    background: #E6E6E6;
+    background: #e6e6e6;
     opacity: 0.4;
     left: -30px;
     top: -800px; // <-- increase 100vh

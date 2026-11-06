@@ -57,4 +57,4 @@ export const GET_WORK_ENTRY = `
       }
     }
   }
-`
+`;

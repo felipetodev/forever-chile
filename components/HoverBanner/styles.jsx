@@ -78,7 +78,8 @@ export const Second = styled(motion.div)`
 `;
 
 export const HoverWrapper = styled(motion.div)`
-  .hover-one, .hover-two {
+  .hover-one,
+  .hover-two {
     transition: margin 700ms ease;
   }
   &:hover div {

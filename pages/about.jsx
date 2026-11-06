@@ -65,7 +65,10 @@ const About = ({ page }) => {
         />
         <Dots lastDot />
         <TrashDesignMobile />
-        <Collective title={blueBannerTitle} brands={collectiveBannerCollection} />
+        <Collective
+          title={blueBannerTitle}
+          brands={collectiveBannerCollection}
+        />
         <HoverBanner />
       </main>
       <Footer footer={footer} />
@@ -81,7 +84,7 @@ export async function getStaticProps() {
   const page = await contentful(
     "about",
     "aboutPageCollection",
-    GET_ABOUT_ENTRY
+    GET_ABOUT_ENTRY,
   );
 
   return {

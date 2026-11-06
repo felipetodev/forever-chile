@@ -14,15 +14,15 @@ const contentful = async (slug = "", contentType = "", query) => {
             slug,
           },
         }),
-      }
+      },
     );
     const { data } = await result.json();
     const [pageContainer] = data[contentType]?.items;
-    return pageContainer
+    return pageContainer;
   } catch (e) {
     console.error(e);
     return {};
   }
-}
+};
 
-module.exports = { contentful }
+module.exports = { contentful };

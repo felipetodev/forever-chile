@@ -19,7 +19,7 @@ export const Container = styled(Layout)`
   }
   @media (max-width: 400px) {
     padding-left: 0px;
-    width: min(800px,84%);
+    width: min(800px, 84%);
     margin: 0 auto;
   }
 `;

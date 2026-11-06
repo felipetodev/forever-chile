@@ -17,11 +17,11 @@ function MyApp({ Component, pageProps, canonical }) {
 export default MyApp;
 
 MyApp.getInitialProps = async ({ ctx }) => {
-  const baseUrl = 'https://www.forever-chile.com'
-  const { asPath } = ctx
-  const canonical = baseUrl + asPath
+  const baseUrl = "https://www.forever-chile.com";
+  const { asPath } = ctx;
+  const canonical = baseUrl + asPath;
 
   return {
-    canonical
-  }
-}
+    canonical,
+  };
+};

@@ -20,7 +20,7 @@ export const DescriptionHeader = styled.div`
     opacity: 0.5;
   }
 
-  @media(max-width: 1130px) {
+  @media (max-width: 1130px) {
     flex-direction: column;
   }
 `;
@@ -48,7 +48,7 @@ export const Years = styled.div`
   &::before {
     content: "";
     position: absolute;
-    background: #E6E6E6;
+    background: #e6e6e6;
     opacity: 0.4;
     top: -15px;
     right: 0;

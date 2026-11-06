@@ -35,7 +35,7 @@ const Collective = ({ title, brands }) => {
                 sticky: false,
               }}
               modules={[Autoplay]}
-              autoplay={{ delay: 1, disableOnInteraction: false}}
+              autoplay={{ delay: 1, disableOnInteraction: false }}
             >
               {brands?.items?.map(({ sys, title, image }) => (
                 <SwiperSlide key={sys?.id}>

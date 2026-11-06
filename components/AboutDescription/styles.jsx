@@ -1,8 +1,7 @@
 import Layout from "../Layout";
 import styled from "styled-components";
 
-export const Container = styled(Layout)`
-`
+export const Container = styled(Layout)``;
 
 export const AboutTitle = styled.div`
   position: relative;

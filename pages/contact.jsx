@@ -51,7 +51,7 @@ export async function getStaticProps() {
   const page = await contentful(
     "contact",
     "contactPageCollection",
-    GET_CONTACT_ENTRY
+    GET_CONTACT_ENTRY,
   );
 
   return {

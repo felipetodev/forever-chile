@@ -83,7 +83,7 @@ export const Container = styled.div`
     &::before {
       content: "";
       position: absolute;
-      background: #E6E6E6;
+      background: #e6e6e6;
       opacity: 0.4;
       top: 0;
       left: -30px;
@@ -110,7 +110,7 @@ export const Container = styled.div`
     &::before {
       content: "";
       position: absolute;
-      background: #E6E6E6;
+      background: #e6e6e6;
       opacity: 0.4;
       top: 0;
       left: 0;
@@ -122,7 +122,7 @@ export const Container = styled.div`
       padding-left: 8px;
       padding-right: 8px;
       top: -40px;
-      width: 150px;      
+      width: 150px;
       right: -80px;
       &::before {
         left: 0;
@@ -135,7 +135,7 @@ export const Container = styled.div`
 
   @media (max-width: 830px) {
     .footer-logo {
-      width: 124px; 
+      width: 124px;
       &::before {
         left: 0px;
       }
@@ -211,7 +211,7 @@ export const IntroStyled = styled.div`
   &::before {
     content: "";
     position: absolute;
-    background: #E6E6E6;
+    background: #e6e6e6;
     opacity: 0.4;
     top: -80px;
     left: -30px;
