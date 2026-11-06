@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import Header from "../components/Header";
 import styled from "styled-components";
@@ -40,16 +40,10 @@ const WorksSpacing = styled.div`
 
 const WorkPage = ({ page = {} }) => {
   const { description, workVideosCollection = [], footer = {} } = page;
-  const [workSection, setWorkSection] = useState("all");
+  const [selectedSection, setWorkSection] = useState(null);
   const [modalWork, setModalWork] = useState(null);
   const { query } = useRouter();
-  const hasParams = Boolean(query.category);
-
-  useEffect(() => {
-    if (hasParams) {
-      setWorkSection(query.category.toLowerCase());
-    }
-  }, [hasParams]);
+  const workSection = selectedSection ?? query.category?.toLowerCase() ?? "all";
 
   const getArrayOfCategories = workVideosCollection?.items?.map(
     (item) => item?.category,

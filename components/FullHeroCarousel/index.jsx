@@ -58,7 +58,6 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
   }, [index]);
 
   useEffect(() => {
-    if (iOSDevice()) setVideoMute(false);
     getActiveSlide();
   }, [index]);
 
@@ -123,7 +122,10 @@ const FullHeroCarousel = ({ videosCollection = {} }) => {
   return (
     <FullHeroStyled>
       <Swiper
-        onTransitionStart={(e) => setIndex(e.realIndex)}
+        onTransitionStart={(e) => {
+          setIndex(e.realIndex);
+          if (iOSDevice()) setVideoMute(false);
+        }}
         effect="fade"
         pagination={{ clickable: true }}
         modules={[EffectFade, Navigation, Pagination, Autoplay]}
